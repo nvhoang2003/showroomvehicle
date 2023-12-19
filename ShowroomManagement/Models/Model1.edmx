@@ -1,0 +1,1215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="showroomModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="nchar" MaxLength="50" />
+          <Property Name="password" Type="nchar" MaxLength="255" />
+          <Property Name="first_name" Type="nchar" MaxLength="50" />
+          <Property Name="last_name" Type="nchar" MaxLength="50" />
+          <Property Name="date_of_birth" Type="date" />
+          <Property Name="phone_number" Type="nchar" MaxLength="10" />
+          <Property Name="email" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="customer_order">
+          <Key>
+            <PropertyRef Name="customer_id" />
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="order_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="group_objects">
+          <Key>
+            <PropertyRef Name="group_id" />
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="group_id" Type="int" Nullable="false" />
+          <Property Name="object_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="groups">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="name" Type="nchar" MaxLength="50" />
+          <Property Name="group_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="objects">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="50" />
+          <Property Name="description" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="price" Type="float" />
+          <Property Name="time_create" Type="date" />
+          <Property Name="manage_by" Type="int" />
+          <Property Name="status" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="organizations">
+          <Key>
+            <PropertyRef Name="organization_id" />
+          </Key>
+          <Property Name="organization_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="50" />
+          <Property Name="description" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pre_order">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="purchase_order">
+          <Key>
+            <PropertyRef Name="purchase_id" />
+          </Key>
+          <Property Name="purchase_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date_purchase" Type="date" />
+          <Property Name="manage_by" Type="int" />
+        </EntityType>
+        <EntityType Name="service_order">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="50" />
+          <Property Name="time_create" Type="date" />
+          <Property Name="description" Type="text" />
+          <Property Name="manage_by" Type="int" />
+          <Property Name="customer_id" Type="int" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="nchar" MaxLength="50" />
+          <Property Name="password" Type="nchar" MaxLength="255" />
+          <Property Name="first_name" Type="nchar" MaxLength="50" />
+          <Property Name="last_name" Type="nchar" MaxLength="50" />
+          <Property Name="phone_number" Type="nchar" MaxLength="10" />
+          <Property Name="address" Type="nchar" MaxLength="50" />
+          <Property Name="manage_id" Type="int" />
+          <Property Name="group_id" Type="int" />
+          <Property Name="organization_id" Type="int" />
+        </EntityType>
+        <EntityType Name="vehicle">
+          <Key>
+            <PropertyRef Name="model_number" />
+          </Key>
+          <Property Name="model_number" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="255" />
+          <Property Name="branch" Type="nchar" MaxLength="50" />
+          <Property Name="price" Type="float" />
+        </EntityType>
+        <EntityType Name="vehicle_data">
+          <Key>
+            <PropertyRef Name="vehicle_data_id" />
+          </Key>
+          <Property Name="vehicle_data_id" Type="int" Nullable="false" />
+          <Property Name="model_number" Type="nchar" MaxLength="10" />
+          <Property Name="color" Type="nchar" MaxLength="50" />
+          <Property Name="listId" Type="text" />
+        </EntityType>
+        <EntityType Name="vehicle_image">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="image_url" Type="nchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="vehicle_order">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="id_number" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="vehicle_purchase">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="purchase_order_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="purchase_order_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="price" Type="float" />
+        </EntityType>
+        <EntityType Name="vehicle_service">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="service_id" Type="int" Nullable="false" />
+          <Property Name="id_number" Type="int" />
+        </EntityType>
+        <Association Name="FK__customer___custo__5629CD9C">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="customer_order">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__customer___order__571DF1D5">
+          <End Role="orders" Type="Self.orders" Multiplicity="1" />
+          <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="customer_order">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__group_obj__group__5812160E">
+          <End Role="groups" Type="Self.groups" Multiplicity="1" />
+          <End Role="group_objects" Type="Self.group_objects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="groups">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="group_objects">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__group_obj__objec__59063A47">
+          <End Role="objects" Type="Self.objects" Multiplicity="1" />
+          <End Role="group_objects" Type="Self.group_objects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="objects">
+              <PropertyRef Name="object_id" />
+            </Principal>
+            <Dependent Role="group_objects">
+              <PropertyRef Name="object_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pre_order__custo__5AEE82B9">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="pre_order" Type="Self.pre_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="pre_order">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pre_order__vehic__5BE2A6F2">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="1" />
+          <End Role="pre_order" Type="Self.pre_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="pre_order">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_o__order__6477ECF3">
+          <End Role="orders" Type="Self.orders" Multiplicity="1" />
+          <End Role="vehicle_order" Type="Self.vehicle_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="vehicle_order">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_o__vehic__656C112C">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="1" />
+          <End Role="vehicle_order" Type="Self.vehicle_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="vehicle_order">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_p__purch__66603565">
+          <End Role="purchase_order" Type="Self.purchase_order" Multiplicity="1" />
+          <End Role="vehicle_purchase" Type="Self.vehicle_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchase_order">
+              <PropertyRef Name="purchase_id" />
+            </Principal>
+            <Dependent Role="vehicle_purchase">
+              <PropertyRef Name="purchase_order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_p__vehic__6754599E">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="1" />
+          <End Role="vehicle_purchase" Type="Self.vehicle_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="vehicle_purchase">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_s__vehic__68487DD7">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="1" />
+          <End Role="vehicle_service" Type="Self.vehicle_service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="vehicle_service">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="manage_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchase_order_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="purchase_order" Type="Self.purchase_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="purchase_order">
+              <PropertyRef Name="manage_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_order_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="service_order" Type="Self.service_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="service_order">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_order_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="service_order" Type="Self.service_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="service_order">
+              <PropertyRef Name="manage_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_groups">
+          <End Role="groups" Type="Self.groups" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="groups">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_organizations">
+          <End Role="organizations" Type="Self.organizations" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organizations">
+              <PropertyRef Name="organization_id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="user1" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="user1">
+              <PropertyRef Name="manage_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehical_data_vehical_data">
+          <End Role="vehicle" Type="Self.vehicle" Multiplicity="0..1" />
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="model_number" />
+            </Principal>
+            <Dependent Role="vehicle_data">
+              <PropertyRef Name="model_number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehicle_image_vehicle_data">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="0..1" />
+          <End Role="vehicle_image" Type="Self.vehicle_image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="vehicle_image">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehicle_service_service_order">
+          <End Role="service_order" Type="Self.service_order" Multiplicity="1" />
+          <End Role="vehicle_service" Type="Self.vehicle_service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="service_order">
+              <PropertyRef Name="service_id" />
+            </Principal>
+            <Dependent Role="vehicle_service">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="showroomModelStoreContainer">
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer_order" EntityType="Self.customer_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="group_objects" EntityType="Self.group_objects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="groups" EntityType="Self.groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="objects" EntityType="Self.objects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="organizations" EntityType="Self.organizations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pre_order" EntityType="Self.pre_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="purchase_order" EntityType="Self.purchase_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="service_order" EntityType="Self.service_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicle" EntityType="Self.vehicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicle_data" EntityType="Self.vehicle_data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicle_image" EntityType="Self.vehicle_image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicle_order" EntityType="Self.vehicle_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicle_purchase" EntityType="Self.vehicle_purchase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicle_service" EntityType="Self.vehicle_service" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__customer___custo__5629CD9C" Association="Self.FK__customer___custo__5629CD9C">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="customer_order" EntitySet="customer_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__customer___order__571DF1D5" Association="Self.FK__customer___order__571DF1D5">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="customer_order" EntitySet="customer_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__group_obj__group__5812160E" Association="Self.FK__group_obj__group__5812160E">
+            <End Role="groups" EntitySet="groups" />
+            <End Role="group_objects" EntitySet="group_objects" />
+          </AssociationSet>
+          <AssociationSet Name="FK__group_obj__objec__59063A47" Association="Self.FK__group_obj__objec__59063A47">
+            <End Role="objects" EntitySet="objects" />
+            <End Role="group_objects" EntitySet="group_objects" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pre_order__custo__5AEE82B9" Association="Self.FK__pre_order__custo__5AEE82B9">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="pre_order" EntitySet="pre_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pre_order__vehic__5BE2A6F2" Association="Self.FK__pre_order__vehic__5BE2A6F2">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="pre_order" EntitySet="pre_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_o__order__6477ECF3" Association="Self.FK__vehicle_o__order__6477ECF3">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="vehicle_order" EntitySet="vehicle_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_o__vehic__656C112C" Association="Self.FK__vehicle_o__vehic__656C112C">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="vehicle_order" EntitySet="vehicle_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_p__purch__66603565" Association="Self.FK__vehicle_p__purch__66603565">
+            <End Role="purchase_order" EntitySet="purchase_order" />
+            <End Role="vehicle_purchase" EntitySet="vehicle_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_p__vehic__6754599E" Association="Self.FK__vehicle_p__vehic__6754599E">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="vehicle_purchase" EntitySet="vehicle_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_s__vehic__68487DD7" Association="Self.FK__vehicle_s__vehic__68487DD7">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="vehicle_service" EntitySet="vehicle_service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_user" Association="Self.FK_order_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchase_order_user" Association="Self.FK_purchase_order_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="purchase_order" EntitySet="purchase_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_order_customer" Association="Self.FK_service_order_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="service_order" EntitySet="service_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_order_user" Association="Self.FK_service_order_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="service_order" EntitySet="service_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_groups" Association="Self.FK_user_groups">
+            <End Role="groups" EntitySet="groups" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_organizations" Association="Self.FK_user_organizations">
+            <End Role="organizations" EntitySet="organizations" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_user" Association="Self.FK_user_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="user1" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehical_data_vehical_data" Association="Self.FK_vehical_data_vehical_data">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehicle_image_vehicle_data" Association="Self.FK_vehicle_image_vehicle_data">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="vehicle_image" EntitySet="vehicle_image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehicle_service_service_order" Association="Self.FK_vehicle_service_service_order">
+            <End Role="service_order" EntitySet="service_order" />
+            <End Role="vehicle_service" EntitySet="vehicle_service" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="showroomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="date_of_birth" Type="DateTime" Precision="0" />
+          <Property Name="phone_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="pre_order" Relationship="Self.FK__pre_order__custo__5AEE82B9" FromRole="customer" ToRole="pre_order" />
+          <NavigationProperty Name="service_order" Relationship="Self.FK_service_order_customer" FromRole="customer" ToRole="service_order" />
+          <NavigationProperty Name="orders" Relationship="Self.customer_order" FromRole="customer" ToRole="orders" />
+        </EntityType>
+        <EntityType Name="group">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="users" Relationship="Self.FK_user_groups" FromRole="groups" ToRole="user" />
+          <NavigationProperty Name="objects" Relationship="Self.group_objects" FromRole="groups" ToRole="objects" />
+        </EntityType>
+        <EntityType Name="object">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="groups" Relationship="Self.group_objects" FromRole="objects" ToRole="groups" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="Double" />
+          <Property Name="time_create" Type="DateTime" Precision="0" />
+          <Property Name="manage_by" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="vehicle_order" Relationship="Self.FK__vehicle_o__order__6477ECF3" FromRole="orders" ToRole="vehicle_order" />
+          <NavigationProperty Name="user" Relationship="Self.FK_order_user" FromRole="orders" ToRole="user" />
+          <NavigationProperty Name="customers" Relationship="Self.customer_order" FromRole="orders" ToRole="customer" />
+        </EntityType>
+        <EntityType Name="organization">
+          <Key>
+            <PropertyRef Name="organization_id" />
+          </Key>
+          <Property Name="organization_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="users" Relationship="Self.FK_user_organizations" FromRole="organizations" ToRole="user" />
+        </EntityType>
+        <EntityType Name="pre_order">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="customer" Relationship="Self.FK__pre_order__custo__5AEE82B9" FromRole="pre_order" ToRole="customer" />
+          <NavigationProperty Name="vehicle_data" Relationship="Self.FK__pre_order__vehic__5BE2A6F2" FromRole="pre_order" ToRole="vehicle_data" />
+        </EntityType>
+        <EntityType Name="purchase_order">
+          <Key>
+            <PropertyRef Name="purchase_id" />
+          </Key>
+          <Property Name="purchase_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_purchase" Type="DateTime" Precision="0" />
+          <Property Name="manage_by" Type="Int32" />
+          <NavigationProperty Name="vehicle_purchase" Relationship="Self.FK__vehicle_p__purch__66603565" FromRole="purchase_order" ToRole="vehicle_purchase" />
+          <NavigationProperty Name="user" Relationship="Self.FK_purchase_order_user" FromRole="purchase_order" ToRole="user" />
+        </EntityType>
+        <EntityType Name="service_order">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="time_create" Type="DateTime" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="manage_by" Type="Int32" />
+          <Property Name="customer_id" Type="Int32" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_service_order_customer" FromRole="service_order" ToRole="customer" />
+          <NavigationProperty Name="user" Relationship="Self.FK_service_order_user" FromRole="service_order" ToRole="user" />
+          <NavigationProperty Name="vehicle_service" Relationship="Self.FK_vehicle_service_service_order" FromRole="service_order" ToRole="vehicle_service" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="phone_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="manage_id" Type="Int32" />
+          <Property Name="group_id" Type="Int32" />
+          <Property Name="organization_id" Type="Int32" />
+          <NavigationProperty Name="group" Relationship="Self.FK_user_groups" FromRole="user" ToRole="groups" />
+          <NavigationProperty Name="orders" Relationship="Self.FK_order_user" FromRole="user" ToRole="orders" />
+          <NavigationProperty Name="organization" Relationship="Self.FK_user_organizations" FromRole="user" ToRole="organizations" />
+          <NavigationProperty Name="purchase_order" Relationship="Self.FK_purchase_order_user" FromRole="user" ToRole="purchase_order" />
+          <NavigationProperty Name="service_order" Relationship="Self.FK_service_order_user" FromRole="user" ToRole="service_order" />
+          <NavigationProperty Name="user1" Relationship="Self.FK_user_user" FromRole="user" ToRole="user1" />
+          <NavigationProperty Name="user2" Relationship="Self.FK_user_user" FromRole="user1" ToRole="user" />
+        </EntityType>
+        <EntityType Name="vehicle">
+          <Key>
+            <PropertyRef Name="model_number" />
+          </Key>
+          <Property Name="model_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="branch" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="price" Type="Double" />
+          <NavigationProperty Name="vehicle_data" Relationship="Self.FK_vehical_data_vehical_data" FromRole="vehicle" ToRole="vehicle_data" />
+        </EntityType>
+        <EntityType Name="vehicle_data">
+          <Key>
+            <PropertyRef Name="vehicle_data_id" />
+          </Key>
+          <Property Name="vehicle_data_id" Type="Int32" Nullable="false" />
+          <Property Name="model_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="listId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="pre_order" Relationship="Self.FK__pre_order__vehic__5BE2A6F2" FromRole="vehicle_data" ToRole="pre_order" />
+          <NavigationProperty Name="vehicle" Relationship="Self.FK_vehical_data_vehical_data" FromRole="vehicle_data" ToRole="vehicle" />
+          <NavigationProperty Name="vehicle_order" Relationship="Self.FK__vehicle_o__vehic__656C112C" FromRole="vehicle_data" ToRole="vehicle_order" />
+          <NavigationProperty Name="vehicle_purchase" Relationship="Self.FK__vehicle_p__vehic__6754599E" FromRole="vehicle_data" ToRole="vehicle_purchase" />
+          <NavigationProperty Name="vehicle_service" Relationship="Self.FK__vehicle_s__vehic__68487DD7" FromRole="vehicle_data" ToRole="vehicle_service" />
+          <NavigationProperty Name="vehicle_image" Relationship="Self.FK_vehicle_image_vehicle_data" FromRole="vehicle_data" ToRole="vehicle_image" />
+        </EntityType>
+        <EntityType Name="vehicle_image">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle_id" Type="Int32" />
+          <Property Name="image_url" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="vehicle_data" Relationship="Self.FK_vehicle_image_vehicle_data" FromRole="vehicle_image" ToRole="vehicle_data" />
+        </EntityType>
+        <EntityType Name="vehicle_order">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="Int32" Nullable="false" />
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <Property Name="id_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="order" Relationship="Self.FK__vehicle_o__order__6477ECF3" FromRole="vehicle_order" ToRole="orders" />
+          <NavigationProperty Name="vehicle_data" Relationship="Self.FK__vehicle_o__vehic__656C112C" FromRole="vehicle_order" ToRole="vehicle_data" />
+        </EntityType>
+        <EntityType Name="vehicle_purchase">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="purchase_order_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="Int32" Nullable="false" />
+          <Property Name="purchase_order_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <NavigationProperty Name="purchase_order" Relationship="Self.FK__vehicle_p__purch__66603565" FromRole="vehicle_purchase" ToRole="purchase_order" />
+          <NavigationProperty Name="vehicle_data" Relationship="Self.FK__vehicle_p__vehic__6754599E" FromRole="vehicle_purchase" ToRole="vehicle_data" />
+        </EntityType>
+        <EntityType Name="vehicle_service">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="Int32" Nullable="false" />
+          <Property Name="service_id" Type="Int32" Nullable="false" />
+          <Property Name="id_number" Type="Int32" />
+          <NavigationProperty Name="service_order" Relationship="Self.FK_vehicle_service_service_order" FromRole="vehicle_service" ToRole="service_order" />
+          <NavigationProperty Name="vehicle_data" Relationship="Self.FK__vehicle_s__vehic__68487DD7" FromRole="vehicle_service" ToRole="vehicle_data" />
+        </EntityType>
+        <Association Name="FK__pre_order__custo__5AEE82B9">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="pre_order" Type="Self.pre_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="pre_order">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_order_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="service_order" Type="Self.service_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="service_order">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_groups">
+          <End Role="groups" Type="Self.group" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="groups">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_o__order__6477ECF3">
+          <End Role="orders" Type="Self.order" Multiplicity="1" />
+          <End Role="vehicle_order" Type="Self.vehicle_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="vehicle_order">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="orders" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="manage_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_organizations">
+          <End Role="organizations" Type="Self.organization" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organizations">
+              <PropertyRef Name="organization_id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pre_order__vehic__5BE2A6F2">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="1" />
+          <End Role="pre_order" Type="Self.pre_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="pre_order">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_p__purch__66603565">
+          <End Role="purchase_order" Type="Self.purchase_order" Multiplicity="1" />
+          <End Role="vehicle_purchase" Type="Self.vehicle_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchase_order">
+              <PropertyRef Name="purchase_id" />
+            </Principal>
+            <Dependent Role="vehicle_purchase">
+              <PropertyRef Name="purchase_order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchase_order_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="purchase_order" Type="Self.purchase_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="purchase_order">
+              <PropertyRef Name="manage_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_order_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="service_order" Type="Self.service_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="service_order">
+              <PropertyRef Name="manage_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehicle_service_service_order">
+          <End Role="service_order" Type="Self.service_order" Multiplicity="1" />
+          <End Role="vehicle_service" Type="Self.vehicle_service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="service_order">
+              <PropertyRef Name="service_id" />
+            </Principal>
+            <Dependent Role="vehicle_service">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="user1" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="user1">
+              <PropertyRef Name="manage_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehical_data_vehical_data">
+          <End Role="vehicle" Type="Self.vehicle" Multiplicity="0..1" />
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="model_number" />
+            </Principal>
+            <Dependent Role="vehicle_data">
+              <PropertyRef Name="model_number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_o__vehic__656C112C">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="1" />
+          <End Role="vehicle_order" Type="Self.vehicle_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="vehicle_order">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_p__vehic__6754599E">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="1" />
+          <End Role="vehicle_purchase" Type="Self.vehicle_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="vehicle_purchase">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vehicle_s__vehic__68487DD7">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="1" />
+          <End Role="vehicle_service" Type="Self.vehicle_service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="vehicle_service">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehicle_image_vehicle_data">
+          <End Role="vehicle_data" Type="Self.vehicle_data" Multiplicity="0..1" />
+          <End Role="vehicle_image" Type="Self.vehicle_image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle_data">
+              <PropertyRef Name="vehicle_data_id" />
+            </Principal>
+            <Dependent Role="vehicle_image">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="customer_order">
+          <End Role="customer" Type="Self.customer" Multiplicity="*" />
+          <End Role="orders" Type="Self.order" Multiplicity="*" />
+        </Association>
+        <Association Name="group_objects">
+          <End Role="groups" Type="Self.group" Multiplicity="*" />
+          <End Role="objects" Type="Self.object" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="showroomEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="groups" EntityType="Self.group" />
+          <EntitySet Name="objects" EntityType="Self.object" />
+          <EntitySet Name="orders" EntityType="Self.order" />
+          <EntitySet Name="organizations" EntityType="Self.organization" />
+          <EntitySet Name="pre_order" EntityType="Self.pre_order" />
+          <EntitySet Name="purchase_order" EntityType="Self.purchase_order" />
+          <EntitySet Name="service_order" EntityType="Self.service_order" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="vehicles" EntityType="Self.vehicle" />
+          <EntitySet Name="vehicle_data" EntityType="Self.vehicle_data" />
+          <EntitySet Name="vehicle_image" EntityType="Self.vehicle_image" />
+          <EntitySet Name="vehicle_order" EntityType="Self.vehicle_order" />
+          <EntitySet Name="vehicle_purchase" EntityType="Self.vehicle_purchase" />
+          <EntitySet Name="vehicle_service" EntityType="Self.vehicle_service" />
+          <AssociationSet Name="FK__pre_order__custo__5AEE82B9" Association="Self.FK__pre_order__custo__5AEE82B9">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="pre_order" EntitySet="pre_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_order_customer" Association="Self.FK_service_order_customer">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="service_order" EntitySet="service_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_groups" Association="Self.FK_user_groups">
+            <End Role="groups" EntitySet="groups" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_o__order__6477ECF3" Association="Self.FK__vehicle_o__order__6477ECF3">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="vehicle_order" EntitySet="vehicle_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_user" Association="Self.FK_order_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_organizations" Association="Self.FK_user_organizations">
+            <End Role="organizations" EntitySet="organizations" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pre_order__vehic__5BE2A6F2" Association="Self.FK__pre_order__vehic__5BE2A6F2">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="pre_order" EntitySet="pre_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_p__purch__66603565" Association="Self.FK__vehicle_p__purch__66603565">
+            <End Role="purchase_order" EntitySet="purchase_order" />
+            <End Role="vehicle_purchase" EntitySet="vehicle_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchase_order_user" Association="Self.FK_purchase_order_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="purchase_order" EntitySet="purchase_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_order_user" Association="Self.FK_service_order_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="service_order" EntitySet="service_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehicle_service_service_order" Association="Self.FK_vehicle_service_service_order">
+            <End Role="service_order" EntitySet="service_order" />
+            <End Role="vehicle_service" EntitySet="vehicle_service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_user" Association="Self.FK_user_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="user1" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehical_data_vehical_data" Association="Self.FK_vehical_data_vehical_data">
+            <End Role="vehicle" EntitySet="vehicles" />
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_o__vehic__656C112C" Association="Self.FK__vehicle_o__vehic__656C112C">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="vehicle_order" EntitySet="vehicle_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_p__vehic__6754599E" Association="Self.FK__vehicle_p__vehic__6754599E">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="vehicle_purchase" EntitySet="vehicle_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vehicle_s__vehic__68487DD7" Association="Self.FK__vehicle_s__vehic__68487DD7">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="vehicle_service" EntitySet="vehicle_service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehicle_image_vehicle_data" Association="Self.FK_vehicle_image_vehicle_data">
+            <End Role="vehicle_data" EntitySet="vehicle_data" />
+            <End Role="vehicle_image" EntitySet="vehicle_image" />
+          </AssociationSet>
+          <AssociationSet Name="customer_order" Association="Self.customer_order">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="group_objects" Association="Self.group_objects">
+            <End Role="groups" EntitySet="groups" />
+            <End Role="objects" EntitySet="objects" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="showroomModelStoreContainer" CdmEntityContainer="showroomEntities">
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="showroomModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="groups">
+            <EntityTypeMapping TypeName="showroomModel.group">
+              <MappingFragment StoreEntitySet="groups">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="objects">
+            <EntityTypeMapping TypeName="showroomModel.object">
+              <MappingFragment StoreEntitySet="objects">
+                <ScalarProperty Name="object_id" ColumnName="object_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="showroomModel.order">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="time_create" ColumnName="time_create" />
+                <ScalarProperty Name="manage_by" ColumnName="manage_by" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="organizations">
+            <EntityTypeMapping TypeName="showroomModel.organization">
+              <MappingFragment StoreEntitySet="organizations">
+                <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pre_order">
+            <EntityTypeMapping TypeName="showroomModel.pre_order">
+              <MappingFragment StoreEntitySet="pre_order">
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purchase_order">
+            <EntityTypeMapping TypeName="showroomModel.purchase_order">
+              <MappingFragment StoreEntitySet="purchase_order">
+                <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+                <ScalarProperty Name="date_purchase" ColumnName="date_purchase" />
+                <ScalarProperty Name="manage_by" ColumnName="manage_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="service_order">
+            <EntityTypeMapping TypeName="showroomModel.service_order">
+              <MappingFragment StoreEntitySet="service_order">
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="time_create" ColumnName="time_create" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="manage_by" ColumnName="manage_by" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="showroomModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="manage_id" ColumnName="manage_id" />
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicles">
+            <EntityTypeMapping TypeName="showroomModel.vehicle">
+              <MappingFragment StoreEntitySet="vehicle">
+                <ScalarProperty Name="model_number" ColumnName="model_number" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="branch" ColumnName="branch" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicle_data">
+            <EntityTypeMapping TypeName="showroomModel.vehicle_data">
+              <MappingFragment StoreEntitySet="vehicle_data">
+                <ScalarProperty Name="vehicle_data_id" ColumnName="vehicle_data_id" />
+                <ScalarProperty Name="model_number" ColumnName="model_number" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="listId" ColumnName="listId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicle_image">
+            <EntityTypeMapping TypeName="showroomModel.vehicle_image">
+              <MappingFragment StoreEntitySet="vehicle_image">
+                <ScalarProperty Name="image_id" ColumnName="image_id" />
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="image_url" ColumnName="image_url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicle_order">
+            <EntityTypeMapping TypeName="showroomModel.vehicle_order">
+              <MappingFragment StoreEntitySet="vehicle_order">
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="id_number" ColumnName="id_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicle_purchase">
+            <EntityTypeMapping TypeName="showroomModel.vehicle_purchase">
+              <MappingFragment StoreEntitySet="vehicle_purchase">
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="purchase_order_id" ColumnName="purchase_order_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicle_service">
+            <EntityTypeMapping TypeName="showroomModel.vehicle_service">
+              <MappingFragment StoreEntitySet="vehicle_service">
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="id_number" ColumnName="id_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="customer_order" TypeName="showroomModel.customer_order" StoreEntitySet="customer_order">
+            <EndProperty Name="customer">
+              <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+            </EndProperty>
+            <EndProperty Name="orders">
+              <ScalarProperty Name="order_id" ColumnName="order_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="group_objects" TypeName="showroomModel.group_objects" StoreEntitySet="group_objects">
+            <EndProperty Name="groups">
+              <ScalarProperty Name="group_id" ColumnName="group_id" />
+            </EndProperty>
+            <EndProperty Name="objects">
+              <ScalarProperty Name="object_id" ColumnName="object_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

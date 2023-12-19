@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="044e474a5da941f9ba3760834417289b" Name="Diagram1">
+        <EntityTypeShape EntityType="showroomModel.customer" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.group" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.object" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.order" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.organization" Width="1.5" PointX="3.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.pre_order" Width="1.5" PointX="13.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.purchase_order" Width="1.5" PointX="8.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.service_order" Width="1.5" PointX="11.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.user" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.vehicle" Width="1.5" PointX="9" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.vehicle_data" Width="1.5" PointX="11.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.vehicle_image" Width="1.5" PointX="13.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.vehicle_order" Width="1.5" PointX="13.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.vehicle_purchase" Width="1.5" PointX="10.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.vehicle_service" Width="1.5" PointX="13.5" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="showroomModel.FK__pre_order__custo__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_service_order_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_user_groups" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK__vehicle_o__order__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_order_user" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_user_organizations" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK__pre_order__vehic__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK__vehicle_p__purch__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_purchase_order_user" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_service_order_user" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_vehicle_service_service_order" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_user_user" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_vehical_data_vehical_data" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK__vehicle_o__vehic__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK__vehicle_p__vehic__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK__vehicle_s__vehic__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.FK_vehicle_image_vehicle_data" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.customer_order" ManuallyRouted="false" />
+        <AssociationConnector Association="showroomModel.group_objects" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

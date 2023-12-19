@@ -1,0 +1,42 @@
+﻿@model ShowroomManagement.Models.vehicle_image
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>vehicle_image</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.image_url)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.image_url)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.vehicle_data.model_number)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.vehicle_data.model_number)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.image_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

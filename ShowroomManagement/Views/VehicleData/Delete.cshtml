@@ -1,0 +1,56 @@
+﻿@model ShowroomManagement.Models.vehicle_data
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>vehicle_data</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.color)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.color)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.listId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.listId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.vehicle.name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.vehicle.name)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

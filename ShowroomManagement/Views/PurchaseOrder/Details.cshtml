@@ -1,0 +1,42 @@
+﻿@model ShowroomManagement.Models.purchase_order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>purchase_order</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.date_purchase)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.date_purchase)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.user.user_name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.user.user_name)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.purchase_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
