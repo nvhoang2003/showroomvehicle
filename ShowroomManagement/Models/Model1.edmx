@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="showroomModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="showroomModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="customer">
           <Key>
             <PropertyRef Name="customer_id" />
@@ -25,6 +25,18 @@
           </Key>
           <Property Name="customer_id" Type="int" Nullable="false" />
           <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="customer_service">
+          <Key>
+            <PropertyRef Name="service_id" />
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="service_id" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
         </EntityType>
         <EntityType Name="group_objects">
           <Key>
@@ -33,6 +45,8 @@
           </Key>
           <Property Name="group_id" Type="int" Nullable="false" />
           <Property Name="object_id" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
         </EntityType>
         <EntityType Name="groups">
           <Key>
@@ -76,6 +90,8 @@
           <Property Name="vehicle_id" Type="int" Nullable="false" />
           <Property Name="customer_id" Type="int" Nullable="false" />
           <Property Name="status" Type="nchar" MaxLength="10" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
         </EntityType>
         <EntityType Name="purchase_order">
           <Key>
@@ -95,6 +111,16 @@
           <Property Name="description" Type="text" />
           <Property Name="manage_by" Type="int" />
           <Property Name="customer_id" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -135,7 +161,7 @@
           </Key>
           <Property Name="image_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="vehicle_id" Type="int" />
-          <Property Name="image_url" Type="nchar" MaxLength="255" />
+          <Property Name="image_url" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="vehicle_order">
           <Key>
@@ -165,18 +191,6 @@
           <Property Name="service_id" Type="int" Nullable="false" />
           <Property Name="id_number" Type="int" />
         </EntityType>
-        <Association Name="FK__customer___custo__5629CD9C">
-          <End Role="customer" Type="Self.customer" Multiplicity="1" />
-          <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="customer">
-              <PropertyRef Name="customer_id" />
-            </Principal>
-            <Dependent Role="customer_order">
-              <PropertyRef Name="customer_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__customer___order__571DF1D5">
           <End Role="orders" Type="Self.orders" Multiplicity="1" />
           <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
@@ -186,30 +200,6 @@
             </Principal>
             <Dependent Role="customer_order">
               <PropertyRef Name="order_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__group_obj__group__5812160E">
-          <End Role="groups" Type="Self.groups" Multiplicity="1" />
-          <End Role="group_objects" Type="Self.group_objects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="groups">
-              <PropertyRef Name="group_id" />
-            </Principal>
-            <Dependent Role="group_objects">
-              <PropertyRef Name="group_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__group_obj__objec__59063A47">
-          <End Role="objects" Type="Self.objects" Multiplicity="1" />
-          <End Role="group_objects" Type="Self.group_objects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="objects">
-              <PropertyRef Name="object_id" />
-            </Principal>
-            <Dependent Role="group_objects">
-              <PropertyRef Name="object_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -294,6 +284,66 @@
             </Principal>
             <Dependent Role="vehicle_service">
               <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customer_order_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="customer_order">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customer_service_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="customer_service" Type="Self.customer_service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="customer_service">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customer_service_service_order">
+          <End Role="service_order" Type="Self.service_order" Multiplicity="1" />
+          <End Role="customer_service" Type="Self.customer_service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="service_order">
+              <PropertyRef Name="service_id" />
+            </Principal>
+            <Dependent Role="customer_service">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_group_objects_groups">
+          <End Role="groups" Type="Self.groups" Multiplicity="1" />
+          <End Role="group_objects" Type="Self.group_objects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="groups">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="group_objects">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_group_objects_objects">
+          <End Role="objects" Type="Self.objects" Multiplicity="1" />
+          <End Role="group_objects" Type="Self.group_objects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="objects">
+              <PropertyRef Name="object_id" />
+            </Principal>
+            <Dependent Role="group_objects">
+              <PropertyRef Name="object_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -420,6 +470,7 @@
         <EntityContainer Name="showroomModelStoreContainer">
           <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="customer_order" EntityType="Self.customer_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer_service" EntityType="Self.customer_service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="group_objects" EntityType="Self.group_objects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="groups" EntityType="Self.groups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="objects" EntityType="Self.objects" Schema="dbo" store:Type="Tables" />
@@ -428,6 +479,7 @@
           <EntitySet Name="pre_order" EntityType="Self.pre_order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="purchase_order" EntityType="Self.purchase_order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="service_order" EntityType="Self.service_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vehicle" EntityType="Self.vehicle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vehicle_data" EntityType="Self.vehicle_data" Schema="dbo" store:Type="Tables" />
@@ -435,21 +487,9 @@
           <EntitySet Name="vehicle_order" EntityType="Self.vehicle_order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vehicle_purchase" EntityType="Self.vehicle_purchase" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vehicle_service" EntityType="Self.vehicle_service" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__customer___custo__5629CD9C" Association="Self.FK__customer___custo__5629CD9C">
-            <End Role="customer" EntitySet="customer" />
-            <End Role="customer_order" EntitySet="customer_order" />
-          </AssociationSet>
           <AssociationSet Name="FK__customer___order__571DF1D5" Association="Self.FK__customer___order__571DF1D5">
             <End Role="orders" EntitySet="orders" />
             <End Role="customer_order" EntitySet="customer_order" />
-          </AssociationSet>
-          <AssociationSet Name="FK__group_obj__group__5812160E" Association="Self.FK__group_obj__group__5812160E">
-            <End Role="groups" EntitySet="groups" />
-            <End Role="group_objects" EntitySet="group_objects" />
-          </AssociationSet>
-          <AssociationSet Name="FK__group_obj__objec__59063A47" Association="Self.FK__group_obj__objec__59063A47">
-            <End Role="objects" EntitySet="objects" />
-            <End Role="group_objects" EntitySet="group_objects" />
           </AssociationSet>
           <AssociationSet Name="FK__pre_order__custo__5AEE82B9" Association="Self.FK__pre_order__custo__5AEE82B9">
             <End Role="customer" EntitySet="customer" />
@@ -478,6 +518,26 @@
           <AssociationSet Name="FK__vehicle_s__vehic__68487DD7" Association="Self.FK__vehicle_s__vehic__68487DD7">
             <End Role="vehicle_data" EntitySet="vehicle_data" />
             <End Role="vehicle_service" EntitySet="vehicle_service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customer_order_customer" Association="Self.FK_customer_order_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="customer_order" EntitySet="customer_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customer_service_customer" Association="Self.FK_customer_service_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="customer_service" EntitySet="customer_service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customer_service_service_order" Association="Self.FK_customer_service_service_order">
+            <End Role="service_order" EntitySet="service_order" />
+            <End Role="customer_service" EntitySet="customer_service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_group_objects_groups" Association="Self.FK_group_objects_groups">
+            <End Role="groups" EntitySet="groups" />
+            <End Role="group_objects" EntitySet="group_objects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_group_objects_objects" Association="Self.FK_group_objects_objects">
+            <End Role="objects" EntitySet="objects" />
+            <End Role="group_objects" EntitySet="group_objects" />
           </AssociationSet>
           <AssociationSet Name="FK_order_user" Association="Self.FK_order_user">
             <End Role="user" EntitySet="user" />
@@ -520,8 +580,7 @@
             <End Role="vehicle_service" EntitySet="vehicle_service" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="showroomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -538,8 +597,45 @@
           <Property Name="phone_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="pre_order" Relationship="Self.FK__pre_order__custo__5AEE82B9" FromRole="customer" ToRole="pre_order" />
+          <NavigationProperty Name="customer_order" Relationship="Self.FK_customer_order_customer" FromRole="customer" ToRole="customer_order" />
+          <NavigationProperty Name="customer_service" Relationship="Self.FK_customer_service_customer" FromRole="customer" ToRole="customer_service" />
           <NavigationProperty Name="service_order" Relationship="Self.FK_service_order_customer" FromRole="customer" ToRole="service_order" />
-          <NavigationProperty Name="orders" Relationship="Self.customer_order" FromRole="customer" ToRole="orders" />
+        </EntityType>
+        <EntityType Name="customer_order">
+          <Key>
+            <PropertyRef Name="customer_id" />
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_customer_order_customer" FromRole="customer_order" ToRole="customer" />
+          <NavigationProperty Name="order" Relationship="Self.FK__customer___order__571DF1D5" FromRole="customer_order" ToRole="orders" />
+        </EntityType>
+        <EntityType Name="customer_service">
+          <Key>
+            <PropertyRef Name="service_id" />
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="service_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_customer_service_customer" FromRole="customer_service" ToRole="customer" />
+          <NavigationProperty Name="service_order" Relationship="Self.FK_customer_service_service_order" FromRole="customer_service" ToRole="service_order" />
+        </EntityType>
+        <EntityType Name="group_objects">
+          <Key>
+            <PropertyRef Name="group_id" />
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="group_id" Type="Int32" Nullable="false" />
+          <Property Name="object_id" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="group" Relationship="Self.FK__group_obj__group__5812160E" FromRole="group_objects" ToRole="groups" />
+          <NavigationProperty Name="object" Relationship="showroomModel.FK_group_objects_objects" FromRole="group_objects" ToRole="objects" />
         </EntityType>
         <EntityType Name="group">
           <Key>
@@ -548,17 +644,17 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="group_objects" Relationship="Self.FK__group_obj__group__5812160E" FromRole="groups" ToRole="group_objects" />
           <NavigationProperty Name="users" Relationship="Self.FK_user_groups" FromRole="groups" ToRole="user" />
-          <NavigationProperty Name="objects" Relationship="Self.group_objects" FromRole="groups" ToRole="objects" />
         </EntityType>
-        <EntityType Name="object">
+        <EntityType Name="objects">
           <Key>
             <PropertyRef Name="object_id" />
           </Key>
           <Property Name="object_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="groups" Relationship="Self.group_objects" FromRole="objects" ToRole="groups" />
+          <NavigationProperty Name="group_objects" Relationship="showroomModel.FK_group_objects_objects" FromRole="objects" ToRole="group_objects" />
         </EntityType>
         <EntityType Name="order">
           <Key>
@@ -569,9 +665,9 @@
           <Property Name="time_create" Type="DateTime" Precision="0" />
           <Property Name="manage_by" Type="Int32" />
           <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="customer_order" Relationship="Self.FK__customer___order__571DF1D5" FromRole="orders" ToRole="customer_order" />
           <NavigationProperty Name="vehicle_order" Relationship="Self.FK__vehicle_o__order__6477ECF3" FromRole="orders" ToRole="vehicle_order" />
           <NavigationProperty Name="user" Relationship="Self.FK_order_user" FromRole="orders" ToRole="user" />
-          <NavigationProperty Name="customers" Relationship="Self.customer_order" FromRole="orders" ToRole="customer" />
         </EntityType>
         <EntityType Name="organization">
           <Key>
@@ -590,6 +686,8 @@
           <Property Name="vehicle_id" Type="Int32" Nullable="false" />
           <Property Name="customer_id" Type="Int32" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
           <NavigationProperty Name="customer" Relationship="Self.FK__pre_order__custo__5AEE82B9" FromRole="pre_order" ToRole="customer" />
           <NavigationProperty Name="vehicle_data" Relationship="Self.FK__pre_order__vehic__5BE2A6F2" FromRole="pre_order" ToRole="vehicle_data" />
         </EntityType>
@@ -614,8 +712,19 @@
           <Property Name="manage_by" Type="Int32" />
           <Property Name="customer_id" Type="Int32" />
           <NavigationProperty Name="customer" Relationship="Self.FK_service_order_customer" FromRole="service_order" ToRole="customer" />
+          <NavigationProperty Name="customer_service" Relationship="Self.FK_customer_service_service_order" FromRole="service_order" ToRole="customer_service" />
           <NavigationProperty Name="user" Relationship="Self.FK_service_order_user" FromRole="service_order" ToRole="user" />
           <NavigationProperty Name="vehicle_service" Relationship="Self.FK_vehicle_service_service_order" FromRole="service_order" ToRole="vehicle_service" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -670,7 +779,7 @@
           </Key>
           <Property Name="image_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="vehicle_id" Type="Int32" />
-          <Property Name="image_url" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="image_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="vehicle_data" Relationship="Self.FK_vehicle_image_vehicle_data" FromRole="vehicle_image" ToRole="vehicle_data" />
         </EntityType>
         <EntityType Name="vehicle_order">
@@ -719,6 +828,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_customer_order_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="customer_order">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customer_service_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="customer_service" Type="Self.customer_service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="customer_service">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_service_order_customer">
           <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
           <End Role="service_order" Type="Self.service_order" Multiplicity="*" />
@@ -728,6 +861,42 @@
             </Principal>
             <Dependent Role="service_order">
               <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__customer___order__571DF1D5">
+          <End Role="orders" Type="Self.order" Multiplicity="1" />
+          <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="customer_order">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customer_service_service_order">
+          <End Role="service_order" Type="Self.service_order" Multiplicity="1" />
+          <End Role="customer_service" Type="Self.customer_service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="service_order">
+              <PropertyRef Name="service_id" />
+            </Principal>
+            <Dependent Role="customer_service">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__group_obj__group__5812160E">
+          <End Role="groups" Type="Self.group" Multiplicity="1" />
+          <End Role="group_objects" Type="Self.group_objects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="groups">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="group_objects">
+              <PropertyRef Name="group_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -911,23 +1080,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="customer_order">
-          <End Role="customer" Type="Self.customer" Multiplicity="*" />
-          <End Role="orders" Type="Self.order" Multiplicity="*" />
-        </Association>
-        <Association Name="group_objects">
-          <End Role="groups" Type="Self.group" Multiplicity="*" />
-          <End Role="objects" Type="Self.object" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="showroomEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="customer_order" EntityType="Self.customer_order" />
+          <EntitySet Name="customer_service" EntityType="Self.customer_service" />
+          <EntitySet Name="group_objects" EntityType="Self.group_objects" />
           <EntitySet Name="groups" EntityType="Self.group" />
-          <EntitySet Name="objects" EntityType="Self.object" />
+          <EntitySet Name="objects1" EntityType="showroomModel.objects" />
           <EntitySet Name="orders" EntityType="Self.order" />
           <EntitySet Name="organizations" EntityType="Self.organization" />
           <EntitySet Name="pre_order" EntityType="Self.pre_order" />
           <EntitySet Name="purchase_order" EntityType="Self.purchase_order" />
           <EntitySet Name="service_order" EntityType="Self.service_order" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="users" EntityType="Self.user" />
           <EntitySet Name="vehicles" EntityType="Self.vehicle" />
           <EntitySet Name="vehicle_data" EntityType="Self.vehicle_data" />
@@ -939,9 +1104,29 @@
             <End Role="customer" EntitySet="customers" />
             <End Role="pre_order" EntitySet="pre_order" />
           </AssociationSet>
+          <AssociationSet Name="FK_customer_order_customer" Association="Self.FK_customer_order_customer">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="customer_order" EntitySet="customer_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customer_service_customer" Association="Self.FK_customer_service_customer">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="customer_service" EntitySet="customer_service" />
+          </AssociationSet>
           <AssociationSet Name="FK_service_order_customer" Association="Self.FK_service_order_customer">
             <End Role="customer" EntitySet="customers" />
             <End Role="service_order" EntitySet="service_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__customer___order__571DF1D5" Association="Self.FK__customer___order__571DF1D5">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="customer_order" EntitySet="customer_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customer_service_service_order" Association="Self.FK_customer_service_service_order">
+            <End Role="service_order" EntitySet="service_order" />
+            <End Role="customer_service" EntitySet="customer_service" />
+          </AssociationSet>
+          <AssociationSet Name="FK__group_obj__group__5812160E" Association="Self.FK__group_obj__group__5812160E">
+            <End Role="groups" EntitySet="groups" />
+            <End Role="group_objects" EntitySet="group_objects" />
           </AssociationSet>
           <AssociationSet Name="FK_user_groups" Association="Self.FK_user_groups">
             <End Role="groups" EntitySet="groups" />
@@ -1003,15 +1188,23 @@
             <End Role="vehicle_data" EntitySet="vehicle_data" />
             <End Role="vehicle_image" EntitySet="vehicle_image" />
           </AssociationSet>
-          <AssociationSet Name="customer_order" Association="Self.customer_order">
-            <End Role="customer" EntitySet="customers" />
-            <End Role="orders" EntitySet="orders" />
-          </AssociationSet>
-          <AssociationSet Name="group_objects" Association="Self.group_objects">
-            <End Role="groups" EntitySet="groups" />
-            <End Role="objects" EntitySet="objects" />
+          <AssociationSet Name="FK_group_objects_objects" Association="showroomModel.FK_group_objects_objects">
+            <End Role="objects" EntitySet="objects1" />
+            <End Role="group_objects" EntitySet="group_objects" />
           </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_group_objects_objects">
+          <End Type="showroomModel.objects" Role="objects" Multiplicity="1" />
+          <End Type="showroomModel.group_objects" Role="group_objects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="objects">
+              <PropertyRef Name="object_id" />
+            </Principal>
+            <Dependent Role="group_objects">
+              <PropertyRef Name="object_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1032,6 +1225,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="customer_order">
+            <EntityTypeMapping TypeName="showroomModel.customer_order">
+              <MappingFragment StoreEntitySet="customer_order">
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer_service">
+            <EntityTypeMapping TypeName="showroomModel.customer_service">
+              <MappingFragment StoreEntitySet="customer_service">
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="group_objects">
+            <EntityTypeMapping TypeName="showroomModel.group_objects">
+              <MappingFragment StoreEntitySet="group_objects">
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="object_id" ColumnName="object_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="groups">
             <EntityTypeMapping TypeName="showroomModel.group">
               <MappingFragment StoreEntitySet="groups">
@@ -1041,8 +1264,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="objects">
-            <EntityTypeMapping TypeName="showroomModel.object">
+          <EntitySetMapping Name="objects1">
+            <EntityTypeMapping TypeName="showroomModel.objects">
               <MappingFragment StoreEntitySet="objects">
                 <ScalarProperty Name="object_id" ColumnName="object_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1076,6 +1299,8 @@
                 <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
                 <ScalarProperty Name="customer_id" ColumnName="customer_id" />
                 <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1097,6 +1322,17 @@
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="manage_by" ColumnName="manage_by" />
                 <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="showroomModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1173,22 +1409,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="customer_order" TypeName="showroomModel.customer_order" StoreEntitySet="customer_order">
-            <EndProperty Name="customer">
-              <ScalarProperty Name="customer_id" ColumnName="customer_id" />
-            </EndProperty>
-            <EndProperty Name="orders">
-              <ScalarProperty Name="order_id" ColumnName="order_id" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="group_objects" TypeName="showroomModel.group_objects" StoreEntitySet="group_objects">
-            <EndProperty Name="groups">
-              <ScalarProperty Name="group_id" ColumnName="group_id" />
-            </EndProperty>
-            <EndProperty Name="objects">
-              <ScalarProperty Name="object_id" ColumnName="object_id" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

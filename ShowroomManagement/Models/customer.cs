@@ -18,8 +18,9 @@ namespace ShowroomManagement.Models
         public customer()
         {
             this.pre_order = new HashSet<pre_order>();
+            this.customer_order = new HashSet<customer_order>();
+            this.customer_service = new HashSet<customer_service>();
             this.service_order = new HashSet<service_order>();
-            this.orders = new HashSet<order>();
         }
     
         public int customer_id { get; set; }
@@ -34,8 +35,10 @@ namespace ShowroomManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<pre_order> pre_order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<service_order> service_order { get; set; }
+        public virtual ICollection<customer_order> customer_order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<order> orders { get; set; }
+        public virtual ICollection<customer_service> customer_service { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<service_order> service_order { get; set; }
     }
 }

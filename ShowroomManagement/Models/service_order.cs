@@ -17,6 +17,7 @@ namespace ShowroomManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public service_order()
         {
+            this.customer_service = new HashSet<customer_service>();
             this.vehicle_service = new HashSet<vehicle_service>();
         }
     
@@ -28,6 +29,8 @@ namespace ShowroomManagement.Models
         public Nullable<int> customer_id { get; set; }
     
         public virtual customer customer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<customer_service> customer_service { get; set; }
         public virtual user user { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<vehicle_service> vehicle_service { get; set; }

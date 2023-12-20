@@ -17,8 +17,8 @@ namespace ShowroomManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public group()
         {
+            this.group_objects = new HashSet<group_objects>();
             this.users = new HashSet<user>();
-            this.objects = new HashSet<@object>();
         }
     
         public string name { get; set; }
@@ -26,8 +26,8 @@ namespace ShowroomManagement.Models
         public string description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<user> users { get; set; }
+        public virtual ICollection<group_objects> group_objects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<@object> objects { get; set; }
+        public virtual ICollection<user> users { get; set; }
     }
 }

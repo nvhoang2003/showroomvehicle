@@ -1,0 +1,43 @@
+﻿@model ShowroomManagement.Models.vehicle_service
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>vehicle_service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service_order.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service_order.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehicle_data.model_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehicle_data.model_number)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

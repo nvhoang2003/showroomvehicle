@@ -17,6 +17,8 @@ namespace ShowroomManagement.Models
         public int vehicle_id { get; set; }
         public int customer_id { get; set; }
         public string status { get; set; }
+        public Nullable<System.DateTime> created_at { get; set; }
+        public Nullable<System.DateTime> updated_at { get; set; }
     
         public virtual customer customer { get; set; }
         public virtual vehicle_data vehicle_data { get; set; }

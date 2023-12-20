@@ -26,13 +26,17 @@ namespace ShowroomManagement.Models
         }
     
         public virtual DbSet<customer> customers { get; set; }
+        public virtual DbSet<customer_order> customer_order { get; set; }
+        public virtual DbSet<customer_service> customer_service { get; set; }
+        public virtual DbSet<group_objects> group_objects { get; set; }
         public virtual DbSet<group> groups { get; set; }
-        public virtual DbSet<@object> objects { get; set; }
+        public virtual DbSet<objects> objects1 { get; set; }
         public virtual DbSet<order> orders { get; set; }
         public virtual DbSet<organization> organizations { get; set; }
         public virtual DbSet<pre_order> pre_order { get; set; }
         public virtual DbSet<purchase_order> purchase_order { get; set; }
         public virtual DbSet<service_order> service_order { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<user> users { get; set; }
         public virtual DbSet<vehicle> vehicles { get; set; }
         public virtual DbSet<vehicle_data> vehicle_data { get; set; }
