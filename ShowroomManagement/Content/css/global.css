@@ -1,0 +1,70 @@
+﻿body {
+}
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+:root {
+    /* fonts */
+    --font-poppins: Poppins;
+    --font-zen-kaku-gothic-antique: "Zen Kaku Gothic Antique";
+    --font-inter: Inter;
+    --font-nunito: Nunito;
+    --font-raleway: Raleway;
+    --font-montserrat: Montserrat;
+    /* font sizes */
+    --font-size-5xs: 8px;
+    --font-size-lg: 18px;
+    --font-size-base: 16px;
+    --font-size-smi-8: 12.8px;
+    --font-size-13xl: 32px;
+    --font-size-5xl: 24px;
+    --font-size-mini: 15px;
+    --font-size-sm: 14px;
+    --font-size-smi: 13px;
+    --font-size-4xl: 23px;
+    --font-size-xl: 20px;
+    --font-size-xs: 12px;
+    --font-size-2xs-3: 10.3px;
+    --font-size-2xs: 11px;
+    /* Colors */
+    --color-white: #fff;
+    --color-dimgray-100: #6f6f6f;
+    --color-dimgray-300: #6f6e70;
+    --color-dimgray-200: #616161;
+    --color-black: #000;
+    --color-whitesmoke-100: #f4f5f8;
+    --color-whitesmoke-200: #f1f1f1;
+    --color-whitesmoke-300: #f0f0f0;
+    --color-gray-300: #fafafa;
+    --color-gray-100: #757575;
+    --color-gray-200: #212121;
+    --color-gray-400: #1e1e1e;
+    --color-gray-500: #191919;
+    --color-gray-600: #010101;
+    --color-darkslategray-100: #424242;
+    --color-darkslategray-200: #2f333a;
+    --color-darkslategray-300: #102e1b;
+    --color-gainsboro-100: #e0e0e0;
+    --color-gainsboro-200: #dbdbdb;
+    --color-gainsboro-300: #d9d9d9;
+    --color-orangered-100: #e73c17;
+    --color-tomato: #ff6262;
+    --color-lightgray-100: #d7d7d7;
+    --color-red-100: #ff0101;
+    /* Gaps */
+    --gap-9xs: 4px;
+    --gap-base: 16px;
+    --gap-11xl: 30px;
+    /* Paddings */
+    --padding-6xs: 7px;
+    --padding-xs: 12px;
+    --padding-smi: 13px;
+    --padding-lg: 18px;
+    --padding-11xl: 30px;
+    /* Border radiuses */
+    --br-8xs: 5px;
+    --br-3xs: 10px;
+    --br-81xl: 100px;
+}

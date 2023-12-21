@@ -35,7 +35,7 @@ namespace ShowroomManagement.Controllers
                 var passwordVerificationResult = Crypto.VerifyHashedPassword(customer.password, obj.password);
                 if (passwordVerificationResult == true)
                 {
-                    Session["Username"] = obj.user_name;
+                    Session["CustomerName"] = obj.user_name;
                     return RedirectToAction("Index", "Home");
                 }
                 TempData["ErrorMessage"] = ("Password is incorrect!");
