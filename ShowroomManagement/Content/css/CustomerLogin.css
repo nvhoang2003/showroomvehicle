@@ -58,16 +58,17 @@
     position: absolute;
     height: 40.83%;
     width: 80.9%;
-    top: 30.08%;
+    top: 25.08%;
     left: 13.1%;
     line-height: 28.16px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .register-link {
     position: absolute;
     top: 77.56%;
-    left: 64.93%;
+    left: 63.63%;
 }
 
 .become-an-exclusive {
@@ -100,24 +101,27 @@
 }
 
 .div6 {
-    height: 45.83%;
-    width: 81.18%;
-    top: 27.08%;
+    position: absolute;
+    height: 40.83%;
+    width: 80.9%;
+    top: 25.08%;
     left: 13.1%;
     line-height: 28.16px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .show {
     width: 7.14%;
-    top: 37.33%;
+    top: 38.33%;
     left: 86.03%;
     font-size: 10.2px;
     line-height: 22.53px;
     color: #9e9e9e;
-    text-align: right;
-    display: inline-block;
+    text-align: left;
+    justify-content: center;
+    display: flex;
 }
 .btn-prytemplate-2 {
     position: relative;
@@ -130,10 +134,10 @@
     height: 100%;
     top: 0;
     bottom: 0;
-    left: calc(50% - 230px);
+    left: calc(50% - 226px);
     background-color: #24243e;
     color:white;
-    width: 460px;
+    width: 450px;
 }
 
 .become-a-member {
