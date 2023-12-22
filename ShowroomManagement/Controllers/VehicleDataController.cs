@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -52,8 +53,30 @@ namespace ShowroomManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.vehicle_data.Add(vehicle_data);
+                var datasave = db.vehicle_data.Add(vehicle_data);
                 db.SaveChanges();
+
+                if (Request.Files["images"] != null)
+                {
+                    for (int i = 0; i < Request.Files.Count; i++)
+                    {
+                        var file = Request.Files[i];
+
+                        if (file != null && file.ContentLength > 0)
+                        {
+                            var fileName = Path.GetFileName(file.FileName);
+                            var path = Path.Combine(Server.MapPath("~/Assests/Image/"), fileName);
+                            file.SaveAs(path);
+                            var vehical_image = new vehicle_image();
+                            vehical_image.image_url = fileName;
+                            vehical_image.vehicle_id = datasave.vehicle_data_id;
+
+                            db.vehicle_image.Add(vehical_image);
+                        }
+                    }
+                    db.SaveChanges();
+                }
+
                 return RedirectToAction("Index");
             }
 

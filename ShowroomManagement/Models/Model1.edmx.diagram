@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e47c7120874b4dc0b2f9f74886eb6e0b" Name="Diagram1">
+      <Diagram DiagramId="e47c7120874b4dc0b2f9f74886eb6e0b" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="showroomModel.customer" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="showroomModel.customer_order" Width="1.5" PointX="10.5" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="showroomModel.customer_service" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="showroomModel.pre_order" Width="1.5" PointX="13.5" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="showroomModel.purchase_order" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="showroomModel.service_order" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="showroomModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="showroomModel.sysdiagram" Width="1.5" PointX="3.375" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="showroomModel.user" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="showroomModel.vehicle" Width="1.5" PointX="9" PointY="13.875" IsExpanded="true" />
         <EntityTypeShape EntityType="showroomModel.vehicle_data" Width="1.5" PointX="11.25" PointY="13.375" IsExpanded="true" />
