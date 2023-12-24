@@ -68,3 +68,9 @@ body {
     --br-3xs: 10px;
     --br-81xl: 100px;
 }
+
+.form-control{
+    max-width: none !important;
+    margin-left: 15px;
+}
+

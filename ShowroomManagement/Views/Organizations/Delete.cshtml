@@ -1,7 +1,8 @@
 ﻿@model ShowroomManagement.Models.organization
 
-@{
-    Layout = null;
+{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -20,24 +21,25 @@
             <dt>
                 @Html.DisplayNameFor(model => model.name)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.name)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.description)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.description)
             </dd>
-    
+
         </dl>
-    
-        @using (Html.BeginForm()) {
+
+        @using (Html.BeginForm())
+        {
             @Html.AntiForgeryToken()
-    
+
             <div class="form-actions no-color">
                 <input type="submit" value="Delete" class="btn btn-default" /> |
                 @Html.ActionLink("Back to List", "Index")

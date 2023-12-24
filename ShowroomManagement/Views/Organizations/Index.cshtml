@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<ShowroomManagement.Models.organization>
 
-@{
-    Layout = null;
+{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <!DOCTYPE html>
 
@@ -25,23 +27,24 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.description)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.organization_id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.organization_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.organization_id })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.organization_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.organization_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.organization_id })
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

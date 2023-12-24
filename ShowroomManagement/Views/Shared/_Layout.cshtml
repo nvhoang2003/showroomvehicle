@@ -4,45 +4,103 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/Content/css/styles.min.css" />
+    <link rel="stylesheet" href="~/Content/css/global.css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Orders", "Index", "Orders", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Customer", "Index", "Customers", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Users", "Index", "Users", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Organizations", "Index", "Organizations", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("PreOrder", "Index", "PreOrder", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Purchase", "Index", "Purchase", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("ServiceOrder", "Index", "ServiceOrder", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("VehicleData", "Index", "VehicleData", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("VehicleImage", "Index", "VehicleImage", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Vehicles", "Index", "Vehicles", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Groups", "Index", "Groups", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+         data-sidebar-position="fixed" data-header-position="fixed">
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav scroll-sidebar mt-3" data-simplebar="">
+                    <div class="brand-logo d-flex align-items-center justify-content-between">
+                        <img src="~/Assests/logo.jpg" width="180" alt="" />
+                        <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                            <i class="ti ti-x fs-8"></i>
+                        </div>
+                    </div>
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Home</span>
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("Dashboard", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Vehicle</span>
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("General Vehicles", "Index", "Vehicles", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("VehicleData", "Index", "VehicleData", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Order</span>
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("Purchase", "Index", "PurchaseOrder", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("Orders", "Index", "Orders", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("PreOrder", "Index", "PreOrder", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">User</span>
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("Customer", "Index", "Customers", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("Users", "Index", "Users", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("Organizations", "Index", "Organizations", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("Groups", "Index", "Groups", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">AUTH</span>
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("My Account", "Index", "Groups", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="sidebar-item">
+                            @Html.ActionLink("Logout", "Index", "Groups", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <div class="body-wrapper">
+            <div class="container-fluid">
+                <div class="card">
+                    @RenderBody()
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-    </div>
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<ShowroomManagement.Models.order>
 
-@{
-    Layout = null;
+{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -31,29 +32,30 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.time_create)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.user.user_name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.order_id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.order_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.order_id })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.time_create)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user.user_name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.order_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.order_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.order_id })
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

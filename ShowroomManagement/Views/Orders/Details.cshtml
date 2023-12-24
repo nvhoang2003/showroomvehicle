@@ -1,7 +1,8 @@
 ﻿@model ShowroomManagement.Models.order
 
-@{
-    Layout = null;
+{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -19,35 +20,35 @@
             <dt>
                 @Html.DisplayNameFor(model => model.price)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.price)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.time_create)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.time_create)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.status)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.status)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.user.user_name)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.user.user_name)
             </dd>
-    
+
         </dl>
     </div>
     <p>

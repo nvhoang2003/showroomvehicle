@@ -109,10 +109,20 @@ namespace ShowroomManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            vehicle vehicle = db.vehicles.Find(id);
-            db.vehicles.Remove(vehicle);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                vehicle vehicle = db.vehicles.Find(id);
+                db.vehicles.Remove(vehicle);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception ex)
+            {
+                vehicle vehicle = db.vehicles.Find(id);
+                ViewBag.Message = ex.Message;
+                return View(vehicle);
+            }
+           
         }
 
         protected override void Dispose(bool disposing)

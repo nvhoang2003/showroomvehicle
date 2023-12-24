@@ -1,7 +1,8 @@
 ﻿@model ShowroomManagement.Models.vehicle_data
 
-@{
-    Layout = null;
+{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -19,27 +20,27 @@
             <dt>
                 @Html.DisplayNameFor(model => model.color)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.color)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.listId)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.listId)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.vehicle.name)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.vehicle.name)
             </dd>
-    
+
         </dl>
     </div>
     <p>
