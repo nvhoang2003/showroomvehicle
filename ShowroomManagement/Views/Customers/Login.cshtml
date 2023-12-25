@@ -33,7 +33,7 @@
         </div>
         <div class="form">
             <div class="form-group">
-                <div class="form-control rectangle"></div>
+                <div class="rectangle"></div>
                 @Html.TextBoxFor(u => u.user_name, new { @class = "inputfield", placeholder = "example@email.com" })
                 @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" })
                 <img class="icon-field" alt="" src="~/Content/images/iconmail@2x.png" />
