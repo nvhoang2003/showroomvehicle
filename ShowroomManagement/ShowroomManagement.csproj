@@ -297,7 +297,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\footer.css" />
     <Content Include="Content\css\global.css" />
+    <Content Include="Content\css\index.css" />
     <Content Include="Content\css\navbar.css" />
     <Content Include="Content\css\servicehome.css" />
     <Content Include="Content\images\backgrounds\rocket.png" />

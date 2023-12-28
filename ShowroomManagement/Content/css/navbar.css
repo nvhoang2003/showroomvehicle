@@ -39,6 +39,7 @@ nav {
         display: flex;
         position: absolute;
         justify-content: center;
+        padding-top:18px;
         align-items: center;
         margin-left: 8%;
     }
@@ -223,5 +224,3 @@ nav {
         opacity: 1;
         left: 0;
     }
-
-
