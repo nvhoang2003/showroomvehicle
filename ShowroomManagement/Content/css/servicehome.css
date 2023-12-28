@@ -1,0 +1,163 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.block {
+    position: relative;
+    min-height: 100%;
+}
+.block-banner .field-header {
+    padding: 4rem 0;
+}
+.container, .container-lg, .container-md, .container-sm {
+    max-width: 960px;
+}
+.container, .container-md, .container-sm {
+    max-width: 720px;
+}
+.container, .container-sm {
+    max-width: 540px;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 2%;
+}
+.block .field-title {
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    color: #151515;
+}
+
+.block-banner .field-header p {
+    margin-top:20px;
+    font-size: 1.3rem;
+}
+
+br {
+    display: block;
+    content: "";
+    margin-top: 0;
+}
+.d-xl-block {
+    display: block !important;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.col-lg-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.col-md-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+}
+
+.col-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.d-none {
+    display: none !important;
+}
+
+.block .field-desc {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: #3C3C3C;
+}
+.block-benefits {
+    padding-top: 6.5rem;
+}
+    .block-benefits .field-header {
+        align-content: center;
+        text-align: center;
+        margin: 0 0 4rem 9rem;
+        width: 930px;
+        height: 155px;
+    }
+        .block-benefits .field-header h2 {
+            margin-bottom: 1rem;
+        }
+        .block-benefits .field-header p {
+            width:650px;
+            height:83px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+    .block-benefits .field-content .slides {
+        display: flex;
+    }
+    .block-benefits .field-content-item .field-image {
+        margin-bottom: 1.5rem;
+    }
+img {
+    width: 362px;
+    height:249px
+}
+
+
+.block {
+    position: relative;
+    min-height: 100%;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.d-lg-block {
+    display: block !important;
+}
+.d-lg-none {
+    display: none!important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+img {
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+biểu định kiểu tác nhân người dùng
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}

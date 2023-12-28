@@ -37,14 +37,20 @@ namespace ShowroomManagement.Controllers
         }
 
         // GET: Orders/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id, string modelnumber, decimal price)
         {
-            ViewBag.manage_by = new SelectList(db.users, "user_id", "user_name");
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ViewBag.code = modelnumber;
+            ViewBag.price = price;
+            ViewBag.manage_by = new SelectList(db.users, "user_id", "user_name", "phone_number");
             return View();
         }
 
         // POST: Orders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the spec ific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -52,6 +58,8 @@ namespace ShowroomManagement.Controllers
         {
             if (ModelState.IsValid)
             {
+                order.time_create = DateTime.Now;
+                order.status = "pending";
                 db.orders.Add(order);
                 db.SaveChanges();
                 return RedirectToAction("Index");

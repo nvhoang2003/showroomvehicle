@@ -14,6 +14,10 @@ namespace ShowroomManagement.Controllers
     {
         private showroomEntities db = new showroomEntities();
 
+        public ActionResult Home()
+        {
+            return View();
+        }
         // GET: ServiceOrder
         public ActionResult Index()
         {
