@@ -297,11 +297,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\css\footer.css" />
+    <Content Include="Content\css\share\footer.css" />
     <Content Include="Content\css\global.css" />
+    <Content Include="Content\css\home\index.css" />
     <Content Include="Content\css\index.css" />
-    <Content Include="Content\css\navbar.css" />
-    <Content Include="Content\css\servicehome.css" />
+    <Content Include="Content\css\share\navbar.css" />
+    <Content Include="Content\css\service\home.css" />
     <Content Include="Content\images\backgrounds\rocket.png" />
     <Content Include="Content\images\exiconarrowright-copy%402x.png" />
     <Content Include="Content\images\iconmail%402x.png" />
@@ -309,6 +310,7 @@
     <Content Include="Content\images\logos\dark-logo.svg" />
     <Content Include="Content\images\logos\favicon.png" />
     <Content Include="Content\images\products\image-1%402x.png" />
+    <Content Include="Content\images\products\letter.png" />
     <Content Include="Content\images\products\rectangle-6003%402x.png" />
     <Content Include="Content\images\products\s1.jpg" />
     <Content Include="Content\images\products\s11.jpg" />
@@ -319,6 +321,7 @@
     <Content Include="Content\images\z4974849751087-aca979b314547c417c5a5057a962db9f-1%402x.png" />
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\dashboard.js" />
+    <Content Include="Content\js\home\index.js" />
     <Content Include="Content\js\script.js" />
     <Content Include="Content\js\sidebarmenu.js" />
     <Content Include="Content\libs\apexcharts\dist\apexcharts.amd.js" />
@@ -976,7 +979,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Content\css\customerlogin.css" />
+    <Content Include="Content\css\customer\login.css" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\css\styles.min.css" />
     <Content Include="Web.config" />
@@ -1087,6 +1090,7 @@
     <Content Include="Views\GroupObjects\Index.cshtml" />
     <Content Include="Views\Shared\_CustomerLayout.cshtml" />
     <Content Include="Views\ServiceOrder\Home.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
