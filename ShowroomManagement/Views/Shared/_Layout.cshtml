@@ -10,6 +10,13 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    @{
+        if (Session["EmployeeId"] == null)
+        {
+            Context.Response.Redirect("~/Users/Login");
+        }
+    }
+    <h1>@Session["EmployeeId"]</h1>
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
          data-sidebar-position="fixed" data-header-position="fixed">
         <aside class="left-sidebar">
@@ -75,7 +82,7 @@
                             <span class="hide-menu">AUTH</span>
                         </li>
                         <li class="sidebar-item">
-                            @Html.ActionLink("My Account", "Index", "Groups", new { area = "" }, new { @class = "nav-link" })
+                            @Html.ActionLink("My Account", "Details", "Users", new { area = "", id = Session["EmployeeId"] }, new { @class = "nav-link" })
                         </li>
                         <li class="sidebar-item">
                             @Html.ActionLink("Logout", "Index", "Groups", new { area = "" }, new { @class = "nav-link" })
@@ -97,10 +104,10 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-        </div>
+    </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
