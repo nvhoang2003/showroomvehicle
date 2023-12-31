@@ -9,6 +9,7 @@ using System.Text;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace ShowroomManagement.Controllers
 {
@@ -36,6 +37,7 @@ namespace ShowroomManagement.Controllers
                 if (passwordVerificationResult == true)
                 {
                     Session["CustomerName"] = obj.user_name;
+                    ViewBag.IsLoggedIn = true;
                     return RedirectToAction("Index", "Home");
                 }
                 TempData["ErrorMessage"] = ("Password is incorrect!");
