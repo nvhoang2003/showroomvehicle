@@ -206,6 +206,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChangePasswordForm.cs" />
     <Compile Include="Models\customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -248,6 +249,7 @@
     <Compile Include="Models\pre_order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PurchaseResposneDTO.cs" />
     <Compile Include="Models\purchase_order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -279,6 +281,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ultility\checkpermision.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -298,8 +301,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\css\global.css" />
+    <Content Include="Content\css\LoginCaEmployee.css" />
     <Content Include="Content\images\backgrounds\rocket.png" />
     <Content Include="Content\images\exiconarrowright-copy%402x.png" />
+    <Content Include="Content\images\exiconeye%402x.png" />
     <Content Include="Content\images\iconmail%402x.png" />
     <Content Include="Content\images\lock%402x.png" />
     <Content Include="Content\images\logos\dark-logo.svg" />
@@ -310,6 +315,7 @@
     <Content Include="Content\images\products\s5.jpg" />
     <Content Include="Content\images\products\s7.jpg" />
     <Content Include="Content\images\profile\user-1.jpg" />
+    <Content Include="Content\images\rectangle%402x.png" />
     <Content Include="Content\images\z4974849751087-aca979b314547c417c5a5057a962db9f-1%402x.png" />
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\dashboard.js" />
@@ -1078,6 +1084,8 @@
     <Content Include="Views\GroupObjects\Details.cshtml" />
     <Content Include="Views\GroupObjects\Edit.cshtml" />
     <Content Include="Views\GroupObjects\Index.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
+    <Content Include="Views\Users\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
