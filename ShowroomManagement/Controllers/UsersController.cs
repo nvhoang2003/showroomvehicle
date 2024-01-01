@@ -29,14 +29,15 @@ namespace ShowroomManagement.Controllers
         {
             var customer = db.users
                 .Include(u => u.group)
+                .Include(u => u.organization)
                 .FirstOrDefault(c => c.user_name == obj.user_name);
             if (customer != null)
             {
                 if (HashPassword(obj.password) == customer.password.Trim())
                 {
-                    Session["EmployeeName"] = obj.user_name;
+                    Session["EmployeeName"] = obj.first_name + " " + obj.last_name;
                     Session["EmployeeId"] = customer.user_id;
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Dashboard", "Home");
                 }
                 ViewBag.Message = ("Password is incorrect!");
             }
