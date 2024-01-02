@@ -16,6 +16,11 @@ namespace ShowroomManagement.Controllers
     public class VehicleDataController : Controller
     {
         private showroomEntities db = new showroomEntities();
+        
+        public ActionResult VehicleList()
+        {
+            return View();
+        }
 
         // GET: VehicleData
         public ActionResult Index()
