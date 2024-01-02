@@ -12,11 +12,14 @@
     <title>Index</title>
 </head>
 <body>
-    <p>
+    @*<p>
         @Html.ActionLink("Create New", "Create")
-    </p>
+    </p>*@
     <table class="table">
         <tr>
+            <th>
+                full_name
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.price)
             </th>
@@ -26,15 +29,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.status)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.user.user_name)
-            </th>
-            <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user.first_name) @Html.DisplayFor(modelItem => item.user.last_name)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.price)
                 </td>
@@ -44,14 +46,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.status)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.user.user_name)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.order_id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.order_id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.order_id })
-                </td>
+                @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.order_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.order_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.order_id })
+        </td>*@
             </tr>
         }
 

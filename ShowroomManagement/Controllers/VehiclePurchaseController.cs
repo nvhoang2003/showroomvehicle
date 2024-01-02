@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using ShowroomManagement.Models;
 
 namespace ShowroomManagement.Controllers
@@ -37,9 +38,11 @@ namespace ShowroomManagement.Controllers
         }
 
         // GET: VehiclePurchase/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             ViewBag.purchase_order_id = new SelectList(db.purchase_order, "purchase_id", "purchase_id");
+            ViewBag.purchase_id = id;
+            ViewBag.list_id = "";
             ViewBag.vehicle_id = new SelectList(db.vehicle_data, "vehicle_data_id", "model_number");
             return View();
         }
@@ -49,13 +52,28 @@ namespace ShowroomManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "vehicle_id,purchase_order_id,quantity,price")] vehicle_purchase vehicle_purchase)
+        public ActionResult Create(int id,[Bind(Include = "vehicle_id,purchase_order_id,quantity,price")] vehicle_purchase vehicle_purchase, FormCollection form)
         {
             if (ModelState.IsValid)
             {
-                db.vehicle_purchase.Add(vehicle_purchase);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                string extraFieldValue = form["list_id"];
+                var listId = extraFieldValue.Split(',').Select(c => c.Trim());
+                if(listId.Any(c => c.IsNullOrWhiteSpace()))
+                {
+                    ViewBag.Message = "You don't enter white space between two comma ";
+                }else if(listId.Count() != vehicle_purchase.quantity)
+                {
+                    ViewBag.Message = "You must enter numbner of id equal to quantity";
+                }
+                else
+                {
+                    var v = db.vehicle_data.Where(vd => vd.vehicle_data_id == vehicle_purchase.vehicle_id).FirstOrDefault();
+                    v.listId += ", " + extraFieldValue;
+                    vehicle_purchase.purchase_order_id = id;
+                    db.vehicle_purchase.Add(vehicle_purchase);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }   
             }
 
             ViewBag.purchase_order_id = new SelectList(db.purchase_order, "purchase_id", "purchase_id", vehicle_purchase.purchase_order_id);

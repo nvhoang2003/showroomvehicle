@@ -23,9 +23,18 @@ namespace ShowroomManagement.Controllers
             var vehicle_data = db.vehicle_data.Include(v => v.vehicle);
             return View(vehicle_data.ToList());
         }
-        public ActionResult VehicleDetails()
+        public ActionResult VehicleDetails(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            vehicle_data vehicle_data = db.vehicle_data.Find(id);
+            if (vehicle_data == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vehicle_data);
         }
         // GET: VehicleData/Detasils/5
         public ActionResult Details(int? id)

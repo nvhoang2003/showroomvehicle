@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dashboard</h2>
+
+<div class="row">
+    <div class="col-lg-8 d-flex align-items-strech">
+        <div class="card w-100">
+            <div class="card-body">
+                <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
+                    <div class="mb-3 mb-sm-0">
+                        <h5 class="card-title fw-semibold">Sales Overview</h5>
+                    </div>
+                </div>
+                <div class="mb-3 mb-sm-0">
+                    <h5 class="card-body">In Last Month Your Showroom</h5>
+                </div>
+                <p class="mb-3 mb-sm-0">Buy: @ViewBag.totalBuy $</p>
+                <p class="mb-3 mb-sm-0">Sell: @ViewBag.totalSell $</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Yearly Breakup -->
+                <div class="card overflow-hidden">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center">
+                            <div class="col-12">
+                                <h4 class="fw-semibold mb-3 text-primary">Hello @ViewBag.userdata.first_name @ViewBag.userdata.last_name</h4>
+                                <h4 class="fw-semibold mb-3">Your organization:  @ViewBag.userdata.organization.name</h4>
+                                <h4 class="fw-semibold mb-3">Your boss: @ViewBag.userdata.user2.first_name @ViewBag.userdata.user2.last_name </h4>
+                                <div class="col-4">
+                                    <div class="d-flex justify-content-center">
+                                        <div id="breakup"></div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <!-- Monthly Earnings -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row alig n-items-start">
+                            <div class="col-8">
+                                <h5 class="card-title mb-9 fw-semibold"> Your Activity</h5>
+                                <h4 class="fw-semibold mb-3">@ViewBag.yourNumberOfOrder Order</h4>
+                                <div class="d-flex align-items-center pb-1">
+                                    <span class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
+                                        <i class="ti ti-arrow-down-right text-danger"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-flex justify-content-end">
+                                    <div class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
+                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="earning"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

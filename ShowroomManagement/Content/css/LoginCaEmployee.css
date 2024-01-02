@@ -1,0 +1,310 @@
+.rectangle-icon1 {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 50%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.login-ca-employee-child,
+.rectangle2 {
+  position: absolute;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gainsboro-100);
+  box-sizing: border-box;
+}
+.login-ca-employee-child {
+  height: 65.44%;
+  width: 39.79%;
+  top: 14.61%;
+  right: 30.1%;
+  bottom: 19.94%;
+  left: 30.1%;
+  box-shadow: 0 82px 40px -14px rgba(100, 100, 100, 0.08);
+}
+.rectangle2 {
+  height: 101.47%;
+  width: 100.26%;
+  top: -0.74%;
+  right: -0.13%;
+  bottom: -0.74%;
+  left: -0.13%;
+}
+.ex-iconeye {
+  position: absolute;
+  height: 23.53%;
+  width: 4.21%;
+  top: 38.24%;
+  right: 2.63%;
+  bottom: 38.24%;
+  left: 93.16%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.div18 {
+  position: absolute;
+  height: 60.39%;
+  width: 100%;
+  top: 39.83%;
+  left: 0;
+  line-height: 28.16px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+.group1,
+.group2,
+.password {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.password {
+  font-size: var(--font-size-2xs-3);
+  line-height: 18.06px;
+  font-weight: 500;
+  color: var(--color-dimgray-200);
+}
+.group1,
+.group2 {
+  height: 100%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+}
+.group1 {
+  height: 68.68%;
+  width: 86.89%;
+  top: 17.5%;
+  right: 8.68%;
+  bottom: 13.82%;
+  left: 4.42%;
+}
+.inputname-copy-3,
+.rectangle3 {
+  position: absolute;
+  height: 49.82%;
+  width: 100%;
+  top: 50.18%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.rectangle3 {
+  height: 101.47%;
+  width: 100.26%;
+  top: -0.74%;
+  right: -0.13%;
+  bottom: -0.74%;
+  left: -0.13%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+}
+.johndoeexamplecom {
+  position: absolute;
+  height: 62.65%;
+  width: 99.55%;
+  top: 37.35%;
+  left: 0.45%;
+  line-height: 28.16px;
+  display: flex;
+  align-items: center;
+}
+.email-address {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-2xs-3);
+  line-height: 18.06px;
+  font-weight: 500;
+  color: var(--color-darkslategray-100);
+}
+.group3 {
+  position: absolute;
+  height: 73.24%;
+  width: 87.29%;
+  top: 17.5%;
+  right: 8.68%;
+  bottom: 9.26%;
+  left: 4.03%;
+}
+.btn-prytemplate-2-item,
+.group,
+.inputname {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.inputname {
+  height: 49.82%;
+  bottom: 50.18%;
+  color: var(--color-dimgray-200);
+}
+.btn-prytemplate-2-item,
+.group {
+  height: 51.22%;
+  bottom: 48.78%;
+}
+.btn-prytemplate-2-item {
+  height: 100%;
+  bottom: 0;
+  background-color: var(--color-gray-200);
+}
+.proceed {
+  position: absolute;
+  top: 28.13%;
+  left: 40.53%;
+  line-height: 28.16px;
+  font-weight: 500;
+}
+.btn-prytemplate-21 {
+  position: absolute;
+  height: 24.02%;
+  width: 100%;
+  top: 75.98%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: var(--color-white);
+}
+.group-group,
+.rectangle4 {
+  position: absolute;
+  height: 29.61%;
+  width: 26.39%;
+  top: 28.7%;
+  right: 36.74%;
+  bottom: 41.69%;
+  left: 36.88%;
+}
+.rectangle4 {
+  height: 104.55%;
+  width: 104.65%;
+  top: -2.27%;
+  right: -2.33%;
+  bottom: -2.27%;
+  left: -2.33%;
+  border: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+}
+.new-shape-icon {
+  position: absolute;
+  height: 34.55%;
+  width: 54.42%;
+  top: 32.73%;
+  right: 22.79%;
+  bottom: 32.73%;
+  left: 22.79%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.checkbox2 {
+  position: relative;
+  width: 21.5px;
+  height: 22px;
+}
+.terms {
+  position: relative;
+  text-decoration: underline;
+  line-height: 22.53px;
+}
+.checkboxlabel {
+  position: absolute;
+  height: 100%;
+  width: 26.52%;
+  top: 0;
+  right: 73.48%;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 9px;
+}
+.terms1 {
+  position: absolute;
+  top: 0;
+  left: 291px;
+  text-decoration: underline;
+  line-height: 22.53px;
+  text-align: right;
+}
+.checkboxlabel-parent {
+  position: absolute;
+  height: 2.56%;
+  width: 26.32%;
+  top: 46.78%;
+  right: 36.81%;
+  bottom: 50.67%;
+  left: 36.88%;
+  font-size: var(--font-size-2xs);
+  color: var(--color-dimgray-200);
+}
+.log-in-to {
+  position: absolute;
+  width: 26.39%;
+  top: 18.28%;
+  left: 36.81%;
+  font-size: 31.3px;
+  line-height: 37.5px;
+  display: inline-block;
+  color: var(--color-black);
+  text-align: center;
+}
+.already-a-member,
+.text {
+  position: absolute;
+  top: 22.89%;
+  left: 40.73%;
+  font-size: var(--font-size-smi-8);
+}
+.text {
+  top: 92.22%;
+  left: 43.61%;
+  font-size: var(--font-size-2xs-3);
+  letter-spacing: 0.7px;
+  color: var(--color-dimgray-200);
+  text-align: right;
+}
+.login-ca-employee {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-100);
+  font-family: var(--font-zen-kaku-gothic-antique);
+}
+
+.login-input {
+    width: 100% !important;
+    height: 40px !important;
+}
+
+.ml-15{
+    margin-left: 15px;
+}
+
+.password-form {
+    width: 100% !important;
+    height: 40px !important;
+    margin-left: 15px !important;
+}
+}
