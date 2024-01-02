@@ -37,6 +37,7 @@ namespace ShowroomManagement.Controllers
                 if (passwordVerificationResult == true)
                 {
                     Session["CustomerName"] = obj.user_name;
+                    Session["CustomerId"] = obj.customer_id;
                     ViewBag.IsLoggedIn = true;
                     return RedirectToAction("Index", "Home");
                 }
@@ -62,6 +63,10 @@ namespace ShowroomManagement.Controllers
                     obj.password = Crypto.HashPassword(obj.password);
                     db.customers.Add(obj);
                     db.SaveChanges();
+
+                    Session["CustomerName"] = obj.user_name;
+                    Session["CustomerId"] = obj.customer_id;
+
                     return RedirectToAction("Index", "Home");
                 }
             }
