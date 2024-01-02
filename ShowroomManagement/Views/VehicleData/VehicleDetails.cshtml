@@ -1,0 +1,1227 @@
+﻿@model ShowroomManagement.Models.vehicle_data
+
+@{
+    ViewBag.Title = "VehicleDetails";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+@Styles.Render("~/Content/css/vehicledata/detail.css")
+@*@Scripts.Render("https://unpkg.com/swiper/swiper-bundle.min.js")*@
+@*@Scripts.Render("~/Content/js/home/index.js")*@
+<div id="main" class="main clearfix">
+    <div id="block-banner" class="block-banner block">
+        <div class="block-banner-img">
+            <img class="d-none d-sm-block" src="https://vinfastauto.us/themes/custom/vinfast_v2/images/v3/vf-8/VF8.webp" alt="VF 8" data-cookiecategory="646">
+        </div>
+        <div class="block-banner-desc">
+            <div class="container">
+                <div class="banner-desc-left">
+                    <span class="banner-desc-slogan slogan">The All New, All Electric.</span>
+                    <h2>@Html.DisplayFor(model => model.vehicle.name)</h2>
+                    <h3>SUSTAINABLY FOCUSED 2 ROW ELECTRIC SUV</h3>
+                </div>
+                <div class="banner-desc-right">
+                    <div class="banner-desc-right_content">
+                        <div class="content-item content-center">
+                            <h5>264 mi</h5>
+                            <p>
+                                EPA Range Per Full Charge <a class="disclaimer-number" href="#block-specs"><sup>*</sup></a>
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <h5>
+                                <small>From</small> @Html.DisplayFor(model => model.vehicle.price)
+                            </h5>
+                            <p>
+                                For 24 months <a class="btn-offer link-effect link-effect-hover" href="#block-offer">View Offers</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="banner-desc-right_buttons d-flex flex-column align-items-center justify-content-between">
+                        <button type="button" class="btn btn--animated btn--primary--blue btn--border--blue" data-toggle="modal" data-target="#fresh-order-vf8-modal">Order Now</button>
+                        <a id="btn-get-offer-2" href="https://vinfastus.my.site.com/TestDriveRequest" class="btn btn--animated btn--primary--white btn--border--blue">Schedule A Test Drive</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="block-offer" class="block-offer block">
+        <div class="container">
+            <h2 class="block-title">Drive Yours As Low As $399/mo<a href="javascript:void(0)" class="disclaimer-number link-effect link-effect-hover" data-toggle="modal" data-target="#offer-lease-eco-modal">*</a></h2>
+            <p class="text-center">VF 8 Special Offer</p>
+            <div class="block-content">
+                <ul class="nav nav-tabs justify-content-center" id="offer-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center active" id="offer-lease-tab" data-toggle="tab" href="#offer-lease-content" role="tab" aria-controls="offer-lease-content" aria-selected="true">LEASE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" id="offer-loan-tab" data-toggle="tab" href="#offer-loan-content" role="tab" aria-controls="offer-loan-content" aria-selected="false">FINANCE</a>
+                    </li>
+                </ul>
+                <div class="tab-content offer-tab-content" id="offer-tab-content">
+                    <div class="tab-pane fade show active" id="offer-lease-content" role="tabpanel" aria-labelledby="lease-tab">
+                        <div class="swiper offer-swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                            <div class="swiper-wrapper" id="swiper-wrapper-98cabaea262936dd" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                                <div class="swiper-slide vehicle-item swiper-slide-active" role="group" aria-label="1 / 2" style="width: 685px; margin-right: 40px;">
+                                    <div class="vehicle-img">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/vf8-eco.webp" alt="VF 8 ECO" data-cookiecategory="646">
+                                    </div>
+                                    <div class="vehicle-content">
+                                        <div class="vehicle-title">
+                                            <span class="slogan">MSRP - $46,000</span>
+                                            <h5 class="vehicle-class">ECO</h5>
+                                        </div>
+                                        <div class="vehicle-desc">
+                                            <div class="vehicle-price">
+                                                <div class="vehicle-price-item">
+                                                    <span class="price">$399/mo<a href="javascript:void(0)" class="disclaimer-number link-effect link-effect-hover" data-toggle="modal" data-target="#offer-lease-eco-modal">*</a></span>
+                                                    <p class="sub-price">For 24 Months Leasing</p>
+                                                </div>
+                                            </div>
+                                            <div class="vehicle-warranty">
+                                                <div class="vehicle-warranty-item">
+                                                    <p>Due At Signing: $4,594</p>
+                                                    <p>10 Year / 125,000 Mile Warranty</p>
+                                                    <p>10,000 Miles Per Year</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-buttons">
+                                            <button type="button" class="btn btn--animated btn--primary--blue btn--border--blue w-100" data-toggle="modal" data-target="#fresh-order-vf8-modal">Order Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide vehicle-item swiper-slide-next" role="group" aria-label="2 / 2" style="width: 685px; margin-right: 40px;">
+                                    <div class="vehicle-img">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/vf8-plus.webp" alt="VF 8 PLUS" data-cookiecategory="646">
+                                    </div>
+                                    <div class="vehicle-content">
+                                        <div class="vehicle-title">
+                                            <span class="slogan">MSRP - $51,800</span>
+                                            <h5 class="vehicle-class">PLUS</h5>
+                                        </div>
+                                        <div class="vehicle-desc">
+                                            <div class="vehicle-price">
+                                                <div class="vehicle-price-item">
+                                                    <span class="price">$499/mo<a href="javascript:void(0)" class="disclaimer-number link-effect link-effect-hover" data-toggle="modal" data-target="#offer-lease-plus-modal">*</a></span>
+                                                    <p class="sub-price">For 24 Months Leasing</p>
+                                                </div>
+                                            </div>
+                                            <div class="vehicle-warranty">
+                                                <div class="vehicle-warranty-item">
+                                                    <p>Due At Signing: $4,694</p>
+                                                    <p>10 Year / 125,000 Mile Warranty</p>
+                                                    <p>10,000 Miles Per Year</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-buttons">
+                                            <button type="button" class="btn btn--animated btn--primary--blue btn--border--blue w-100" data-toggle="modal" data-target="#fresh-order-vf8-modal">Order Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="offer-loan-content" role="tabpanel" aria-labelledby="loan-tab">
+                        <div class="swiper offer-swiper swiper-initialized swiper-horizontal swiper-pointer-events">
+                            <div class="swiper-wrapper" id="swiper-wrapper-1deef7b8bb8a118d" aria-live="polite" style="transition-duration: 0ms;">
+                                <div class="swiper-slide vehicle-item">
+                                    <div class="vehicle-img">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/vf8-eco.webp" alt="VF 8 ECO" data-cookiecategory="646">
+                                    </div>
+                                    <div class="vehicle-content">
+                                        <div class="vehicle-title">
+                                            <span class="slogan">MSRP - $46,000</span>
+                                            <h5 class="vehicle-class">ECO</h5>
+                                        </div>
+                                        <div class="vehicle-desc">
+                                            <div class="vehicle-price">
+                                                <div class="vehicle-price-item">
+                                                    <span class="price">2.99% APR<a href="javascript:void(0)" class="disclaimer-number link-effect link-effect-hover" data-toggle="modal" data-target="#offer-loan-eco-modal">*</a></span>
+                                                    <p class="sub-price">Financing For Up To 36 Months</p>
+                                                </div>
+                                            </div>
+                                            <div class="vehicle-warranty">
+                                                <div class="vehicle-warranty-item">
+                                                    <p>10 Year / 125,000 Mile Warranty</p>
+                                                    <p>Down Payment: $3,500</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-buttons">
+                                            <button type="button" class="btn btn--animated btn--primary--blue btn--border--blue w-100" data-toggle="modal" data-target="#fresh-order-vf8-modal">Order Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide vehicle-item">
+                                    <div class="vehicle-img">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/vf8-plus.webp" alt="VF 8 PLUS" data-cookiecategory="646">
+                                    </div>
+                                    <div class="vehicle-content">
+                                        <div class="vehicle-title">
+                                            <span class="slogan">MSRP - $51,800</span>
+                                            <h5 class="vehicle-class">PLUS</h5>
+                                        </div>
+                                        <div class="vehicle-desc">
+                                            <div class="vehicle-price">
+                                                <div class="vehicle-price-item">
+                                                    <span class="price">3.49% APR<a href="javascript:void(0)" class="disclaimer-number link-effect link-effect-hover" data-toggle="modal" data-target="#offer-loan-plus-modal">*</a></span>
+                                                    <p class="sub-price">Financing For Up To 36 Months</p>
+                                                </div>
+                                            </div>
+                                            <div class="vehicle-warranty">
+                                                <div class="vehicle-warranty-item">
+                                                    <p>10 Year / 125,000 Mile Warranty</p>
+                                                    <p>Down Payment: $3,500</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-buttons">
+                                            <button type="button" class="btn btn--animated btn--primary--blue btn--border--blue w-100" data-toggle="modal" data-target="#fresh-order-vf8-modal">Order Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination block-offer-pagination d-block d-md-none swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"></div>
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <p class="text-center mt-5">
+                        Enjoy A Year of Free Public Charging! <a href="/public-charging-promotion-offer" target="_blank">*</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="block-exterior" class="block-exterior block-design block">
+        <div class="container">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-12 text-md-center">
+                        <h2 class="block-title">
+                            Sophistication &amp; comfort
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-8 col-lg-6 text-md-center m-md-auto">
+                        <p class="block-desc">
+                            State-of-the-art technology and unrivaled interior space combined with stunning Pininfarina design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="block-slider">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="colorExterior1" role="tabpanel" aria-labelledby="colorExterior1-tab">
+                        <div class="colorSwiper1 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-red.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-red.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-red.webp" alt="exterior-color" data-cookiecategory="646">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="colorExterior2" role="tabpanel" aria-labelledby="colorExterior2-tab">
+                        <div class="colorSwiper2 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-gray.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-gray.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-gray.webp" alt="exterior-color" data-cookiecategory="646">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="colorExterior3" role="tabpanel" aria-labelledby="colorExterior3-tab">
+                        <div class="colorSwiper3 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-blue.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-blue.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-blue.webp" alt="exterior-color" data-cookiecategory="646">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="colorExterior4" role="tabpanel" aria-labelledby="colorExterior4-tab">
+                        <div class="colorSwiper4 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-yellow.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-yellow.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-yellow.webp" alt="VinFast Car Color" data-cookiecategory="646">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="colorExterior5" role="tabpanel" aria-labelledby="colorExterior5-tab">
+                        <div class="colorSwiper5 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-green.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-green.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-green.webp" alt="VinFast Car Color" data-cookiecategory="646">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="colorExterior6" role="tabpanel" aria-labelledby="colorExterior6-tab">
+                        <div class="colorSwiper6 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-white.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-white.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-white.webp" alt="VinFast Car Color" data-cookiecategory="646">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="colorExterior7" role="tabpanel" aria-labelledby="colorExterior7-tab">
+                        <div class="colorSwiper7 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-black.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-black.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-black.webp" alt="VinFast Car Color" data-cookiecategory="646">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="colorExterior8" role="tabpanel" aria-labelledby="colorExterior8-tab">
+                        <div class="colorSwiper8 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-silver.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-silver.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-silver.webp" alt="VinFast Car Color" data-cookiecategory="646">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-color">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item colorExterior1">
+                            <a class="nav-link active" id="colorExterior1-tab" data-color="Crimson Red" data-toggle="tab" href="#colorExterior1" role="tab" aria-controls="colorExterior1" aria-selected="true"></a>
+                        </li>
+                        <li class="nav-item colorExterior2">
+                            <a class="nav-link" id="colorExterior2-tab" data-color="Neptune Grey" data-toggle="tab" href="#colorExterior2" role="tab" aria-controls="colorExterior2" aria-selected="false"></a>
+                        </li>
+                        <li class="nav-item colorExterior3">
+                            <a class="nav-link" id="colorExterior3-tab" data-color="VinFast Blue" data-toggle="tab" href="#colorExterior3" role="tab" aria-controls="colorExterior3" aria-selected="false"></a>
+                        </li>
+                        <li class="nav-item colorExterior4">
+                            <a class="nav-link" id="colorExterior4-tab" data-color="Sunset Orange" data-toggle="tab" href="#colorExterior4" role="tab" aria-controls="colorExterior4" aria-selected="false"></a>
+                        </li>
+                        <li class="nav-item colorExterior5">
+                            <a class="nav-link" id="colorExterior5-tab" data-color="Deep Ocean" data-toggle="tab" href="#colorExterior5" role="tab" aria-controls="colorExterior5" aria-selected="false"></a>
+                        </li>
+                        <li class="nav-item colorExterior6">
+                            <a class="nav-link" id="colorExterior6-tab" data-color="Brahminy White" data-toggle="tab" href="#colorExterior6" role="tab" aria-controls="colorExterior6" aria-selected="false"></a>
+                        </li>
+                        <li class="nav-item colorExterior7">
+                            <a class="nav-link" id="colorExterior7-tab" data-color="Jet Black" data-toggle="tab" href="#colorExterior7" role="tab" aria-controls="colorExterior7" aria-selected="false"></a>
+                        </li>
+                        <li class="nav-item colorExterior8">
+                            <a class="nav-link" id="colorExterior8-tab" data-color="Desat Silver" data-toggle="tab" href="#colorExterior8" role="tab" aria-controls="colorExterior8" aria-selected="false"></a>
+                        </li>
+                    </ul>
+                    <div class="tab-color__name" data-color="Crimson Red"></div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-container container d-none d-md-block">
+            <div class="block-detail slider">
+                <div class="slides row">
+                    <div class="block-detail-item col-md-5 col-lg-3">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-dynamic.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-dynamic.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-dynamic.webp" alt="VinFast Exterior Design" data-cookiecategory="646">
+                        </picture>
+                        <div class="detail-item-content">
+                            <div class="item-content-header">
+                                <h3 class="item-title">Dynamic balance</h3>
+                            </div>
+                            <p class="item-subtitle">Sharp &amp; fluid lines provide a sporty, aerodynamic appearance.</p>
+                        </div>
+                    </div>
+                    <div class="block-detail-item col-md-5 col-lg-3">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-miror.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-miror.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-miror.webp" alt="VinFast Exterior Design" data-cookiecategory="646">
+                        </picture>
+                        <div class="detail-item-content">
+                            <div class="item-content-header">
+                                <h3 class="item-title">Auto side view mirror</h3>
+                            </div>
+                            <p class="item-subtitle">Equipped with heating, automatic anti-glare, and position memorization.</p>
+                        </div>
+                    </div>
+                    <div class="block-detail-item col-md-5 col-lg-3">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-panoramic.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-panoramic.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-panoramic.webp" alt="VinFast Exterior Design" data-cookiecategory="646">
+                        </picture>
+                        <div class="detail-item-content">
+                            <div class="item-content-header">
+                                <h3 class="item-title">
+                                    Panoramic sunroof<sup>
+                                        <a class="disclaimer-number" href="#block-disclaimer">4</a>
+                                    </sup>
+                                </h3>
+                            </div>
+                            <p class="item-subtitle">The VF 8 keeps you connected with tech and nature.</p>
+                        </div>
+                    </div>
+                    <div class="block-detail-item col-md-5 col-lg-3">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-led.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-led.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-led.webp" alt="VinFast Exterior Design" data-cookiecategory="646">
+                        </picture>
+                        <div class="detail-item-content">
+                            <div class="item-content-header">
+                                <h3 class="item-title">LED light</h3>
+                            </div>
+                            <p class="item-subtitle">Stunning LED accent lighting establishes a luxurious impression.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-container-tablet container d-block d-md-none">
+            <ul class="exterior-list collapse-list">
+                <li class="exterior-item collapse-item active">
+                    <div class="exterior-item-header collapse-item-header">
+                        <div class="header-left">
+                            <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                            </svg>
+                            <h3>Dynamic balance</h3>
+                        </div>
+                    </div>
+                    <div class="exterior-item-detail collapse-item-detail show" style="display: block;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-dynamic.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-dynamic.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-dynamic.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                        <p>Sharp &amp; fluid lines provide a sporty, aerodynamic appearance.</p>
+                    </div>
+                </li>
+                <li class="exterior-item collapse-item">
+                    <div class="exterior-item-header collapse-item-header">
+                        <div class="header-left">
+                            <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                            </svg>
+                            <h3>Auto side view mirror</h3>
+                        </div>
+                    </div>
+                    <div class="exterior-item-detail collapse-item-detail" style="display: none;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-miror.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-miror.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-miror.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                        <p>Equipped with heating, automatic anti-glare, and position memorization.</p>
+                    </div>
+                </li>
+                <li class="exterior-item collapse-item">
+                    <div class="exterior-item-header collapse-item-header">
+                        <div class="header-left">
+                            <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                            </svg>
+                            <h3>
+                                Panoramic sunroof<sup>
+                                    <a class="disclaimer-number" href="#block-disclaimer">4</a>
+                                </sup>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="exterior-item-detail collapse-item-detail" style="display: none;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-panoramic.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-panoramic.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-panoramic.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                        <p>The VF 8 keeps you connected with tech and nature.</p>
+                    </div>
+                </li>
+                <li class="exterior-item collapse-item">
+                    <div class="exterior-item-header collapse-item-header">
+                        <div class="header-left">
+                            <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                            </svg>
+                            <h3>LED light</h3>
+                        </div>
+                    </div>
+                    <div class="exterior-item-detail collapse-item-detail" style="display: none;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-led.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-led.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-led.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                        <p>Stunning LED accent lighting establishes a luxurious impression​.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="block-interior" class="block-interior block-design block">
+        <div class="container">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-12 text-md-center">
+                        <h2 class="block-title">
+                            Sustainable luxury within reach
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-8 col-lg-6 text-md-center m-md-auto">
+                        <p class="block-desc">
+                            Innovations for life make every journey more than just a drive. Advanced and smart applications let you manage your home, work uninterrupted, and stay entertained.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="block-slider">
+                <div class="interiorSwiper swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                    <div class="swiper-wrapper" id="swiper-wrapper-724ee26f9109b8122" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                        <div class="swiper-slide interior-img1 swiper-slide-active" role="group" aria-label="1 / 2" style="width: 1410px;">
+                            <picture>
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-img1.webp" type="image/webp">
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-img1.webp">
+                                <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-img1.webp" alt="VinFast Interior Design" data-cookiecategory="646">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide interior-img2 swiper-slide-next" role="group" aria-label="2 / 2" style="width: 1410px;">
+                            <picture>
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-img2.webp" type="image/webp">
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-img2.webp">
+                                <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-img2.webp" alt="VinFast Interior Design" data-cookiecategory="646">
+                            </picture>
+                        </div>
+                    </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+                <div class="tab-color">
+                    <div class="swiper-pagination block-interior-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet interior1 swiper-pagination-bullet-active" data-color="Passenger Side" tabindex="0" aria-current="true"></span><span class="swiper-pagination-bullet interior2" data-color="Cockpit" tabindex="0"></span></div>
+                    <div class="tab-color__name" data-color="Passenger Side"></div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-container container d-none d-md-block">
+            <div class="block-detail slider">
+                <div class="slides row">
+                    <div class="block-detail-item col-md-5 col-lg-3">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-driver.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-driver.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-driver.webp" alt="VinFast Exterior Design" data-cookiecategory="646">
+                        </picture>
+                        <div class="detail-item-content">
+                            <div class="item-content-header">
+                                <h3 class="item-title">
+                                    Driver monitoring system<sup>
+                                        <a class="disclaimer-number" href="#block-disclaimer">5</a>
+                                    </sup>
+                                </h3>
+                            </div>
+                            <p class="item-subtitle">VF 8 recognizes you and customizes your experience to your preferences.</p>
+                        </div>
+                    </div>
+                    <div class="block-detail-item col-md-5 col-lg-3">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-leather.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-leather.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-leather.webp" alt="VinFast Exterior Design" data-cookiecategory="646">
+                        </picture>
+                        <div class="detail-item-content">
+                            <div class="item-content-header">
+                                <h3 class="item-title">
+                                    Vegan leather seats<sup>
+                                        <a class="disclaimer-number" href="#block-disclaimer">4</a>
+                                    </sup>
+                                </h3>
+                            </div>
+                            <p class="item-subtitle">VF 8 comes with premium leather that keeps you comfy everywhere the journey takes you.</p>
+                        </div>
+                    </div>
+                    <div class="block-detail-item col-md-5 col-lg-3">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-ambient.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-ambient.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-ambient.webp" alt="VinFast Exterior Design" data-cookiecategory="646">
+                        </picture>
+                        <div class="detail-item-content">
+                            <div class="item-content-header">
+                                <h3 class="item-title">Ambient light</h3>
+                            </div>
+                            <p class="item-subtitle">Match the mood with VF 8’s customizable ambient lighting.</p>
+                        </div>
+                    </div>
+                    <div class="block-detail-item col-md-5 col-lg-3">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-steering.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-steering.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-steering.webp" alt="VinFast Exterior Design" data-cookiecategory="646">
+                        </picture>
+                        <div class="detail-item-content">
+                            <div class="item-content-header">
+                                <h3 class="item-title">
+                                    Heated steering wheel<sup>
+                                        <a class="disclaimer-number" href="#block-disclaimer">4</a>
+                                    </sup>
+                                </h3>
+                            </div>
+                            <p class="item-subtitle">Keep your hands warm with VF 8's heated steering wheel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-container-tablet container d-block d-md-none">
+            <ul class="interior-list collapse-list">
+                <li class="interior-item collapse-item active">
+                    <div class="interior-item-header collapse-item-header">
+                        <div class="header-left">
+                            <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                            </svg>
+                            <h3>
+                                Driver monitoring system<sup>
+                                    <a class="disclaimer-number" href="#block-disclaimer">5</a>
+                                </sup>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="interior-item-detail collapse-item-detail show" style="">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-driver.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-driver.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-driver.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                        <p>VF 8 recognizes you and customizes your experience to your preferences.</p>
+                    </div>
+                </li>
+                <li class="interior-item collapse-item">
+                    <div class="interior-item-header collapse-item-header">
+                        <div class="header-left">
+                            <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                            </svg>
+                            <h3>
+                                Vegan leather seats<sup>
+                                    <a class="disclaimer-number" href="#block-disclaimer">4</a>
+                                </sup>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="interior-item-detail collapse-item-detail" style="display: none;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-leather.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-leather.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-leather.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                        <p>Premium, configurable leather keeps you comfy everywhere the journey takes you.</p>
+                    </div>
+                </li>
+                <li class="interior-item collapse-item">
+                    <div class="interior-item-header collapse-item-header">
+                        <div class="header-left">
+                            <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                            </svg>
+                            <h3>Ambient light</h3>
+                        </div>
+                    </div>
+                    <div class="interior-item-detail collapse-item-detail" style="display: none;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-ambient.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-ambient.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-ambient.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                        <p>Match the mood with VF 8’s customizable ambient lighting.</p>
+                    </div>
+                </li>
+                <li class="interior-item collapse-item">
+                    <div class="interior-item-header collapse-item-header">
+                        <div class="header-left">
+                            <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                            </svg>
+                            <h3>
+                                Heated steering wheel<sup>
+                                    <a class="disclaimer-number" href="#block-disclaimer">4</a>
+                                </sup>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="interior-item-detail collapse-item-detail" style="display: none;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-steering.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/interior-steering.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/interior-steering.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                        <p>Keep your hands warm with VF 8's heated steering wheel.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="block-technology" class="block-technology block">
+        <div class="container">
+            <div class="block-header technology-header">
+                <div class="row">
+                    <div class="col-12 col-md-6 offset-lg-3">
+                        <h2 class="block-title">
+                            Keeping you and your family entertained, and connected
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 offset-lg-3">
+                        <p class="block-desc">
+                            Stay connected with a 15.6 inch touch screen and access to VF Online packages to manage your home, work uninterrupted, and stay entertained, all remotely and safely.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="technologySwiper swiper block d-none d-lg-block swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                <div class="swiper-wrapper" id="swiper-wrapper-10b48fd7f80782f9b" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                    <div class="swiper-slide pet-mode slide1 swiper-slide-active" role="group" aria-label="1 / 3" style="width: 1410px;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide voice-assistance slide2 swiper-slide-next" role="group" aria-label="2 / 3" style="width: 1410px;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide companion slide3" role="group" aria-label="3 / 3" style="width: 1410px;">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                    </div>
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+            <div class="swiper-pagination block-technology-pagination d-none d-lg-block col-12 col-xl-8 swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" aria-current="true">Over-the-air updates</span><span class="swiper-pagination-bullet" tabindex="0">Voice assistant</span><span class="swiper-pagination-bullet" tabindex="0">VinFast App</span></div>
+            <div class="technology-content d-none d-lg-block col-12 col-xl-8">
+                <div class="technology-content-item item1 active">
+                    <p>
+                        With over-the-air (OTA) updates, your VinFast becomes future-proof thanks to regular automatic or manual updates to the operating system, apps, and system that keep your vehicle up-to-date and always feeling brand new.
+                    </p>
+                </div>
+                <div class="technology-content-item item2">
+                    <p>
+                        Simply say "Alexa" to activate the AI-powered voice assistant in your VF 8 to experience natural human-like conversations and access everything from navigation assistance to entertainment such as music and podcasts.
+                    </p>
+                </div>
+                <div class="technology-content-item item3">
+                    <p>
+                        With the VinFast App, customers have access to VinFast products and service features. Customers can access vehicle data, control their vehicle remotely, get around with navigation features, book maintenance, and roadside assistance.
+                    </p>
+                </div>
+            </div>
+            <div class="field-content-tablet d-none d-sm-block d-lg-none">
+                <ul class="technology-list collapse-list">
+                    <li class="technology-item collapse-item">
+                        <div class="technology-item-header collapse-item-header">
+                            <div class="header-left">
+                                <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                                </svg>
+                                <h3>Over-the-air updates</h3>
+                            </div>
+                        </div>
+                        <div class="technology-item-detail collapse-item-detail" style="display: none;">
+                            <picture>
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp" type="image/webp">
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp">
+                                <img src="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp" alt="VinFast Technology" data-cookiecategory="646">
+                            </picture>
+                            <p>With over-the-air (OTA) updates, your VinFast becomes future-proof thanks to regular automatic or manual updates to the operating system, apps, and system that keep your vehicle up-to-date and always feeling brand new.</p>
+                        </div>
+                    </li>
+                    <li class="technology-item collapse-item">
+                        <div class="technology-item-header collapse-item-header">
+                            <div class="header-left">
+                                <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                                </svg>
+                                <h3>Voice assistant</h3>
+                            </div>
+                        </div>
+                        <div class="technology-item-detail collapse-item-detail" style="display: none;">
+                            <picture>
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp" type="image/webp">
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp">
+                                <img src="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp" alt="VinFast Technology" data-cookiecategory="646">
+                            </picture>
+                            <p>Simply say "Alexa" to activate the AI-powered voice assistant in your VF 8 to experience natural human-like conversations and access everything from navigation assistance to entertainment such as music and podcasts.</p>
+                        </div>
+                    </li>
+                    <li class="technology-item collapse-item">
+                        <div class="technology-item-header collapse-item-header">
+                            <div class="header-left">
+                                <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                                </svg>
+                                <h3>VinFast App</h3>
+                            </div>
+                        </div>
+                        <div class="technology-item-detail collapse-item-detail" style="display: none;">
+                            <picture>
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp" type="image/webp">
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp">
+                                <img src="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp" alt="VinFast Technology" data-cookiecategory="646">
+                            </picture>
+                            <p>With the VinFast App, customers have access to VinFast products and service features. Customers can access vehicle data, control their vehicle remotely, get around with navigation features, book maintenance, and roadside assistance.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="field-content-mobile d-block d-sm-none">
+                <div class="field-mobile-item">
+                    <picture>
+                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp" type="image/webp">
+                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp">
+                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/OTA.webp" alt="VinFast Technology" data-cookiecategory="646">
+                    </picture>
+                    <div class="mobile-item-detail">
+                        <h3>Over-the-air updates</h3>
+                        <p>With over-the-air (OTA) updates, your VinFast becomes future-proof thanks to regular automatic or manual updates to the operating system, apps, and system that keep your vehicle up-to-date and always feeling brand new.</p>
+                    </div>
+                </div>
+                <div class="field-mobile-item">
+                    <picture>
+                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp" type="image/webp">
+                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp">
+                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/voice-asistant.webp" alt="VinFast Technology" data-cookiecategory="646">
+                    </picture>
+                    <div class="mobile-item-detail">
+                        <h3>Voice assistance</h3>
+                        <p>Simply say "Alexa" to activate the AI-powered voice assistant in your VF 8 to experience natural human-like conversations and access everything from navigation assistance to entertainment such as music and podcasts.</p>
+                    </div>
+                </div>
+                <div class="field-mobile-item">
+                    <picture>
+                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp" type="image/webp">
+                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp">
+                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/technology-companion.webp" alt="VinFast Technology" data-cookiecategory="646">
+                    </picture>
+                    <div class="mobile-item-detail">
+                        <h3>VinFast App</h3>
+                        <p>With the VinFast App, customers have access to VinFast products and service features. Customers can access vehicle data, control their vehicle remotely, get around with navigation features, book maintenance, and roadside assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="block-charging" class="block-charging block">
+        <div class="container">
+            <div class="field-content block-header">
+                <div class="field-title col-12 col-md-7 col-xl-6">
+                    <h2 class="block-title">
+                        Boundless journeys
+                    </h2>
+                    <p class="block-desc">
+                        With a tremendous range, lightning-fast charging speeds, and access to more than 90,000 public chargers throughout North America, VinFast EVs are ready for the journey and offer a great range for your buck.
+                    </p>
+                </div>
+            </div>
+            <div class="field-content">
+                <div class="field-images">
+                    <div class="field-image col-xl-8">
+                        <picture>
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/charge.webp" type="image/webp">
+                            <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/charge.webp">
+                            <img src="/themes/custom/vinfast_v2/images/v3/vf-8/charge.webp" alt="VinFast Technology" data-cookiecategory="646">
+                        </picture>
+                    </div>
+                    <div class="field-info col-xl-3 p-0">
+                        <div class="field-text">
+                            <div class="item">
+                                <h3 class="counter">264 mi</h3>
+                                <p>EPA Range Per Full Charge <a class="disclaimer-number" href="#block-specs"><sup>*</sup></a></p>
+                            </div>
+                            <div class="item">
+                                <h3 class="counter-1">0-62 mph</h3>
+                                <p>in 5.5 seconds <a class="disclaimer-number" href="#block-specs"><sup>*</sup></a></p>
+                            </div>
+                            <div class="item">
+                                <h3 class="counter-3">402 hp</h3>
+                                <p>max power <a class="disclaimer-number" href="#block-specs"><sup>*</sup></a></p>
+                            </div>
+                            <div class="item">
+                                <h3 class="counter-2">87.7 kWh</h3>
+                                <p>usable battery capacity</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="block-safety" class="block-safety block">
+        <div class="container">
+            <div class="field-content">
+                <div class="field-title text-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="block-title">
+                                Safety without compromise
+                            </h2>
+                        </div>
+                        <div class="col-lg-6 offset-lg-3">
+                            <p class="block-desc">
+                                Every VinFast vehicle is built to protect by including a full range of safety features and smart design like head-up display to keep your eyes on the road, and a high-end digital security system to alert emergency services when in an accident.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-text">
+                    <div class="field-detail slider d-none d-md-block">
+                        <div class="slides">
+                            <div class="field-item">
+                                <picture>
+                                    <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/emergency.webp" type="image/webp" width="100%" height="100%" alt="">
+                                    <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/emergency.webp" alt="">
+                                    <img src="/themes/custom/vinfast_v2/images/v3/vf-8/emergency.webp" alt="" data-cookiecategory="646">
+                                </picture>
+                                <div class="field-item-content">
+                                    <h3 class="item-title">
+                                        Emergency SOS
+                                    </h3>
+                                    <p class="item-subtitle">If you’re in an emergency, you can easily press the Emergency SOS button to reach first responders and summon help in no time.</p>
+                                </div>
+                            </div>
+                            <div class="field-item">
+                                <picture>
+                                    <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/airbag.webp" type="image/webp" width="100%" height="100%" alt="">
+                                    <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/airbag.webp" alt="">
+                                    <img src="/themes/custom/vinfast_v2/images/v3/vf-8/airbag.webp" alt="" data-cookiecategory="646">
+                                </picture>
+                                <div class="field-item-content">
+                                    <h3 class="item-title">
+                                        11 Airbags
+                                    </h3>
+                                    <p class="item-subtitle">Drivers and passengers have dual-stage front-facing, middle, knee, side impact, and seat-mounted side airbags.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field-detail-tablet d-block d-md-none">
+                        <ul class="exterior-list collapse-list">
+                            <li class="exterior-item collapse-item active">
+                                <div class="exterior-item-header collapse-item-header">
+                                    <div class="header-left">
+                                        <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                                        </svg>
+                                        <h3>Emergency SOS</h3>
+                                    </div>
+                                </div>
+                                <div class="exterior-item-detail collapse-item-detail" style="">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/emergency.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/emergency.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/emergency.webp" alt="VinFast Technology" data-cookiecategory="646">
+                                    </picture>
+                                    <p>If you’re in an emergency, you can easily press the Emergency SOS button to reach first responders and summon help in no time.</p>
+                                </div>
+                            </li>
+                            <li class="exterior-item collapse-item">
+                                <div class="exterior-item-header collapse-item-header">
+                                    <div class="header-left">
+                                        <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.787 9.15041C15.503 9.43439 15.0425 9.43443 14.7585 9.15036L8.0002 2.39191L1.24156 9.15041C0.957582 9.43439 0.497073 9.43443 0.213049 9.15036C-0.0709755 8.86634 -0.0709755 8.40588 0.213049 8.12185L7.48597 0.849126C7.62236 0.712738 7.80733 0.636131 8.0002 0.636131C8.19307 0.636131 8.37809 0.712786 8.51443 0.849174L15.787 8.1219C16.071 8.40588 16.071 8.86639 15.787 9.15041Z" fill="#3C3C3C"></path>
+                                        </svg>
+                                        <h3>11 Airbags</h3>
+                                    </div>
+                                </div>
+                                <div class="exterior-item-detail collapse-item-detail" style="display: none;">
+                                    <picture>
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/airbag.webp" type="image/webp">
+                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/airbag.webp">
+                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/airbag.webp" alt="VinFast Technology" data-cookiecategory="646">
+                                    </picture>
+                                    <p>Drivers and passengers have dual-stage front-facing, middle, knee, side impact, and seat-mounted side airbags.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="block-aftersales" class="block-aftersales block block-margin">
+        <div class="container">
+            <div class="field-content">
+                <div class="field-header">
+                    <div class="row">
+                        <div class="col-12 col-md-6 offset-lg-3">
+                            <h2 class="block-title text-left text-xl-center">
+                                Built for you, by you
+                            </h2>
+                            <p class="block-desc text-left text-xl-center p-0">with exceptional after-sales services, extended warranties, and considerable plug-and-charge solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-image d-xl-flex row">
+                    <a class="field-image__item image-vf9 col-12 col-xl-6 pr-lg-3" href="/charging">
+                        <div class="field-image__item-wrap">
+                            <div class="field-text flex-column justify-content-between">
+                                <h3 class="field-title_item">Without limits</h3>
+                                <p class="field-desc_item">
+                                    Explore our charging services
+                                    <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L9 9L1 17" stroke="#1464F4" stroke-width="2"></path>
+                                    </svg>
+                                </p>
+                            </div>
+                            <picture>
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/without-limits.webp" type="image/webp">
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/without-limits.webp">
+                                <img src="/themes/custom/vinfast_v2/images/v3/vf-8/without-limits.webp" alt="map" data-cookiecategory="646">
+                            </picture>
+                        </div>
+                    </a>
+                    <a class="field-image__item image-vf8 col-12 col-xl-6 pl-lg-3" href="/service#block-warranty">
+                        <div class="field-image__item-wrap">
+                            <div class="field-text d-flex flex-column justify-content-between">
+                                <h3 class="field-title_item">Warranty</h3>
+                                <p class="field-desc_item">
+                                    Explore our warranty breakdown
+                                    <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L9 9L1 17" stroke="#1464F4" stroke-width="2"></path>
+                                    </svg>
+                                </p>
+                            </div>
+                            <picture>
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/warranty.webp" type="image/webp">
+                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/warranty.webp">
+                                <img src="/themes/custom/vinfast_v2/images/v3/vf-8/warranty.webp" alt="map" data-cookiecategory="646">
+                            </picture>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="block-specs" class="block-specs block">
+        <div class="container">
+            <div class="field-content">
+                <div class="field-title">
+                    <h2 class="block-title">Vehicle Specification</h2>
+                </div>
+                <div class="tab-content">
+                    <div class="group-title">
+                        <div class="group-title-desktop">
+                            <div class="logo">
+                                <svg width="95" height="25" viewBox="0 0 95 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30.2813 0L13.4331 19.54L9.82272 3.6302C9.36736 1.51522 7.41583 0 5.17156 0H0L5.5944 24.6538H9.00958H14.604L35.8757 0H30.2813Z" fill="#151515"></path>
+                                    <path d="M52.5532 2.80946H67.7879L68.5626 0H48.7446C40.6431 0 33.6068 5.39795 31.6379 13.0687L28.7007 24.6538H37.5445L40.6108 14.4892H57.5562L58.3631 11.6798H41.4823L41.8051 10.6381C43.193 5.99773 47.5826 2.80946 52.5532 2.80946Z" fill="#151515"></path>
+                                    <path d="M93.6038 6.04538C94.7839 1.6058 94.4968 0 83.5893 0C73.7661 0 71.3423 0.0314865 69.7157 5.95092C68.8227 9.00509 68.7908 10.6424 71.2466 11.3981C67.6426 12.0593 66.5901 13.3187 65.3144 18.0417C63.7835 23.6148 63.4965 24.6538 76.1263 24.6538C87.0657 24.6538 89.2982 24.4334 91.2437 18.0732C92.4238 14.0744 92.7746 12.2482 89.0112 11.461C91.5308 10.7998 92.6151 9.9182 93.6038 6.04538ZM83.3979 14.8616L82.0903 19.679C81.7076 21.1273 80.3362 22.1349 78.7415 22.1349H74.8186C73.798 22.1349 73.0645 21.2218 73.3196 20.3087L74.723 15.4598C75.1376 14.0429 76.509 13.0668 78.0718 13.0668H81.899C82.9195 13.0668 83.6531 13.9485 83.3979 14.8616ZM86.0451 4.72295L85.2797 7.49375C84.8969 8.91063 83.4936 9.9182 81.9309 9.9182H78.1355C77.115 9.9182 76.3495 9.00509 76.6366 8.09199L77.4339 5.32119C77.8485 3.90431 79.2199 2.92823 80.7827 2.92823H84.5461C85.5667 2.92823 86.3002 3.80985 86.0451 4.72295Z" fill="#151515"></path>
+                                </svg>
+                            </div>
+                            <div class="title-type">Eco</div>
+                            <div class="title-type">Plus</div>
+                        </div>
+                        <div class="group-title-mobile">
+                            <div class="title-type">
+                                <span class="car-name">VF 8 Eco</span>
+                            </div>
+                            <div class="title-type">
+                                <span class="car-name">VF 8 Plus</span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="main-content">
+                        <li class="active">
+                            <div class="spec-detail show">
+                                <div class="spec-detail-content d-none d-md-flex">
+                                    <ul class="title">
+                                        <li>Overall dimension (LxWxH)</li>
+                                        <li>Wheelbase</li>
+                                        <li>Battery Capacity</li>
+                                        <li>Range per full charge (EPA)</li>
+                                        <li>Charging speed</li>
+                                        <li>Engine/e-Motor</li>
+                                        <li>Max. power</li>
+                                        <li>Vehicle warranty</li>
+                                    </ul>
+                                    <ul class="detail">
+                                        <li>187 x 76.1 x 65.6 (in)</li>
+                                        <li>116.1 (in)</li>
+                                        <li>87.7 (kWh)</li>
+                                        <li>264 mi</li>
+                                        <li>10% - 70% in 31 min</li>
+                                        <li>Motor x 2</li>
+                                        <li>349 (hp)</li>
+                                        <li>10 year / 125,000 miles</li>
+                                    </ul>
+                                    <ul class="detail">
+                                        <li>187 x 76.1 x 65.6 (in)</li>
+                                        <li>116.1 (in)</li>
+                                        <li>87.7 (kWh)</li>
+                                        <li>243 mi</li>
+                                        <li>10% - 70% in 31 min</li>
+                                        <li>Motor x 2</li>
+                                        <li>402 (hp)</li>
+                                        <li>10 year / 125,000 miles</li>
+                                    </ul>
+                                </div>
+                                <div class="spec-detail-content mobile d-flex d-md-none">
+                                    <div class="group-content">
+                                        <p class="mobile-title">Overall dimension (LxWxH)</p>
+                                        <div class="mobile-content">
+                                            <p>187 x 76.1 x 65.6 (in)</p>
+                                            <p>187 x 76.1 x 65.6 (in)</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-content">
+                                        <p class="mobile-title">Wheelbase</p>
+                                        <div class="mobile-content">
+                                            <p>116.1 (in)</p>
+                                            <p>116.1 (in)</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-content">
+                                        <p class="mobile-title">Battery Capacity</p>
+                                        <div class="mobile-content">
+                                            <p>87.7 (kWh)</p>
+                                            <p>87.7 (kWh)</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-content">
+                                        <p class="mobile-title">Range per full charge (EPA)</p>
+                                        <div class="mobile-content">
+                                            <p>264 mi</p>
+                                            <p>243 mi</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-content">
+                                        <p class="mobile-title">Charging speed</p>
+                                        <div class="mobile-content">
+                                            <p>10% - 70% in 31 min</p>
+                                            <p>10% - 70% in 31 min</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-content">
+                                        <p class="mobile-title">Engine/e-Motor</p>
+                                        <div class="mobile-content">
+                                            <p>Motor x 2</p>
+                                            <p>Motor x 2</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-content">
+                                        <p class="mobile-title">Max. power</p>
+                                        <div class="mobile-content">
+                                            <p>349 (hp)</p>
+                                            <p>402 (hp)</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-content">
+                                        <p class="mobile-title">Vehicle warranty</p>
+                                        <div class="mobile-content">
+                                            <p>10 year / 125,000 miles</p>
+                                            <p>10 year / 125,000 miles</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="field-button">
+                    <button type="button" class="btn btn--animated btn--primary--blue btn--border--blue" data-toggle="modal" data-target="#fresh-order-vf8-modal">Order Now</button>
+                    <a id="btn-specs-2" href="https://static-cms-prod.vinfastauto.us/cms-vinfast-us/Specs/VF-8-Spec.pdf" class="btn btn--animated btn--primary--white btn--border--blue" target="_blank">
+                        Download Full Specs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="block-disclaimer" class="block-disclaimer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 text-justify">
+                    <p>
+                        1. Vehicle performance and the displayed drivable distance may vary depending on external factors such as speed, driving style, passengers, load weight, tire condition, weather conditions, and road conditions.
+                    </p>
+                    <p>
+                        2. Announced prices are subject to change and do not include destination charge or any applicable tax, title, registration, and license fees.
+                    </p>
+                    <p>
+                        3. Color options may affect the pricing.
+                    </p>
+                    <p>
+                        4. Features of the actual vehicle will vary depending on version and configuration.
+                    </p>
+                    <p>
+                        5. Certain Advanced Driver Assistance Systems (ADAS) technology features may be subject to delayed availability and be made available as part of a future software update to your vehicle and may be subject to subscription.
+                    </p>
+                    <p>
+                        6. Images and videos shown contain pre-production level vehicles. Actual production vehicles may differ.
+                    </p>
+                    <p>
+                        7. Vehicle may show optional accessories that are not included in base vehicle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="shopping-tools-detail" class="shopping-tools-detail hide">
+        <div class="shopping-tools-container">
+            <div id="shopping-tools-button" class="shopping-tools-button active">
+                <p>Shopping Tools</p>
+            </div>
+            <ul>
+                <li><a id="btn-st-store-locator" href="/store-locator">Store Locator</a></li>
+                <li><a id="btn-st-join-the-charge" href="javascript:void(0);">Connect Now</a></li>
+                <li><a id="btn-st-download-specs" class="btn-st" href="#block-specs">Download Spec</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+

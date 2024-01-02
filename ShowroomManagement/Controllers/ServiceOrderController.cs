@@ -39,7 +39,6 @@ namespace ShowroomManagement.Controllers
             }
             return View(service_order);
         }
-
         // GET: ServiceOrder/Create
         public ActionResult Create()
         {

@@ -1,8 +1,8 @@
 ﻿@model ShowroomManagement.Models.vehicle_data
 
 @{
-    ViewBag.Title = "Detail";
-    Layout = null;
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -13,6 +13,7 @@
     <title>Details</title>
 </head>
 <body>
+
     <div>
         <h4>vehicle_data</h4>
         <hr />
@@ -44,7 +45,7 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Order", "Create", "Orders", new { id = Model.vehicle_data_id, modelnumber = Model.model_number, price = Model.vehicle.price}, null)
+        @Html.ActionLink("Order", "Create", "Orders", new { id = Model.vehicle_data_id, modelnumber = Model.model_number, price = Model.vehicle.price }, null)
         @Html.ActionLink("Edit", "Edit", new { id = Model.vehicle_data_id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>

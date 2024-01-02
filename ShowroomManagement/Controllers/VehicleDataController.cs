@@ -23,8 +23,11 @@ namespace ShowroomManagement.Controllers
             var vehicle_data = db.vehicle_data.Include(v => v.vehicle);
             return View(vehicle_data.ToList());
         }
-
-        // GET: VehicleData/Details/5
+        public ActionResult VehicleDetails()
+        {
+            return View();
+        }
+        // GET: VehicleData/Detasils/5
         public ActionResult Details(int? id)
         {
             if (id == null)

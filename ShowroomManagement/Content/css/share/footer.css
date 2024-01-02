@@ -65,8 +65,11 @@ img {
 img {
     border-style: none;
 }
+#footer-wrapper .logo{
+    margin-top:0px;
+}
 #footer-wrapper .logo .info {
-    margin-top: 36px;
+    margin-top: 0px;
     max-width: 85%;
     max-width: 500px;
 }
@@ -106,8 +109,19 @@ b, strong {
 b, strong {
     font-weight: bolder;
 }
+footer .chervon-down {
+    position: relative;
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+    background: url(https://storage.googleapis.com/vinfast-data-01/caret-down.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
 footer .ecosystem {
     display: flex;
+    margin-top:25px;
 }
     footer .ecosystem p.menu-title {
         font-weight: 600;

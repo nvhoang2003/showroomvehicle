@@ -2,51 +2,289 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
-<h2>Create</h2>
+@Styles.Render("~/Content/css/service_order/create.css")
+@Scripts.Render("~/Content/js/service-order/create.js")
+<div class="dat-lich-bao-duong">
+    <div class="inner w-100">
+        <div class="container justify-content-center">
+            <div class="col-lg-12 col-12">
+                <form class="schedule-maintenance-form" action="/on/demandware.store/Sites-app_vinfast_vn-Site/vi_VN/ServiceBooking-createServiceBooking" method="POST">
+                    <input id="00N2j000000yj5k" class="booking-serivce-gtm" maxlength="100" name="00N2j000000yj5k" size="20" type="hidden" value="DLDVLQQLHW4QP7YGMYJJB2">
+                    <div class="header-popup">
+                        <span class="header-timer display-none" data-expiretime="05:00"></span>
+                        <span class="header-title">Schedule a service appointment</span>
+                        <div></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-12 group-user-info ">
+                            <label class="title fix d-flex">
+                                <i class="d-flex">1</i>
+                                <span>Customer information</span>
+                            </label>
+                            <div class="group-item row required">
+                                <label class="col-lg-4 col-12 col-form-label">Name</label>
+                                <div class="col-lg-12 col-12 root_numText">
+                                    <input type="text" id="fullName" class="js_numText" name="name" size="20" maxlength="80" placeholder="Enter first and last name" value="" data-missing-error="Please do not leave this information field blank.">
+                                    <div class="invalid-feedback"></div>
+                                    <div class="num_text">
+                                        <span class="num">0</span>
+                                        <span class="max_num">80</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-item row required">
+                                <label class="col-lg-4 col-12 col-form-label">Phone number</label>
+                                <div class="col-lg-12 col-12 ">
+                                    <input type="text" id="phoneNumber" name="phone" size="20" maxlength="10" placeholder="Minimum 10 digits" value="" data-missing-error="Please do not leave this information field blank." data-invalid-error="*Invalid format. Please re-enter.">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            <div class="group-item row mb-2 required">
+                                <label class="col-lg-4 col-12 col-form-label">Email</label>
+                                <div class="col-lg-12 col-12 ">
+                                    <input type="text" id="email" name="email" size="20" maxlength="80" class="ignore-regex" placeholder="vidu@gmail.com" value="" data-missing-error="Please do not leave this information field blank." data-invalid-error="*Invalid format. Please re-enter.">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 group-car-info ">
+                            <label class="title fix d-flex">
+                                <i class="d-flex">2</i>
+                                <span>Vehicle information</span>
+                            </label>
+                            <div class="group-item row required">
+                                <label class="col-lg-4 col-12 col-form-label">Car brand</label>
+                                <div class="col-lg-12 col-12 ">
+                                    <select name="productModel" id="product" maxlength="100" size="20" class="box-select select2-search select2-hidden-accessible" data-placeholder="Choose" data-model="" data-missing-error="Please do not leave this information field blank." data-select2-id="product" tabindex="-1" aria-hidden="true">
+                                        <option></option>
+                                        <option data-id="Products-Car-FADIL" value="Products-Car-FADIL" data-type="Car">FADIL</option>
+                                        <option data-id="Products-Car-LUX-A" value="Products-Car-LUX-A" data-type="Car">LUX A2.0</option>
+                                        <option data-id="Products-Car-LUX-SA" value="Products-Car-LUX-SA" data-type="Car">LUX SA2.0</option>
+                                        <option data-id="Products-Car-VFE34" value="Products-Car-VFE34" data-type="eCar">VF E34</option>
+                                        <option data-id="Products-Car-VF5" value="Products-Car-VF5" data-type="eCar">VF 5</option>
+                                    </select>
+                                    <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 495px;">
+                                        <span class="selection">
+                                            <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-product-container"><span class="select2-selection__rendered" id="select2-product-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Choose</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
+                                        </span><span class="dropdown-wrapper" aria-hidden="true"></span>
+                                    </span>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            <div class="group-item row">
+                                <label class="col-12 col-form-label">Kilometers</label>
+                                <div class="col-lg-12 col-12 ">
+                                    <input type="text" id="sokm" name="vehicleKm" maxlength="10" size="20" placeholder="Enter the mileage of your vehicle." value="">
+                                </div>
+                            </div>
+                            <div class="group-item row required">
+                                <label class="col-lg-4 col-12 col-form-label">Model Number</label>
+                                <div class="col-lg-12 col-12 ">
+                                    <input type="text" id="licensePlate" name="licensePlate" value="" class="ignore-regex" maxlength="8" size="20" placeholder="Enter the license plate number" data-missing-error="Please do not leave this information field blank." data-invalid-error="*Sai định dạng. Vui lòng nhập lại.">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-12 pt-30 group-service ">
+                            <label class="title fix d-flex">
+                                <i class="d-flex">3</i>
+                                <span>Dịch vụ</span>
+                            </label>
+                            <div class="group-item row required">
+                                <label class="col-lg-4 col-12 col-form-label pr-0">Dịch vụ</label>
+                                <div class="col-lg-12 col-12 row">
+                                    <div class="group-item-checkbox col-12">
+                                        <div class="expandable ">
+                                            <input class="service-checkbox has-child" type="checkbox" name="service_root_3" id="service_3" value="3" data-mbs="false" data-embs="false" data-baytype="" data-ignore="">
+                                            <label for="service_3">Maintenance<span></span></label>
+                                        </div>
+                                    </div>
+                                    <div class="group-item-checkbox col-12">
+                                        <div class="expandable ">
+                                            <input class="service-checkbox has-child" type="checkbox" name="service_root_1" id="service_1" value="1" data-mbs="false" data-embs="false" data-baytype="" data-ignore="">
+                                            <label for="service_1">General repairs<span></span></label>
+                                        </div>
+                                    </div>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>vehicle_service</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.vehicle_id, "vehicle_id", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("vehicle_id", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.vehicle_id, "", new { @class = "text-danger" })
+                                    <div class="group-item-checkbox col-12">
+                                        <div class="expandable expandable-painting">
+                                            <input class="service-checkbox has-child" type="checkbox" name="service_root_2" id="service_2" value="2" data-mbs="false" data-embs="false" data-baytype="" data-ignore="">
+                                            <label for="service_2">Painting<span></span></label>
+                                        </div>
+                                    </div>
+                                    <div class="group-item-checkbox col-12">
+                                        <div class="expandable ">
+                                            <input class="service-checkbox has-child" type="checkbox" name="service_root_4" id="service_4" value="4" data-mbs="false" data-embs="false" data-baytype="" data-ignore="">
+                                            <label for="service_4">Other repairs<span></span></label>
+                                            <div class="service-list-expand-lv1" tabindex="-1">
+                                                <div class="">
+                                                    <input class="service-checkbox " type="checkbox" name="service_lv1_4A" id="service_4A" value="4A" data-mbs="false" data-embs="false" data-baytype="" data-ignore="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="col-lg-6 col-12 pt-30 group-schedule ">
+                            <label class="title fix d-flex">
+                                <i class="d-flex">4</i>
+                                <span>Time</span>
+                            </label>
+                            <div class="group-item row required">
+                                <label class="col-lg-4 col-12 col-form-label">Thời gian</label>
+                                <div class="col-lg-12 col-12 ">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-6 col-6 pr-2">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="Ngày" id="scheduleDate" name="scheduleDate" class="datepicker dateOnlyInput ignore-regex" size="12" readonly="" data-scheduledate="" data-missing-error="Quý khách vui lòng không để trống trường thông tin này.">
+                                                <div class="invalid-feedback"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-6">
+                                            <select id="scheduleTimeOrigin" class="d-none" style="display: none">
+                                                <option></option>
+                                                <option value="08:00 - 09:00" class="morning-time">08:00</option>
+                                                <option value="09:00 - 10:00" class="morning-time">09:00</option>
+                                                <option value="10:00 - 11:00" class="morning-time">10:00</option>
+                                                <option value="11:00 - 12:00" class="morning-time">11:00</option>
+                                                <option value="12:00 - 13:00" class="morning-time">12:00</option>
+                                                <option value="13:00 - 14:00" class="afternoon-time">13:00</option>
+                                                <option value="14:00 - 15:00" class="afternoon-time">14:00</option>
+                                                <option value="15:00 - 16:00" class="afternoon-time">15:00</option>
+                                                <option value="16:00 - 17:00" class="afternoon-time">16:00</option>
+                                                <option value="17:00 - 18:00" class="afternoon-time">17:00</option>
+                                                <option value="18:00 - 19:00" class="afternoon-time">18:00</option>
+                                                <option value="19:00 - 20:00" class="afternoon-time">19:00</option>
+                                                <option value="20:00 - 21:00" class="afternoon-time">20:00</option>
+                                            </select>
+                                            <div class="input-group">
+                                                <select id="scheduleTime" name="scheduleTime" class="box-select select2-search select2-hidden-accessible" data-placeholder="Giờ" data-missing-error="Quý khách vui lòng không để trống trường thông tin này." tabindex="-1" aria-hidden="true" data-select2-id="scheduleTime">
+                                                    <option data-select2-id="24"></option>
+                                                    <option value="08:00 - 09:00" class="morning-time">08:00</option>
+                                                    <option value="09:00 - 10:00" class="morning-time">09:00</option>
+                                                    <option value="10:00 - 11:00" class="morning-time">10:00</option>
+                                                    <option value="11:00 - 12:00" class="morning-time">11:00</option>
+                                                    <option value="12:00 - 13:00" class="morning-time">12:00</option>
+                                                    <option value="13:00 - 14:00" class="afternoon-time">13:00</option>
+                                                    <option value="14:00 - 15:00" class="afternoon-time">14:00</option>
+                                                    <option value="15:00 - 16:00" class="afternoon-time">15:00</option>
+                                                    <option value="16:00 - 17:00" class="afternoon-time">16:00</option>
+                                                    <option value="17:00 - 18:00" class="afternoon-time">17:00</option>
+                                                    <option value="18:00 - 19:00" class="afternoon-time">18:00</option>
+                                                    <option value="19:00 - 20:00" class="afternoon-time">19:00</option>
+                                                    <option value="20:00 - 21:00" class="afternoon-time">20:00</option>
+                                                </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="23" style="width: 247.5px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-scheduleTime-container"><span class="select2-selection__rendered" id="select2-scheduleTime-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Giờ</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                <div class="invalid-feedback"></div>
+                                                <div id="scheduleTimeSession" class="d-none">
+                                                    <div>
+                                                        <button type="button" class="btn btn-primary morning">Sáng</button>
+                                                        <button type="button" class="btn afternoon">Chiều</button>
+                                                    </div>
+                                                </div>
+                                                <div id="select2-scheduleTime">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-item row mb-2" id="discriptions">
+                                <label class="col-lg-4 col-12 col-form-label pr-0">Ghi chú</label>
+                                <div class="col-lg-12 col-12 ">
+                                    <textarea id="note" maxlength="255" class="form-control" name="description" placeholder="Specifically, please let us know how we can assist you."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-12 group-submit">
+                            <button id="btn-submit" class="btn btn-primary" disabled="">Gửi yêu cầu</button>
+                        </div>
+                        <p class="row col-12 validation-error-message" style="display: none;">*Sai định dạng. Vui lòng nhập lại.</p>
+                    </div>
+                    <input type="hidden" name="uncid" class="hidden" value="">
+                    <input type="hidden" id="servicePriority" name="servicePriority" value="2,4,3,1">
+                </form>
+                <input type="hidden" class="url-login" value="#">
+                <input type="hidden" id="url-booking-service-history" value="https://shop.vinfastauto.com/vn_vi/bao-duong-sua-chua">
+                <div class="modal fade" id="schedule-maintenance-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <a href="" id="closeSuccessDialog" class="close">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                                <div class="vin-logo"></div>
+                                <div class="mc-icon">
+                                    <div class="mc-icon__line"></div>
+                                    <div class="img-boder">
+                                        <svg width="76" height="76" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.6454 18.4965L20.1768 8.2108C20.0739 7.48642 19.6207 6.86101 18.9676 6.53444L6.37215 0.236736C5.51517 -0.190764 4.48007 -0.024514 3.80319 0.65434L0.65434 3.80319C-0.024514 4.48007 -0.190764 5.51517 0.236736 6.37215L6.53444 18.9676C6.86101 19.6207 7.4884 20.0719 8.2108 20.1768L18.4965 21.6454L31.7035 34.8524L20.824 45.7318C15.2091 43.7309 8.84611 45.1124 4.56517 49.3953C-0.0977432 54.0582 -1.32087 61.1872 1.52122 67.1346C1.83194 67.7877 2.44153 68.2468 3.15403 68.3696C3.86653 68.4923 4.59288 68.2607 5.10549 67.7501L12.4403 60.4153L15.5891 63.5641L8.25434 70.8989C7.74372 71.4096 7.51215 72.1379 7.63486 72.8504C7.75757 73.5629 8.21674 74.1725 8.86986 74.4832C11.0074 75.5044 13.2973 76.0012 15.5713 76.0012C19.6247 76.0012 23.6226 74.4258 26.6111 71.4373C30.892 67.1563 32.2755 60.7953 30.2726 55.1804L41.152 44.3009L43.531 46.6799C41.5182 50.0939 41.9774 54.5728 44.9045 57.5019L60.7973 73.3947C62.4795 75.0769 64.716 76.0032 67.095 76.0032C69.4739 76.0032 71.7104 75.0769 73.3927 73.3947C75.075 71.7124 76.0012 69.4759 76.0012 67.0969C76.0012 64.718 75.075 62.4815 73.3927 60.7992L57.5 44.9065C54.5708 41.9774 50.0919 41.5202 46.6779 43.533L44.2989 41.154L55.1784 30.2746C56.8765 30.8802 58.6419 31.1751 60.3975 31.1751C64.4508 31.1751 68.4487 29.5977 71.4373 26.6111C76.1002 21.9482 77.3253 14.8192 74.4832 8.86986C74.1725 8.21674 73.5629 7.75757 72.8504 7.63486C72.1379 7.51215 71.4115 7.74372 70.9009 8.25434L63.5661 15.5891L60.4173 12.4403L67.752 5.10549C68.2627 4.59486 68.4942 3.86653 68.3715 3.15403C68.2488 2.44153 67.7877 1.83194 67.1365 1.52122C61.1891 -1.32087 54.0602 -0.095764 49.3953 4.56715C45.1143 8.84809 43.7309 15.2091 45.7318 20.824L34.8524 31.7035L21.6454 18.4965ZM9.99601 15.9335L4.93726 5.81601L5.81799 4.93528L15.9335 9.99601L16.9231 16.9231L9.99601 15.9335ZM51.2023 46.7511C52.3423 46.7511 53.4823 47.1846 54.3511 48.0534L70.2438 63.9461C71.085 64.7873 71.5481 65.9055 71.5481 67.095C71.5481 68.2844 71.085 69.4027 70.2438 70.2438C69.4027 71.085 68.2844 71.5481 67.095 71.5481C65.9055 71.5481 64.7873 71.085 63.9461 70.2438L48.0534 54.3511C46.3177 52.6154 46.3177 49.7891 48.0534 48.0534C48.9223 47.1846 50.0623 46.7511 51.2023 46.7511ZM26.0708 53.0805C25.4038 53.7475 25.2297 54.7628 25.6354 55.6138C27.664 59.8611 26.7892 64.9555 23.4583 68.2864C20.9408 70.8059 17.4159 71.9202 14.0117 71.4373L20.3094 65.1376C20.727 64.72 20.9626 64.1539 20.9626 63.5641C20.9626 62.9743 20.729 62.4063 20.3094 61.9887L14.0117 55.691C13.1429 54.8222 11.7317 54.8222 10.8629 55.691L4.56319 61.9887C4.08028 58.5846 5.19653 55.0597 7.71403 52.5422C11.045 49.2112 16.1374 48.3364 20.3866 50.3651C21.2377 50.7708 22.253 50.5966 22.92 49.9297L34.8524 38.0012L38.0012 41.1501L26.0708 53.0805ZM49.9316 22.9219C50.5986 22.255 50.7728 21.2397 50.367 20.3886C48.3384 16.1413 49.2132 11.0469 52.5441 7.71601C55.0616 5.19653 58.5845 4.08226 61.9907 4.56517L55.693 10.8649C54.8241 11.7337 54.8241 13.1449 55.693 14.0137L61.9907 20.3114C62.4083 20.729 62.9743 20.9645 63.5661 20.9645C64.1559 20.9645 64.7219 20.731 65.1395 20.3114L71.4392 14.0137C71.9221 17.4199 70.8059 20.9428 68.2884 23.4603C64.9575 26.7912 59.8651 27.666 55.6158 25.6374C54.7648 25.2316 53.7494 25.4058 53.0825 26.0728L41.1501 38.0012L38.0012 34.8524L49.9316 22.9219Z" fill="#2C72C6"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h4>Đặt lịch thành công</h4>
+                                    Cảm ơn Quý khách đã đặt hẹn. Xưởng dịch vụ đã tiếp nhận thông tin của Quý khách và sẽ phản hồi lại trong thời gian sớm nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.service_id, "service_id", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("service_id", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.service_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.id_number, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.id_number, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.id_number, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="d-none">
+            <div class="no-place"><span>Đã hết chỗ</span></div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+@*<h2>Create</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>vehicle_service</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.vehicle_id, "vehicle_id", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("vehicle_id", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.vehicle_id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.service_id, "service_id", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("service_id", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.service_id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.id_number, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.id_number, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.id_number, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+*@

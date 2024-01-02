@@ -297,18 +297,26 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\service_order\create.css" />
     <Content Include="Content\css\share\footer.css" />
     <Content Include="Content\css\global.css" />
     <Content Include="Content\css\home\index.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\share\navbar.css" />
     <Content Include="Content\css\service\home.css" />
+    <Content Include="Content\css\vehicledata\detail.css" />
     <Content Include="Content\images\backgrounds\rocket.png" />
+    <Content Include="Content\images\backgrounds\service.png" />
     <Content Include="Content\images\exiconarrowright-copy%402x.png" />
     <Content Include="Content\images\iconmail%402x.png" />
+    <Content Include="Content\images\icons\dropdown.png" />
     <Content Include="Content\images\lock%402x.png" />
     <Content Include="Content\images\logos\dark-logo.svg" />
     <Content Include="Content\images\logos\favicon.png" />
+    <Content Include="Content\images\logos\footerlg.png" />
+    <Content Include="Content\images\logos\logo.jpg" />
+    <Content Include="Content\images\logos\logo2.jpg" />
+    <Content Include="Content\images\logos\logo3.jpg" />
     <Content Include="Content\images\products\image-1%402x.png" />
     <Content Include="Content\images\products\letter.png" />
     <Content Include="Content\images\products\rectangle-6003%402x.png" />
@@ -323,6 +331,7 @@
     <Content Include="Content\js\dashboard.js" />
     <Content Include="Content\js\home\index.js" />
     <Content Include="Content\js\script.js" />
+    <Content Include="Content\js\service-order\create.js" />
     <Content Include="Content\js\sidebarmenu.js" />
     <Content Include="Content\libs\apexcharts\dist\apexcharts.amd.js" />
     <Content Include="Content\libs\apexcharts\dist\apexcharts.common.js" />
@@ -1091,10 +1100,11 @@
     <Content Include="Views\Shared\_CustomerLayout.cshtml" />
     <Content Include="Views\ServiceOrder\Home.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\VehicleData\VehicleDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assests\Image\" />
+    <Folder Include="Assests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
