@@ -12,7 +12,9 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="~/Content/js/home/nav.js"></script>
 </head>
+
 <body>
     <div class="wrapper">
         <nav>
@@ -25,7 +27,7 @@
             <ul>
                 <li>
                     <a href="~/Home/AboutUs">About us</a>
-                </li>   
+                </li>
                 <li>
                     <a href="~/VehicleData/Index">Car</a>
                 </li>
@@ -36,18 +38,53 @@
                     <a href="~/Home/ContactUs">Contact</a>
                 </li>
             </ul>
-            <div class="box-car-head">
-                <a class="account" id="accountLink" href="/Customers/Login">Login</a>
-                <a class="button" id="preOrderLink" href="~/PreOrder/Index">Pre Order</a>
-                <div class="block-megamainmenu desktop-hover" data-toggle="sidebar" data-target=".sidebar-right">
-                    <div id="menu-side-right" class="we-mega-menu-li">
-                        <div id="nav-icon-region">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+            <div class="box-car-head" id="userActions">
+                <a class="button" id="preOrderLink" href="~/PreOrder/Index">RESERVE NOW</a>
+                @if (Session["CustomerName"] != null)
+                {
+                    <div class="cart">
+                        <img class="cart-img" src="~/Content/images/icons/cart.png" alt="Cart" />
+                        <span id="CartItemCount" class="cart-item">0</span>
+                    </div>
+                    <div href="#" class="user" style="display: flex; align-items: center;">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_2662_2392)">
+                                <circle cx="12" cy="12.5" r="12" fill="#1464F4" fill-opacity="0.1"></circle>
+                                <path d="M11.9997 11.9999C13.8413 11.9999 15.333 10.5083 15.333 8.66659C15.333 6.82492 13.8413 5.33325 11.9997 5.33325C10.158 5.33325 8.66634 6.82492 8.66634 8.66659C8.66634 10.5083 10.158 11.9999 11.9997 11.9999ZM11.9997 13.6666C9.77467 13.6666 5.33301 14.7833 5.33301 16.9999V18.6666H18.6663V16.9999C18.6663 14.7833 14.2247 13.6666 11.9997 13.6666Z" fill="#1464F4"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_2662_2392">
+                                    <rect width="30" height="30" fill="white" transform="translate(0 0.5)"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <div class="user_pop">
+                            <ul class="menu">
+                                <li class="menu-item">
+                                    <a href="~/Customer/Profile">Account Information</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Order History</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Maintenance - Repair</a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a href="#" id="logout">Logout</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <a class="account" id="accountLink" href="/Customers/Login">Login</a>
+                    <div class="separator"></div>
+                    <div class="block-megamainmenu desktop-hover" data-toggle="sidebar" data-target=".sidebar-right">
+                        <a class="account" id="accountLink" href="/Customers/Register">Register</a>
+                    </div>
+                }
             </div>
         </nav>
     </div>

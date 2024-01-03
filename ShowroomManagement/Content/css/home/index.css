@@ -29,7 +29,6 @@ element.style {
 .swiper-android .swiper-slide, .swiper-wrapper {
     transform: translate3d(0px,0,0);
 }
-
 .swiper-wrapper {
     position: relative;
     width: 100%;
@@ -778,3 +777,97 @@ button, input, optgroup, select, textarea {
     margin-top: 6rem;
     height: 700px;
 }
+.separator {
+    border-right: 1.5px solid #1464f4;
+    margin-left: 30px;
+    height: 1.6rem
+}
+
+.box-car-head .user {
+    padding: 10px;
+    margin-right: 10px;
+    margin-left:30px;
+    position: relative;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.box-car-head .cart {
+    padding: 10px;
+    margin-right: 0px;
+    margin-left: 30px;
+    position: relative;
+    border-radius: 3px;
+    cursor: pointer;
+}
+    .box-car-head .cart .cart-img{
+        width:24px;
+        height:24px;
+    }
+    .box-car-head .cart .cart-item {
+        color: rgb(255, 255, 255);
+        background: rgb(255, 66, 79);
+        height: 16px;
+        right: 0px;
+        top: 0px;
+        border-radius: 6px;
+        display: inline-block;
+        text-align: center;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 150%;
+        position: absolute;
+        padding: 0.5px 4px;
+    }
+.user_pop {
+    position: absolute;
+    z-index: 99;
+    top: 54px;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+    transform: translateY(-2px) translateX(35%);
+    width: 165px;
+    height: 200px;
+    padding: 10px;
+    white-space: nowrap;
+    background: #fff;
+    box-shadow: 0 16px 48px rgb(0 0 0/18%);
+    border-radius: 3px;
+}
+.user:hover .user_pop,
+.user:focus .user_pop {
+    visibility: visible;
+    opacity: 1;
+}
+
+.user_pop ul.menu {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}n
+
+ul.menu {
+    margin-left: 1em;
+    padding: 0;
+    list-style: none outside;
+    text-align: left;
+}
+
+.user_pop ul.menu li {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 20px;
+    padding: 10px;
+    margin: 0;
+}
+
+    .user_pop ul.menu li a {
+        color: #1f2125;
+        font-size: 12px;
+        text-decoration: none;
+        outline: none;
+        transition: all .3s;
+        background-color: transparent;
+    }
