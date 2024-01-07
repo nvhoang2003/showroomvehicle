@@ -62,6 +62,10 @@ namespace ShowroomManagement.Controllers
                     obj.password = Crypto.HashPassword(obj.password);
                     db.customers.Add(obj);
                     db.SaveChanges();
+
+                    Session["CustomerName"] = obj.user_name;
+                    Session["CustomerId"] = obj.customer_id;
+
                     return RedirectToAction("Index", "Home");
                 }
             }

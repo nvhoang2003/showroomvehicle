@@ -1,19 +1,32 @@
 ﻿@{
     ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 <main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
-
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
+    <div class="row">
+        <div class="col-5 mt-5 mb-4 mr-4">
+            <div class="mr-5">
+                <img src="~/Content/images/logos/Section2-Star-assist.jpg" alt="Logo" />
+            </div>
+        </div>
+        <div class="col-4 offset-2 mt-5">
+            <h2 class="text-center">CUSTOMER CARE CENTER</h2>
+            <address class="mt-5 mb-5">
+                No 8, Tran Khat Chan 8 Street, Viet Hung Ward<br />
+                Hai Ba Trung District, Ha Noi<br />
+                <abbr title="Phone">Hotline:</abbr>
+                1900232389
+            </address>
+            <address>
+                <h5>
+                    If you need advice, please message us at the following email address
+                </h5>
+                <strong>Support:</strong><br />   
+                <a href="mailto:hoang.nv.1970@aptechlearning.edu.vn">hoang.nv.1970@aptechlearning.edu.vn</a><br />
+                <strong>Marketing:</strong><br />                            
+                <a href="mailto:lap.nv.1904@aptechlearning.edu.vn">lap.nv.1904@aptechlearning.edu.vn</a>
+            </address>
+        </div>
+    </div>
+   
 </main>
