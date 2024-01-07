@@ -1,9 +1,19 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Auto Car";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-
-    <p>Use this area to provide additional information.</p>
+<main aria-labelledby="title" class="m-5">
+    @*<h3>@ViewBag.Message</h3>*@
+    <div class="row">
+        <div class=" offset-3 col-6 item-center">
+            <h2 class="text-center w-100 fw-bold">ABOUT US</h2>
+            <img src="~/Content/images/logos/Mercedes-benz-c300-amg-màu-trắng.jpg" alt="Logo" />
+            <p>
+                With nearly 3 decades of accompanying users, understanding the brand's position as well as market expectations, Auto Car has continuously promoted investment and development in this potential market. Through many memorable milestones with successfully assembled cars, Auto Car has always established the contemporary concept of luxury cars.
+            </p>
+            <p>
+                Currently, we are trying to negotiate with partners to import new vehicles. In addition, other imported car models such as S-Class, GLB, GLE, GLS as well as sub-brands Mercedes-AMG, Mercedes-Maybach, and Mercedes-EQ are all receiving a lot of love and attention. of cutomer.
+            </p>
+        </div>
+    </div>
 </main>
