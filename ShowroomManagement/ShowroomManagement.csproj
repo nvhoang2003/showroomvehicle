@@ -314,7 +314,10 @@
     <Content Include="Content\images\exiconarrowright-copy%402x.png" />
     <Content Include="Content\images\exiconeye%402x.png" />
     <Content Include="Content\images\iconmail%402x.png" />
+    <Content Include="Content\images\icons\cart.png" />
     <Content Include="Content\images\icons\dropdown.png" />
+    <Content Include="Content\images\icons\ic-password-hide.png" />
+    <Content Include="Content\images\icons\ic-password-show.png" />
     <Content Include="Content\images\lock%402x.png" />
     <Content Include="Content\images\logos\dark-logo.svg" />
     <Content Include="Content\images\logos\favicon.png" />
@@ -336,6 +339,7 @@
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\dashboard.js" />
     <Content Include="Content\js\home\index.js" />
+    <Content Include="Content\js\home\nav.js" />
     <Content Include="Content\js\script.js" />
     <Content Include="Content\js\service-order\create.js" />
     <Content Include="Content\js\sidebarmenu.js" />

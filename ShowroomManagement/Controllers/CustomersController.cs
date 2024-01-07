@@ -38,7 +38,6 @@ namespace ShowroomManagement.Controllers
                 {
                     Session["CustomerName"] = obj.user_name;
                     Session["CustomerId"] = obj.customer_id;
-                    ViewBag.IsLoggedIn = true;
                     return RedirectToAction("Index", "Home");
                 }
                 TempData["ErrorMessage"] = ("Password is incorrect!");
@@ -81,7 +80,12 @@ namespace ShowroomManagement.Controllers
                 return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
-
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return Json(new { status = "done" });
+        }
         // GET: Customers
         public ActionResult Index()
         {
