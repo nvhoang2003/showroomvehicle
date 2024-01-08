@@ -48,12 +48,6 @@ img {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    border: none;
-}
-
-img {
     vertical-align: middle;
     border-style: none;
 }
@@ -79,7 +73,7 @@ img {
     line-height: 1.5rem;
     letter-spacing: -.02rem;
     color: #3c3c3c;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 p {
@@ -96,7 +90,7 @@ p {
     line-height: 1.5rem;
     letter-spacing: -.02rem;
     color: #3c3c3c;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 b, strong {
     font-weight: bolder;
@@ -271,15 +265,6 @@ footer .menu-footer .menu-item {
 footer .menu-footer .header {
     display: flex;
 }
-footer .menu-footer p.menu-title, footer .menu-footer .menu-item p.menu-title a {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 150%;
-    text-transform: uppercase;
-    color: #3c3c3c;
-    margin-bottom: 0;
-    cursor: pointer;
-}
 
 p:last-child {
     margin-bottom: 0;
@@ -302,6 +287,9 @@ footer .menu-footer p.menu-title, footer .menu-footer .menu-item p.menu-title a 
     margin-bottom: 0;
     cursor: pointer;
 }
+    footer .menu-footer p.menu-title, footer .menu-footer .menu-item p.menu-title a:hover {
+        color: #1464f4;
+    }
 
 footer .menu-item a {
     font-style: normal;
