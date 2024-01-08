@@ -1,0 +1,27 @@
+﻿.cs-contact-info .cs-media i {
+    color: #1464f4 !important;
+}
+.cs-contact-form .cs-form-holder .input-holder input, .cs-form-holder .input-holder textarea {
+    font-weight:600 !important;
+}
+.cs-btn-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+   
+}
+.cs-contact-form .cs-btn-submit input[type=submit] {
+    color: white;
+    background-color: #1464f4;
+    border: none;
+}
+
+    .cs-contact-form .cs-btn-submit input[type=submit]:hover {
+        background-color: white;
+        color: #1464f4;
+        border: 1px solid #1464f4;
+    }
+.main-section{
+    padding-bottom:0px;
+}

@@ -52,12 +52,12 @@ nav {
                 position: relative;
                 text-decoration: none;
                 color: #3c3c3c;
-                font-size: 18px;
+                font-size: 20px;
                 padding: 4px 8px;
                 border-radius: 5px;
                 font-weight: 400;
                 font-style: normal;
-                font-size: 16px;
+                font-size: 18px;
                 line-height: 150%;
                 -webkit-transition: .3s;
                 transition: .3s;
@@ -176,6 +176,7 @@ nav {
     -ms-flex-pack: end;
     justify-content: end;
     align-items: center;
+    margin-top:18px;
 }
 
 .box-car-head div#menu-side-right {
@@ -226,4 +227,41 @@ nav {
     border-right: 1.5px solid #1464f4;
     margin-left: 30px;
     height: 1.6rem
+}
+
+.mega_menu {
+    position: fixed;
+    width: 100vw;
+    z-index: 100;
+    background: #fff;
+    top: 84px;
+    box-shadow: 0 3px 6px #00000029;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    transform: translateY(-15px);
+}
+.mega-dropdown{
+    position: fixed;
+    width: 100vw;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0 3px 6px #00000029;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    transform: translateY(-15px);
+}
+
+.mega_menu_header.mega-main-menu > li.active .mega_menu, .mega_menu_header.mega-main-menu > li.mega_menu_active .mega_menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 100;
+    overflow: auto;
+    max-height: 240px;
+    border-top: 2px solid #d9e1e2;
+    box-sizing: content-box;
 }
