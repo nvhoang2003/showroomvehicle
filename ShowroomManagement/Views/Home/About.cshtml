@@ -1,19 +1,377 @@
 ﻿@{
-    ViewBag.Title = "Auto Car";
+    ViewBag.Title = "About";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
-<main aria-labelledby="title" class="m-5">
-    @*<h3>@ViewBag.Message</h3>*@
-    <div class="row">
-        <div class=" offset-3 col-6 item-center">
-            <h2 class="text-center w-100 fw-bold">ABOUT US</h2>
-            <img src="~/Content/images/logos/Mercedes-benz-c300-amg-màu-trắng.jpg" alt="Logo" />
-            <p>
-                With nearly 3 decades of accompanying users, understanding the brand's position as well as market expectations, Auto Car has continuously promoted investment and development in this potential market. Through many memorable milestones with successfully assembled cars, Auto Car has always established the contemporary concept of luxury cars.
-            </p>
-            <p>
-                Currently, we are trying to negotiate with partners to import new vehicles. In addition, other imported car models such as S-Class, GLB, GLE, GLS as well as sub-brands Mercedes-AMG, Mercedes-Maybach, and Mercedes-EQ are all receiving a lot of love and attention. of cutomer.
-            </p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoMobile</title>
+    <link href="~/Assests/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Assests/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/Assests/css/chosen.css" rel="stylesheet">
+    <link href="~/Assests/css/iconmoon.css" rel="stylesheet">
+    <link href="~/Assests/css/style.css" rel="stylesheet">
+    <link href="~/Assests/css/cs-automobile-plugin.css" rel="stylesheet">
+    <link href="~/Assests/css/color.css" rel="stylesheet">
+    <link href="~/Assests/css/widget.css" rel="stylesheet">
+    <link href="~/Assests/css/responsive.css" rel="stylesheet">
+    <link href="~/Content/css/home/about.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Assests/scripts/jquery.js"></script>
+    <script src="~/Assests/scripts/modernizr.js"></script>
+    <script src="~/Assests/scripts/bootstrap.min.js"></script>
+</head>
+<body class="wp-automobile">
+    <div class="wrapper">
+        <div class="swiper-slide vision">
+            <div id="block-visionvinfast">
+                <div class="parallax-bg" data-swiper-parallax="">
+                    <div class="container">
+                        <div class="containner-inner">
+                            <img class="vision-pc" src="~/Assests/extra-images/about.png" alt="">
+                            <div class="vision-content">
+                                <div class="vision-content-item show-item">
+                                    <h2>Vision</h2><p>To become a modern automotive brand driving a powerful global electric vehicle revolution.</p>
+                                </div>
+                                <div class="vision-content-item show-item">
+                                    <h2>Mission</h2><p>For a bright future for everyone.</p>
+                                </div>
+                                <div class="vision-content-item show-item">
+                                    <h2>Brand Philosophy</h2><p>Placing customers at the center, AutoCar continuously innovates to create high-quality products and exceptional experiences for everyone.</p>
+                                </div>
+                                <div class="vision-content-item show-item">
+                                    <h2>Core Values</h2><p>Premium products, competitive prices, and exceptional after-sales service.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- Main Start -->
+        <div class="main-section">
+            <div class="page-section" style="margin-bottom:30px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="cs-services">
+                                <div class="cs-media"> <img class="icon-fuel1 cs-color" src="/Assests/extra-images/change-car-oil.png" style="font-size: 50px; height: 50px; width:40px;" /> </div>
+                                <div class="cs-text">
+                                    <h6>OIL CHANGES</h6>
+                                    <p>Experience our post-purchase services with professional oil changes. We are dedicated to providing top-notch maintenance for your vehicle.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="cs-services">
+                                <div class="cs-media"> <img class="icon-car230 cs-color" src="~/Assests/extra-images/air-conditioner.png" style="font-size:40px" /></div>
+                                <div class="cs-text">
+                                    <h6>AIR CONDITIONING</h6>
+                                    <p>Keep your vehicle cool and comfortable. We offer expert air conditioning services to ensure a pleasant driving experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="cs-services">
+                                <div class="cs-media"> <img class="icon-energy42 cs-color" src="~/Assests/extra-images/energy.png" style="font-size:40px" /></div>
+                                <div class="cs-text">
+                                    <h6>AUTO ELECTRIC </h6>
+                                    <p>We have a professional team with in-depth knowledge and specialized skills, committed to providing excellent service and meeting all your needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section" style="margin-bottom:40px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="cs-column-text">
+                                <h2 style="font-size:26px !important;">WELCOME TO THE AutoCar</h2>
+                                <p>At AutoCar, we invite you to explore a world of automotive elegance and excellence. Our showroom is a haven for enthusiasts and those seeking the pinnacle of driving experiences. Immerse yourself in a curated selection of premium vehicles that embody sophistication, performance, and cutting-edge technology.</p>
+                                <ul class="cs-icon-list">
+                                    <li><img class="icon-check2 cs-color" src="~/Assests/extra-images/check.png" />Competitive pricing, attentive customer consultation.</li>
+                                    <li><img class="icon-check2 cs-color" src="~/Assests/extra-images/check.png" />Unveiling Refined Vehicles, Unmatched Service.</li>
+                                    <li><img class="icon-check2 cs-color" src="~/Assests/extra-images/check.png" />Modern technology, luxurious interior.</li>
+                                    <li> <img class="icon-check2 cs-color" src="~/Assests/extra-images/check.png" />Dedicated customer care services.</li>
+                                </ul> 
+                                <a href="~/Home/Contact" class="btn btn--animated btn--border--blue btn--primary--blue">Contact us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="cs-video-frame">
+                                <iframe width="560" height="340" src="https://www.youtube.com/embed/21CY9RtMQkU" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section" style="margin-bottom:70px; margin-top:50px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="section-title" style="text-align:center; color:#333333; margin-bottom:45px;">
+                                <h2 style="margin-bottom:5px; text-transform:uppercase !important;">Meet Our Team</h2>
+                                <p>Choose the Sales Representative That Suits Your Needs.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="cs-team">
+                                <div class="cs-media">
+                                    <figure><a href="#"><img src="~/Assests/extra-images/team-img-1.jpg" alt="" /></a></figure>
+                                    <div class="cs-caption">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cs-text">
+                                    <h6><a href="#">Lennox Wardell</a></h6>
+                                    <span>Exemplary Consultation Staff </span> <em><i class="fa fa-mobile" aria-hidden="true"></i>001-234-567-6789</em>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="cs-team">
+                                <div class="cs-media">
+                                    <figure><a href="#"><img src="~/Assests/extra-images/team-img-2.jpg" alt="" /></a></figure>
+                                    <div class="cs-caption">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cs-text">
+                                    <h6><a href="#">Sarah Odegard </a></h6>
+                                    <span>Exemplary Consultation Staff </span> <em><i class="fa fa-mobile" aria-hidden="true"></i>001-234-567-6789</em>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="cs-team">
+                                <div class="cs-media">
+                                    <figure><a href="#"><img src="~/Assests/extra-images/team-img-3.jpg" alt="" /></a></figure>
+                                    <div class="cs-caption">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cs-text">
+                                    <h6><a href="#">Lars Jakuba </a></h6>
+                                    <span>Exemplary Consultation Staff </span> <em><i class="fa fa-mobile" aria-hidden="true"></i>001-234-567-6789</em>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="cs-team">
+                                <div class="cs-media">
+                                    <figure><a href="#"><img src="~/Assests/extra-images/team-img-4.jpg" alt="" /></a></figure>
+                                    <div class="cs-caption">                                
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cs-text">
+                                    <h6><a href="#">Mikey Diokles </a></h6>
+                                    <span>Exemplary Consultation Staff </span> <em><i class="fa fa-mobile" aria-hidden="true"></i>001-234-567-6789</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section" style=" background:url(/Assests/extra-images/bg-counter.jpg) no-repeat 0 0 / cover; margin-bottom:50px; margin-top:20px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="cs-counter">
+                                <div class="cs-media">
+                                    <figure><i class="fa fa-shopping-cart" aria-hidden="true"></i></figure>
+                                </div>
+                                <div class="cs-text" style="color:#fff;"> <strong class="counter">263</strong> <span>Vehicles Sold</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="cs-counter">
+                                <div class="cs-media">
+                                    <figure><i class="fa fa-car" aria-hidden="true"></i></figure>
+                                </div>
+                                <div class="cs-text" style="color:#fff;"> <strong class="counter">897</strong> <span>Current Vehicles</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="cs-counter">
+                                <div class="cs-media">
+                                    <figure><i class="fa fa-user" aria-hidden="true"></i></figure>
+                                </div>
+                                <div class="cs-text" style="color:#fff;"> <strong class="counter">141</strong> <span>Registerd Customers</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="cs-counter">
+                                <div class="cs-media">
+                                    <figure><i class="fa fa-commenting" aria-hidden="true"></i></figure>
+                                </div>
+                                <div class="cs-text" style="color:#fff;"> <strong class="counter">389</strong> <span>Feedback</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section" style="margin-bottom:30px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="section-title" style="color:#333333; margin-bottom:45px;">
+                                        <h2 style="margin-bottom:5px; text-transform:uppercase !important;">OUR ADVANTAGES</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="panel-group box" id="accordion5" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                <h6 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion5" href="#collapse30" aria-expanded="true" aria-controls="collapse30"><i class="fa fa-user" aria-hidden="true"></i></i>We go through extensive factory training so that we may provide </a> </h6>
+                                            </div>
+                                            <div id="collapse30" class="panel-collapse collapse in" role="tabpanel">
+                                                <div class="panel-body">
+                                                    At our dealership, we prioritize excellence in every aspect of our service, and that commitment begins with our team. We recognize the importance of staying ahead in the ever-evolving automotive industry, and to achieve this, we go through extensive factory training. This training equips our staff with the latest knowledge, skills, and insights into the intricacies of the vehicles we offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="heading31">
+                                                <h6 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion5" href="#collapse31" aria-expanded="false" aria-controls="collapse31"> <i class="fa fa-car" aria-hidden="true"></i>You need to make an educated decision in choosing the vehicle </a> </h6>
+                                            </div>
+                                            <div id="collapse31" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading31">
+                                                <div class="panel-body">
+                                                    Selecting the right vehicle requires a well-informed decision-making process. We understand the significance of this choice and are here to empower you with the knowledge and insights needed to make an educated decision. Our team is committed to providing you with comprehensive information about each vehicle in our collection, ensuring you have all the details to make a choice that aligns perfectly with your needs, preferences, and lifestyle. We believe that an informed decision leads to satisfaction and confidence in your vehicle choice, and we are dedicated to assisting you throughout this process.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="heading32">
+                                                <h6 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion5" href="#collapse32" aria-expanded="false" aria-controls="collapse32"><i class="fa fa-cog" aria-hidden="true"></i>We think you should also have pretty high expectations for your dealership. </a> </h6>
+                                            </div>
+                                            <div id="collapse32" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading32">
+                                                <div class="panel-body">
+                                                    We believe that your expectations for a dealership should be set at a high standard. When it comes to our team of sales professionals assisting you in finding the perfect vehicle, we want to exceed those expectations. Our dedicated sales support is here to ensure your car-buying experience is nothing short of exceptional. We understand the significance of such a decision, and our commitment is to guide you with expertise, transparency, and personalized attention. Your satisfaction is our priority, and we strive to elevate your expectations when it comes to choosing your ideal vehicle.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <ul class="cs-testimonial-slider">
+                                <li>
+                                    <div class="cs-media">
+                                        <figure> <img src="~/Assests/extra-images/testimonial-slider-img-1.jpg" alt="" /> </figure>
+                                    </div>
+                                    <div class="cs-text">
+                                        <p> We take pride in our continuous pursuit of excellence and look forward to sharing our knowledge and passion for automobiles with you. </p>
+                                        <h6>James Warson<span>Chief Executive Officer </span></h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="cs-media">
+                                        <figure> <img src="~/Assests/extra-images/testimonial-slider-img-1.jpg" alt="" /> </figure>
+                                    </div>
+                                    <div class="cs-text">
+                                        <p> Whether you are in search of the latest model or seeking advice on maintenance, our team, enriched by factory training, is ready to assist you. </p>
+                                        <h6>James Warson<span>Chief Executive Officer </span></h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="cs-media">
+                                        <figure> <img src="~/Assests/extra-images/testimonial-slider-img-1.jpg" alt="" /> </figure>
+                                    </div>
+                                    <div class="cs-text">
+                                        <p> Factory training goes beyond just understanding the technicalities of the vehicles; it instills a sense of confidence and professionalism in our staff. </p>
+                                        <h6>James Warson<span>Chief Executive Officer </span></h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="cs-media">
+                                        <figure> <img src="~/Assests/extra-images/testimonial-slider-img-1.jpg" alt="" /> </figure>
+                                    </div>
+                                    <div class="cs-text">
+                                        <p> Our dedication to continuous learning is rooted in our belief that a well-informed team can provide an unparalleled experience to our customers. </p>
+                                        <h6>James Warson<span>Chief Executive Officer </span></h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="cs-media">
+                                        <figure> <img src="~/Assests/extra-images/testimonial-slider-img-1.jpg" alt="" /> </figure>
+                                    </div>
+                                    <div class="cs-text">
+                                        <p>  By staying up-to-date with the latest advancements in automotive technology, manufacturing processes, and industry trends, we ensure that our customers receive not only a product but also the highest standard of service. </p>
+                                        <h6>James Warson<span>Chief Executive Officer </span></h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section" style="margin-bottom:0; background:#edf0f5; padding:35px 0 ;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <ul class="cs-partners-slider">
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-1.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-2.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-3.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-4.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-5.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-6.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-1.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-2.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-3.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-4.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-5.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Assests/extra-images/partner-img-6.jpg" alt="" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main End -->
+
     </div>
-</main>
+    <script src="~/Assests/scripts/responsive.menu.js"></script>
+    <script src="~/Assests/scripts/chosen.select.js"></script>
+    <script src="~/Assests/scripts/slick.js"></script>
+    <script src="../../../chimpgroup.com/themeforest/automobile/~/Assests/scripts/theia-sticky-sidebar.html"></script>
+    <script src="~/Assests/scripts/bootstrap-slider.js"></script>
+    <script src="~/Assests/scripts/echo.js"></script>
+    <script src="~/Assests/scripts/counter.js"></script>
+    <script src="~/Assests/scripts/echo.js"></script>
+    <script src="~/Assests/scripts/jquery.viewbox.min.js"></script> <!-- Gallery Lightbox -->
+    <!-- Put all Functions in functions.js -->
+    <script src="~/Assests/scripts/functions.js"></script>
+</body>
+
+</html>

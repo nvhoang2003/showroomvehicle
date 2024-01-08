@@ -19,7 +19,7 @@
     overflow: hidden;
     list-style: none;
     padding: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 element.style {
@@ -33,7 +33,7 @@ element.style {
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 0;
     display: flex;
     transition-property: transform;
     box-sizing: content-box;
@@ -275,7 +275,7 @@ div {
     overflow: hidden;
     list-style: none;
     padding: 0;
-    z-index: 1;
+    z-index: 0;
 }
 .block-home-banner .swiper-pagination .swiper-pagination-bullet {
     background: #fff;
@@ -467,17 +467,69 @@ g{
     background: url(/Content/images/products/letter.png) no-repeat scroll left center transparent;
     background-size: cover;
 }
-.row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+
+.offset-lg-1 {
+    margin-left: 5.333333%;
 }
 .offset-lg-3 {
     margin-left: 25%;
 }
+.col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+.card {
+    background: none;
+    word-wrap: unset;
+    border: none;
+    border-radius: unset;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+#block-service .card .card-content {
+    padding: 0;
+    color:#fff;
+}
+.card .field-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.card .field-desc {
+    font-size: 1rem;
+    padding: 1rem 0 0 0;
+}
+#block-service .container {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -10px;
+    margin-top:70px;
+}
+#block-service .card .field-view-more {
+    display: flex;
+    gap: 1rem;
+}
+
+.card .field-view-more {
+    padding: 1rem 0 0 0;
+}
+    .card .field-view-more a {
+        font-size: 0.5rem;
+        font-weight: 700;
+        letter-spacing: 0.075rem;
+        line-height: normal;
+        text-transform: uppercase;
+        transition: none;
+    }
 
 .col-lg-6 {
     -ms-flex: 0 0 50%;
@@ -655,28 +707,45 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     padding: 1rem;
     overflow: hidden;
     z-index: 1;
-    cursor: pointer;
     border-radius: 0;
-    border: none;
-    font-weight: 700;
-    font-size: .75rem;
-    line-height: 1rem;
-    text-align: center;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    color: #fff;
 }
+
+.btn--border--blue {
+    border: 1px solid #1464f4;
+}
+
+.btn--animated::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform, background-color, color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+}
+
+.btn--animated:hover::before {
+    transform: scaleX(1);
+}
+
+
+.btn--primary--blue {
+    color: #fff;
+    background: #1464f4;
+    transition-property: color;
+}
+
+
 
 .btn {
     border-radius: 6px;
     padding-top: 8px;
     padding-bottom: 8px;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
 }
 
 .btn {
@@ -695,9 +764,57 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.btn {
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.btn {
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 24px;
+    margin-left: 0px;
+    gap: 10px;
+    width: 170px;
+    background: #1464f4;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    transition-duration: 0.4s;
+    color: white;
+    height: auto;
+    z-index:1;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn--primary--white {
+    color: #1464f4;
+    background: #fff;
+}
+.btn--animated.btn--primary--blue::before {
+    background: #fff;
+
+}
+.btn--animated.btn--primary--blue:hover {
+    color: #1464f4;
+}
+    .btn--animated.btn--primary--white::before {
+        background: #1464f4;
+    }
 [type=button], [type=reset], [type=submit], button {
     -webkit-appearance: button;
 }
@@ -768,11 +885,51 @@ button, input, optgroup, select, textarea {
         color: #fff;
         font-weight: 700;
     }
+.block-padding {
+    padding: 2rem 0 0 0;
+}
+
+#block-green-tree .container {
+    position: relative;
+}
+#block-green-tree .field-image {
+    background: url(/Content/images/products/ferrari/fe2.png) no-repeat scroll center center transparent;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#block-green-tree .field-overlay {
+    background: linear-gradient(270deg, rgba(22, 22, 0, 0.80) 8.43%, rgba(22, 22, 0, 0.00) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.offset-lg-7 {
+    margin-left: 0;
+    margin-top:0;
+}
+#block-green-tree .card {
+    padding: 6.625rem 0;
+    margin-left: 190%;
+    width:400px;
+    margin-top:40px;
+}
+    #block-green-tree .card .field-title, #block-green-tree .card .field-desc {
+        color: #fff;
+    }
+    #block-green-tree .card .field-title, #block-green-tree .card .field-desc {
+        color: #fff;
+    }
 #block-service {
     height: 65vh;
 }
 #block-service {
-    background: url(https://www.lexus.com.vn/content/dam/lexus-v3-blueprint/servicing-and-support/servicing-and-support/lexus-masthead-d.jpg) no-repeat scroll right center transparent;
+    background: url(/Content/images/products/lexus/lx1.jpg) no-repeat scroll right center transparent;
     background-size: cover;
     margin-top: 6rem;
     height: 700px;
@@ -871,3 +1028,5 @@ ul.menu {
         transition: all .3s;
         background-color: transparent;
     }
+.col-lg-4 offset-lg-7 .content-video {
+}

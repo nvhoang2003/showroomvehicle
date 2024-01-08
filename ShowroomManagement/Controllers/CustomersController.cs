@@ -2,6 +2,7 @@
 using ShowroomManagement.Models;
 using System;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
@@ -17,6 +18,38 @@ namespace ShowroomManagement.Controllers
     {
         private showroomEntities db = new showroomEntities();
 
+        public ActionResult ResetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ResetPassword(ChangePasswordForm obj)
+        {
+            var id = (int)Session["CustomerId"];
+            var customer = db.customers
+                .FirstOrDefault(c => c.customer_id == id);
+            if (customer != null)
+            {
+                if (HashPassword(obj.oldPasswprd) == customer.password.Trim())
+                {
+                    if (obj.newPasswprd == obj.confirmPassword)
+                    {
+                        customer.password = HashPassword(obj.newPasswprd);
+                        db.customers.AddOrUpdate(customer);
+                        db.SaveChanges();
+
+                        return RedirectToAction("Details");
+                    }
+                    ViewBag.Message = "Confirm Password must be equal New Password!";
+                    return View(obj);
+                }
+                ViewBag.Message = "Password is incorrect!";
+            }
+            return View(obj);
+        }
+
         public ActionResult Login()
         {
             return View();
@@ -30,14 +63,14 @@ namespace ShowroomManagement.Controllers
             {
                 return View(obj);
             }
-            var customer = db.customers.FirstOrDefault(c => c.user_name == obj.user_name);
+            var customer = db.customers.FirstOrDefault(c => c.user_name == obj.user_name || c.email == obj.user_name);
             if (customer != null)
             {
                 var passwordVerificationResult = Crypto.VerifyHashedPassword(customer.password, obj.password);
                 if (passwordVerificationResult == true)
                 {
-                    Session["CustomerName"] = obj.user_name;
-                    Session["CustomerId"] = obj.customer_id;
+                    Session["CustomerName"] = customer.user_name;
+                    Session["CustomerId"] = customer.customer_id;
                     return RedirectToAction("Index", "Home");
                 }
                 TempData["ErrorMessage"] = ("Password is incorrect!");
@@ -80,11 +113,11 @@ namespace ShowroomManagement.Controllers
                 return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
-        [HttpPost]
+        [HttpGet]
         public ActionResult Logout()
         {
             Session.Abandon();
-            return Json(new { status = "done" });
+            return RedirectToAction("Login");
         }
         // GET: Customers
         public ActionResult Index()
@@ -150,13 +183,31 @@ namespace ShowroomManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "customer_id,user_name,password,first_name,last_name,date_of_birth,phone_number,email")] customer customer)
+        public ActionResult Edit([Bind(Include = "customer_id,user_name,first_name,last_name,date_of_birth,phone_number,email")] customer customer)
         {
             if (ModelState.IsValid)
             {
+                var userToUpdate = db.customers.FirstOrDefault(u => u.customer_id == customer.customer_id);
+
+                if (userToUpdate != null)
+                {
+                    userToUpdate.user_name = customer.user_name;
+                    userToUpdate.first_name = customer.first_name;
+                    userToUpdate.last_name = customer.last_name;
+                    userToUpdate.phone_number = customer.phone_number;
+                    userToUpdate.date_of_birth = customer.date_of_birth;
+                    userToUpdate.email = customer.email;
+
+                    db.Entry(userToUpdate).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                    return RedirectToAction("Details");
+                }
+                //customer customerToUpdate = db.customers.Find(customer.customer_id);
+                //customer.password = customerToUpdate.password;
                 db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details");
             }
             return View(customer);
         }
