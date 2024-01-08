@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-qDO/x6xIoArJ+xTl1jj2BKNT8RHO5FPgQajV/DJZWfToRhT9sr+Sq5SEolJz7bZ5tvItVsL/LcbA9t+L2x56LcA==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" target="_blank" href="~/Content/css/share/navbar.css" />
     <link rel="stylesheet" type="text/css" target="_blank" href="~/Content/css/share/footer.css" />
+    <link rel="stylesheet" type="text/css" target="_blank" href="~/Content/css/home/index.css" />
     <script src="jquery-3.7.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -17,6 +18,8 @@
 </head>
 
 <body>
+    @Styles.Render("~/Content/css/home.css")
+    @Styles.Render("~/")
     <div class="navbarCus">
         <nav>
             <div class="logo">
@@ -227,7 +230,7 @@
                         <div class="user_pop">
                             <ul class="menu">
                                 <li class="menu-item">
-                                    <a href="~/Customer/Profile">Account Information</a>
+                                    @Html.ActionLink("Account Information", "Details", "Customers", new { area = "", id = Session["CustomerId"] }, new { @class = "" })
                                 </li>
                                 <li class="menu-item">
                                     <a href="#">Order History</a>
@@ -237,7 +240,7 @@
                                 </li>
 
                                 <li class="menu-item">
-                                    <a href="#" id="logout">Logout</a>
+                                    @Html.ActionLink("Logout", "Logout", "Customers")
                                 </li>
                             </ul>
                         </div>
