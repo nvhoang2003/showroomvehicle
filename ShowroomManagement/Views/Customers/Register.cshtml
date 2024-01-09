@@ -1,4 +1,4 @@
-﻿@model ShowroomManagement.Models.customer
+﻿@model ShowroomManagement.Models.RegisterModel
 @{
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
@@ -22,6 +22,7 @@
           href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -33,29 +34,31 @@
             <div class="become-an-exclusive">Register Account</div>
         </div>
         <div class="form">
-            <div class="form-group">            
-                <div class="rectangle">
-                    @Html.LabelFor(model => model.user_name, "Username:", htmlAttributes: new { @class = "icon-field" })
-                </div>
-                @Html.TextBoxFor(u => u.user_name, new { @class = "inputfield", placeholder = "example@email.com" })
-                @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" })            
-           </div>
             <div class="form-group">
                 <div class="rectangle">
-                    @Html.LabelFor(model => model.user_name, "Password:", htmlAttributes: new { @class = "icon-field" })
+                    @Html.LabelFor(model => model.username, "Username:", htmlAttributes: new { @class = "icon-field" })
                 </div>
-                @Html.TextBoxFor(u => u.user_name, new { @class = "inputfield", placeholder = "*********" })
-                @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(u => u.username, new { @class = "inputfield", placeholder = "example@email.com" })
+                @Html.ValidationMessageFor(m => m.username, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 <div class="rectangle">
-                    @Html.LabelFor(model => model.user_name, "RetypePassword:", htmlAttributes: new { @class = "icon-field" })
+                    @Html.LabelFor(model => model.password, "Password:", htmlAttributes: new { @class = "icon-field" })
                 </div>
-                @Html.TextBoxFor(u => u.password, new { @class = "div6", placeholder = "*********" })
+                @Html.TextBoxFor(u => u.password, new { @class = "div6", placeholder = "*********", @type = "password", @id = "password" })
                 @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
-                <input type="button" class="show" id="showHidePassword" value="SHOW" />
-                <img class="icon-field" alt="" src="~/Content/images/lock@2x.png" />
+                <i class="fa fa-eye show" aria-hidden="true" id="showHidePassword"></i>
             </div>
+
+            <div class="form-group">
+                <div class="rectangle">
+                    @Html.LabelFor(model => model.password, "Confirm Password:", htmlAttributes: new { @class = "icon-field" })
+                </div>
+                @Html.TextBoxFor(u => u.password, new { @class = "div6", placeholder = "*********", @type = "password", @id = "confirmPassword" })
+                @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                <i class="fa fa-eye show" aria-hidden="true" id="showHideConfirmPassword"></i>
+            </div>
+
             <div class="btn-prytemplate-2">
                 <button class="btn-prytemplate-2-child">
                     Login
@@ -66,9 +69,9 @@
             </div>
         </div>
         <div class="register-link">
-            <span>Don’t have an account?</span>
+            <span>Already have an account?</span>
             <b>
-                @Html.ActionLink("SIGN UP HERE", "Register")
+                @Html.ActionLink("SIGN IN HERE", "Login")
             </b>
         </div>
         <img class="image"
@@ -79,16 +82,26 @@
 </html>
 <script>
     $("#showHidePassword").click(function () {
-        if ($(this).val() == "SHOW") {
-            $(this).val("HIDE");
-            $("#password").attr("type", "text");
-        } else {
-            $(this).val("SHOW");
-            $("#password").attr("type", "password");
-        }
+        togglePasswordVisibility("password", $(this));
     });
+
+    $("#showHideConfirmPassword").click(function () {
+        togglePasswordVisibility("confirmPassword", $(this));
+    });
+
+    function togglePasswordVisibility(fieldId, icon) {
+        var passwordField = $("#" + fieldId);
+
+        if (passwordField.attr("type") === "password") {
+            passwordField.attr("type", "text");
+            icon.removeClass("fa-eye").addClass("fa-eye-slash");
+        } else {
+            passwordField.attr("type", "password");
+            icon.removeClass("fa-eye-slash").addClass("fa-eye");
+        }
+    }
 </script>
-@*@model ShowroomManagement.Models.customer
+@*
 
     @{
         ViewBag.Title = "Register";
