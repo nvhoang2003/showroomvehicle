@@ -80,24 +80,28 @@ namespace ShowroomManagement.Controllers
 
         public ActionResult Register()
         {
-            return View();
+            RegisterModel obj = new RegisterModel();
+            return View(obj);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register (customer obj)
+        public ActionResult Register (RegisterModel obj)
         {
             if (ModelState.IsValid)
             {
-                var existingUser = db.customers.FirstOrDefault(c => c.user_name == obj.user_name);
+                var existingUser = db.customers.FirstOrDefault(c => c.user_name == obj.username);
                 if(existingUser == null)
                 {
                     obj.password = Crypto.HashPassword(obj.password);
-                    db.customers.Add(obj);
+                    customer newCus = new customer();
+                    newCus.user_name = obj.username;
+                    newCus.password = obj.password;
+                    db.customers.Add(newCus);
                     db.SaveChanges();
 
-                    Session["CustomerName"] = obj.user_name;
-                    Session["CustomerId"] = obj.customer_id;
+                    Session["CustomerName"] = newCus.user_name;
+                    Session["CustomerId"] = newCus.customer_id;
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -162,7 +166,6 @@ namespace ShowroomManagement.Controllers
 
             return View(customer);
         }
-
         // GET: Customers/Edit/5
         public ActionResult Edit(int? id)
         {

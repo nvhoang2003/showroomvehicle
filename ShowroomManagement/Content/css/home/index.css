@@ -1030,3 +1030,8 @@ ul.menu {
     }
 .col-lg-4 offset-lg-7 .content-video {
 }
+.content-video{
+    position:relative;
+    padding-left:-15px !important;
+    margin-bottom:-3px !important;
+}

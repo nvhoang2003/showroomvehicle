@@ -1,4 +1,4 @@
-﻿@model ShowroomManagement.Models.customer
+﻿@model ShowroomManagement.Models.RegisterModel
 @{
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
@@ -11,7 +11,6 @@
 
     <link rel="stylesheet" href="~/Content/css/global.css" />
     <link rel="stylesheet" href="~/Content/css/customer/login.css" />
-    <link rel="stylesheet" href="~/Content/css/customer/register.css" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" />
     <link rel="stylesheet"
@@ -22,154 +21,86 @@
           href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" />
+    <link rel="stylesheet" href="~/Content/css/customer/register.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-    <form method="post" asp-action="Register" asp-controller="Customers" class="login-form">
-        @Html.AntiForgeryToken()
-        <div class="heading">
-            <div class="become-an-exclusive">Register Account</div>
-        </div>
-        <div class="form">
-            <div class="form-group">            
-                <div class="rectangle">
-                    @Html.LabelFor(model => model.user_name, "Username:", htmlAttributes: new { @class = "icon-field" })
-                </div>
-                @Html.TextBoxFor(u => u.user_name, new { @class = "inputfield", placeholder = "example@email.com" })
-                @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" })            
-           </div>
-            <div class="form-group">
-                <div class="rectangle">
-                    @Html.LabelFor(model => model.user_name, "Password:", htmlAttributes: new { @class = "icon-field" })
-                </div>
-                @Html.TextBoxFor(u => u.user_name, new { @class = "inputfield", placeholder = "*********" })
-                @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" })
+    <div class="register">
+        <form method="post" asp-action="Register" asp-controller="Customers" class="login-form">
+            @Html.AntiForgeryToken()
+            <div class="heading">
+                <div class="become-an-exclusive">Register Account</div>
             </div>
-            <div class="form-group">
-                <div class="rectangle">
-                    @Html.LabelFor(model => model.user_name, "RetypePassword:", htmlAttributes: new { @class = "icon-field" })
+            <div class="form">
+                <div class="form-group">
+                    <div class="rectangle">
+                        @Html.LabelFor(model => model.username, "Username:", htmlAttributes: new { @class = "icon-field" })
+                    </div>
+                    @Html.TextBoxFor(u => u.username, new { @class = "inputfield", placeholder = "example@email.com" })
+                    @Html.ValidationMessageFor(m => m.username, "", new { @class = "text-danger" })
                 </div>
-                @Html.TextBoxFor(u => u.password, new { @class = "div6", placeholder = "*********" })
-                @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
-                <input type="button" class="show" id="showHidePassword" value="SHOW" />
-                <img class="icon-field" alt="" src="~/Content/images/lock@2x.png" />
+                <div class="form-group">
+                    <div class="rectangle">
+                        @Html.LabelFor(model => model.password, "Password:", htmlAttributes: new { @class = "icon-field" })
+                    </div>
+                    @Html.TextBoxFor(u => u.password, new { @class = "div6", placeholder = "*********", @id = "password" })
+                    @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                    <i class="fa fa-eye show" aria-hidden="true" id="showHidePassword"></i>
+                </div>
+
+                <div class="form-group">
+                    <div class="rectangle">
+                        @Html.LabelFor(model => model.confirmPassword, "Confirm:", htmlAttributes: new { @class = "icon-field" })
+                    </div>
+                    @Html.TextBoxFor(u => u.confirmPassword, new { @class = "div6", placeholder = "*********", @type = "password", @id = "confirmPassword" })
+                    @Html.ValidationMessageFor(m => m.confirmPassword, "", new { @class = "text-danger" })
+                    <i class="fa fa-eye show" aria-hidden="true" id="showHideConfirmPassword"></i>
+                </div>
+
+
+                <div class="btn-prytemplate-2">
+                    <button class="btn-prytemplate-2-child">
+                        Register
+                        <img class="ex-iconarrow-right-copy"
+                             alt=""
+                             src="~/Content/images/exiconarrowright-copy@2x.png" />
+                    </button>
+                </div>
             </div>
-            <div class="btn-prytemplate-2">
-                <button class="btn-prytemplate-2-child">
-                    Login
-                    <img class="ex-iconarrow-right-copy"
-                         alt=""
-                         src="~/Content/images/exiconarrowright-copy@2x.png" />
-                </button>
+            <div class="register-link">
+                <span>Already have an account?</span>
+                <b>
+                    @Html.ActionLink("SIGN IN HERE", "Login")
+                </b>
             </div>
-        </div>
-        <div class="register-link">
-            <span>Don’t have an account?</span>
-            <b>
-                @Html.ActionLink("SIGN UP HERE", "Register")
-            </b>
-        </div>
-        <img class="image"
-             alt=""
-             src="~/Content/images/z4974849751087-aca979b314547c417c5a5057a962db9f-1@2x.png" />
-    </form>
+            <img class="image"
+                 alt=""
+                 src="~/Assests/extra-images/register.png" />
+        </form>
+    </div>
 </body>
 </html>
 <script>
     $("#showHidePassword").click(function () {
-        if ($(this).val() == "SHOW") {
-            $(this).val("HIDE");
-            $("#password").attr("type", "text");
-        } else {
-            $(this).val("SHOW");
-            $("#password").attr("type", "password");
-        }
+        togglePasswordVisibility("password", $(this));
     });
+
+    $("#showHideConfirmPassword").click(function () {
+        togglePasswordVisibility("confirmPassword", $(this));
+    });
+
+    function togglePasswordVisibility(fieldId, icon) {
+        var passwordField = $("#" + fieldId);
+
+        if (passwordField.attr("type") === "password") {
+            passwordField.attr("type", "text");
+            icon.removeClass("fa-eye").addClass("fa-eye-slash");
+        } else {
+            passwordField.attr("type", "password");
+            icon.removeClass("fa-eye-slash").addClass("fa-eye");
+        }
+    }
 </script>
-@*@model ShowroomManagement.Models.customer
-
-    @{
-        ViewBag.Title = "Register";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-
-    <h2>Register</h2>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>customer</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.user_name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.first_name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.last_name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.date_of_birth, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.date_of_birth, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.date_of_birth, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.phone_number, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.phone_number, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.phone_number, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-*@

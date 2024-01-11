@@ -23,57 +23,67 @@
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-    <form method="post" asp-action="Login" asp-controller="Customers" class="login-form">
-        @Html.AntiForgeryToken()
-        <div class="heading">
-            <div class="become-an-exclusive">Welcome to Showroom</div>
-        </div>
-        <div class="form">
-            <div class="form-group">
-                <div class="rectangle"></div>
-                @Html.TextBoxFor(u => u.user_name, new { @class = "inputfield", placeholder = "example@email.com" })
-                @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" })
-                <img class="icon-field" alt="" src="~/Content/images/iconmail@2x.png" />
+    <div class="login">
+        <form method="post" asp-action="Login" asp-controller="Customers" class="login-form">
+            @Html.AntiForgeryToken()
+            <div class="heading">
+                <div class="become-an-exclusive">Welcome to Showroom</div>
             </div>
-            <div class="form-group">
-                <div class="rectangle"></div>
-                @Html.TextBoxFor(u => u.password, new { @class = "div6", placeholder = "*********" })
-                @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
-                <input type="button" class="show" id="showHidePassword" value="SHOW" />
-                <img class="icon-field" alt="" src="~/Content/images/lock@2x.png" />
+            <div class="form">
+                <div class="form-group">
+                    <div class="rectangle"></div>
+                    @Html.TextBoxFor(u => u.user_name, new { @class = "inputfield", placeholder = "example@email.com" })
+                    @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" })
+                    <img class="icon-field" alt="" src="~/Content/images/iconmail@2x.png" />
+                </div>
+                <div class="form-group">
+                    <div class="rectangle"></div>
+                    @Html.TextBoxFor(u => u.password, new { @class = "div6", placeholder = "*********" })
+                    @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                    <i class="fa fa-eye show" aria-hidden="true" id="showHidePassword"></i>
+                    <img class="icon-field" alt="" src="~/Content/images/lock@2x.png" />
+                </div>
+                <div class="btn-prytemplate-2">
+                    <button class="btn-prytemplate-2-child">
+                        Login
+                        <img class="ex-iconarrow-right-copy"
+                             alt=""
+                             src="~/Content/images/exiconarrowright-copy@2x.png" />
+                    </button>
+                </div>
             </div>
-            <div class="btn-prytemplate-2">
-                <button class="btn-prytemplate-2-child">
-                    Login
-                    <img class="ex-iconarrow-right-copy"
-                         alt=""
-                         src="~/Content/images/exiconarrowright-copy@2x.png" />
-                </button>
+            <div class="register-link">
+                <span>Don’t have an account?</span>
+                <b>
+                    @Html.ActionLink("SIGN UP HERE", "Register")
+                </b>
             </div>
-        </div>
-        <div class="register-link">
-            <span>Don’t have an account?</span>
-            <b>
-                @Html.ActionLink("SIGN UP HERE", "Register")
-            </b>
-        </div>
-        <img class="image"
-             alt=""
-             src="~/Content/images/z4974849751087-aca979b314547c417c5a5057a962db9f-1@2x.png" />
-    </form>
+            <img class="image"
+                 alt=""
+                 src="~/Content/images/z4974849751087-aca979b314547c417c5a5057a962db9f-1@2x.png" />
+        </form>
+    </div>
+
 </body>
 </html>
 <script>
     $("#showHidePassword").click(function () {
-        if ($(this).val() == "SHOW") {
-            $(this).val("HIDE");
-            $("#password").attr("type", "text");
-        } else {
-            $(this).val("SHOW");
-            $("#password").attr("type", "password");
-        }
+        togglePasswordVisibility("password", $(this));
     });
+
+    function togglePasswordVisibility(fieldId, icon) {
+        var passwordField = $("#" + fieldId);
+
+        if (passwordField.attr("type") === "password") {
+            passwordField.attr("type", "text");
+            icon.removeClass("fa-eye").addClass("fa-eye-slash");
+        } else {
+            passwordField.attr("type", "password");
+            icon.removeClass("fa-eye-slash").addClass("fa-eye");
+        }
+    }
 </script>

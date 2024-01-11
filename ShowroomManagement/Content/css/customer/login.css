@@ -1,4 +1,8 @@
-﻿
+﻿.login{
+    position:relative;
+    padding-top:5rem;
+    padding-bottom:5rem;
+}
 .login-form {
     display: flex;
     justify-content: center;
@@ -117,8 +121,8 @@
 
 .show {
     width: 8%;
-    top: 34.33%;
-    left: 84.00%;
+    top: 38.33%;
+    left: 86.00%;
     font-size: 12px;
     line-height: 22.53px;
     color: #9e9e9e;

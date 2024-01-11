@@ -4,6 +4,169 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoMobile</title>
+    <link href="~/Assests/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Assests/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/Assests/css/chosen.css" rel="stylesheet">
+    <link href="~/Assests/css/iconmoon.css" rel="stylesheet">
+    <link href="~/Assests/css/style.css" rel="stylesheet">
+    <link href="~/Assests/css/cs-automobile-plugin.css" rel="stylesheet">
+    <link href="~/Assests/css/color.css" rel="stylesheet">
+    <link href="~/Assests/css/widget.css" rel="stylesheet">
+    <link href="~/Assests/css/responsive.css" rel="stylesheet">
+    <link href="~/Content/css/home/about.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Assests/scripts/jquery.js"></script>
+    <script src="~/Assests/scripts/modernizr.js"></script>
+    <script src="~/Assests/scripts/bootstrap.min.js"></script>
+</head>
+<body class="wp-automobile">
+    <div class="wrapper">
+        <div class="main-section">
+            <div class="page-section" style="background:url(~/Assests/extra-images/user-bg-img.jpg) no-repeat;background-size:cover;min-height:175px;margin-top:-30px;margin-bottom:-129px;"></div>
+            <div class="page-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="cs-user-account-holder">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <ul class="cs-user-accounts-list">
+                                            <li><a href="user-car-listing.html">My vehicles</a></li>
+                                            <li><a href="user-car-shortlist.html">OrderHistory</a></li>
+                                            <li><a href="user-payments.html">Maintenance - Repair</a></li>
+                                            <li class="active"><a href="user-genral-setting.html">Profile Settings</a></li>
+                                            <li><a href="#">Sign Out</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="cs-user-section-title">
+                                            <h4>Genral Settings</h4>
+                                        </div>
+                                    </div>
+                                    <form class="user-setting">
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Full Name</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Email Address</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <label>Name</label>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <select data-placeholder="Select Make" tabindex="1" class="chosen-select">
+                                                                    <option value="United States">United States</option>
+                                                                    <option value="United Kingdom">United Kingdom</option>
+                                                                    <option value="Afghanistan">Afghanistan</option>
+                                                                    <option value="United Kingdom">United Kingdom</option>
+                                                                    <option value="Afghanistan">Afghanistan</option>
+                                                                    <option value="United Kingdom">United Kingdom</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <label>Date of Birth</label>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <select data-placeholder="Select Make" tabindex="1" class="chosen-select">
+                                                                    <option value="United States">01</option>
+                                                                    <option value="United Kingdom">02</option>
+                                                                    <option value="Afghanistan">03</option>
+                                                                    <option value="Afghanistan">04</option>
+                                                                    <option value="Afghanistan">05</option>
+                                                                    <option value="Afghanistan">06</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Country</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <select data-placeholder="Select Make" tabindex="1" class="chosen-select">
+                                                    <option value="United States">United States</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>City</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <select data-placeholder="Select Make" tabindex="1" class="chosen-select">
+                                                    <option value="United States">United States</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-md-12">
+                                                <div class="cs-field"><div class="cs-btn-submit"><input type="submit" value="Save Changes"></div></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Assests/scripts/responsive.menu.js"></script>
+    <script src="~/Assests/scripts/chosen.select.js"></script>
+    <script src="~/Assests/scripts/slick.js"></script>
+    <script src="~/Assests/scripts/echo.js"></script>
+    <!-- Put all Functions in functions.js -->
+    <script src="~/Assests/scripts/functions.js"></script>
+</body>
+
+</html>
 <div class="m-5 card-body">
     <h2 class="text-center">Edit Your Profile</h2>
 

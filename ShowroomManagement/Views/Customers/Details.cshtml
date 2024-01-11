@@ -4,63 +4,366 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
-<div class="m-5">
-    <h2>Your Information</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="card-body align-items-center">
-        <hr />
-        <dl class="dl-horizontal row">
-            <dt class="col-2">
-                @Html.DisplayNameFor(model => model.user_name)
-            </dt>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoMobile</title>
+    <link href="~/Assests/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Assests/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/Assests/css/chosen.css" rel="stylesheet">
+    <link href="~/Assests/css/iconmoon.css" rel="stylesheet">
+    <link href="~/Assests/css/style.css" rel="stylesheet">
+    <link href="~/Assests/css/cs-automobile-plugin.css" rel="stylesheet">
+    <link href="~/Assests/css/color.css" rel="stylesheet">
+    <link href="~/Assests/css/widget.css" rel="stylesheet">
+    <link href="~/Assests/css/responsive.css" rel="stylesheet">
+    <link href="~/Content/css/home/about.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Assests/scripts/jquery.js"></script>
+    <script src="~/Assests/scripts/modernizr.js"></script>
+    <script src="~/Assests/scripts/bootstrap.min.js"></script>
+</head>
+<body class="wp-automobile">
+    <div class="wrapper">
+        <div class="main-section">
+            <div class="page-section" style="background:url(~/Assests/extra-images/user-bg-img.jpg) no-repeat;background-size:cover;min-height:175px;margin-top:-30px;margin-bottom:-129px;"></div>
+            <div class="page-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="cs-user-account-holder">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <ul class="cs-user-accounts-list">
+                                            <li><a href="user-car-listing.html">My vehicles</a></li>
+                                            <li><a href="user-car-shortlist.html">OrderHistory</a></li>
+                                            <li><a href="user-payments.html">Maintenance - Repair</a></li>
+                                            <li class="active"><a href="user-genral-setting.html">Profile Settings</a></li>
+                                            <li><a href="#">Sign Out</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="cs-user-section-title">
+                                            <h4>Genral Settings</h4>
+                                        </div>
+                                    </div>
+                                    <form class="user-setting">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="cs-profile-pic">
+                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                    <div class="profile-pic">
+                                                        <div class="cs-media">
+                                                            <figure> <img src="~/Assests/extra-images/profile-pic.jpg" alt="" /> </figure>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Full Name</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Email Address</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <label>Name</label>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <select data-placeholder="Select Make" tabindex="1" class="chosen-select">
+                                                                    <option value="United States">United States</option>
+                                                                    <option value="United Kingdom">United Kingdom</option>
+                                                                    <option value="Afghanistan">Afghanistan</option>
+                                                                    <option value="United Kingdom">United Kingdom</option>
+                                                                    <option value="Afghanistan">Afghanistan</option>
+                                                                    <option value="United Kingdom">United Kingdom</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <label>Date of Birth</label>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <select data-placeholder="Select Make" tabindex="1" class="chosen-select">
+                                                                    <option value="United States">01</option>
+                                                                    <option value="United Kingdom">02</option>
+                                                                    <option value="Afghanistan">03</option>
+                                                                    <option value="Afghanistan">04</option>
+                                                                    <option value="Afghanistan">05</option>
+                                                                    <option value="Afghanistan">06</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Country</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <select data-placeholder="Select Make" tabindex="1" class="chosen-select">
+                                                    <option value="United States">United States</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>City</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <select data-placeholder="Select Make" tabindex="1" class="chosen-select">
+                                                    <option value="United States">United States</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>About us</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <textarea></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="cs-switch-holder">
+                                                    <label for="someSwitchOptionDefault">Contact Form</label>
+                                                    <div class="material-switch">
+                                                        <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox" />
+                                                        <label for="someSwitchOptionDefault" class="label-default"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="cs-switch-holder">
+                                                    <label for="someSwitchOptionPrimary">Account Activation</label>
+                                                    <div class="material-switch">
+                                                        <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox" />
+                                                        <label for="someSwitchOptionPrimary" class="label-default"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="cs-seprator"></div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <h6>Contact Information</h6>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Mobile Number</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Phone number</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Emaill Address</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="cs-seprator"></div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <h6>Update password</h6>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Password</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label>Confirm password</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <input type="text" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="cs-seprator"></div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <h6>Social icons</h6>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="cs-field">
+                                                    <a href="#" data-original-title="Facebook">Facebook<i class="icon-facebook2"></i></a>
+                                                </div>
+                                                <div class="cs-field">
+                                                    <a href="#" data-original-title="Twitter">Twitter<i class="icon-twitter2"></i></a>
+                                                </div>
+                                                <div class="cs-field">
+                                                    <a href="#" data-original-title="Linkedin">LinkedIn<i class="icon-linkedin22"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cs-field-holder">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-md-12">
+                                                <div class="cs-field"><div class="cs-btn-submit"><input type="submit" value="Save Changes"></div></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
 
-            <dd class="col-9">
-                @Html.DisplayFor(model => model.user_name)
-            </dd>
-
-            <dt class="col-2">
-                @Html.DisplayNameFor(model => model.first_name)
-            </dt>
-
-            <dd class="col-9">
-                @Html.DisplayFor(model => model.first_name)
-            </dd>
-
-            <dt class="col-2">
-                @Html.DisplayNameFor(model => model.last_name)
-            </dt>
-
-            <dd class="col-9">
-                @Html.DisplayFor(model => model.last_name)
-            </dd>
-
-            <dt class="col-2">
-                @Html.DisplayNameFor(model => model.date_of_birth)
-            </dt>
-
-            <dd class="col-9">
-                @Html.DisplayFor(model => model.date_of_birth)
-            </dd>
-
-            <dt class="col-2">
-                @Html.DisplayNameFor(model => model.phone_number)
-            </dt>
-
-            <dd class="col-9">
-                @Html.DisplayFor(model => model.phone_number)
-            </dd>
-
-            <dt class="col-2">
-                @Html.DisplayNameFor(model => model.email)
-            </dt>
-
-            <dd class="col-9">
-                @Html.DisplayFor(model => model.email)
-            </dd>
-
-        </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section" style="background:#19171a;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="cs-ad" style="text-align:center; padding:55px 0 32px;">
+                                <div class="cs-media">
+                                    <figure>
+                                        <img src="~/Assests/extra-images/cs-ad-img.jpg" alt="" />
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.customer_id } ,new { @class="btn btn-primary" } )
-    </p>
-</div>
+    <script src="~/Assests/scripts/responsive.menu.js"></script>
+    <script src="~/Assests/scripts/chosen.select.js"></script>
+    <script src="~/Assests/scripts/slick.js"></script>
+    <script src="~/Assests/scripts/echo.js"></script>
+    <!-- Put all Functions in functions.js -->
+    <script src="~/Assests/scripts/functions.js"></script>
+</body>
+
+</html>
+@*<div class="m-5">
+        <h2>Your Information</h2>
+
+        <div class="card-body align-items-center">
+            <hr />
+            <dl class="dl-horizontal row">
+                <dt class="col-2">
+                    @Html.DisplayNameFor(model => model.user_name)
+                </dt>
+
+                <dd class="col-9">
+                    @Html.DisplayFor(model => model.user_name)
+                </dd>
+
+                <dt class="col-2">
+                    @Html.DisplayNameFor(model => model.first_name)
+                </dt>
+
+                <dd class="col-9">
+                    @Html.DisplayFor(model => model.first_name)
+                </dd>
+
+                <dt class="col-2">
+                    @Html.DisplayNameFor(model => model.last_name)
+                </dt>
+
+                <dd class="col-9">
+                    @Html.DisplayFor(model => model.last_name)
+                </dd>
+
+                <dt class="col-2">
+                    @Html.DisplayNameFor(model => model.date_of_birth)
+                </dt>
+
+                <dd class="col-9">
+                    @Html.DisplayFor(model => model.date_of_birth)
+                </dd>
+
+                <dt class="col-2">
+                    @Html.DisplayNameFor(model => model.phone_number)
+                </dt>
+
+                <dd class="col-9">
+                    @Html.DisplayFor(model => model.phone_number)
+                </dd>
+
+                <dt class="col-2">
+                    @Html.DisplayNameFor(model => model.email)
+                </dt>
+
+                <dd class="col-9">
+                    @Html.DisplayFor(model => model.email)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.customer_id } ,new { @class="btn btn-primary" } )
+        </p>
+    </div>*@

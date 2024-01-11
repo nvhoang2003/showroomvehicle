@@ -16,3 +16,12 @@
         effect: 'fade'
     });
 });
+$(document).ready(function () {
+    $('.menu_car > a').on('click', function (e) {
+        e.preventDefault(); 
+        toggleDropdown(); 
+    });
+    $('#mega_oto_tab .nav-link').on('click', function () {
+        toggleDropdown();
+    });
+});

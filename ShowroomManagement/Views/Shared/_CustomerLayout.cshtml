@@ -9,200 +9,122 @@
     <link rel="stylesheet" type="text/css" target="_blank" href="~/Content/css/share/navbar.css" />
     <link rel="stylesheet" type="text/css" target="_blank" href="~/Content/css/share/footer.css" />
     <link rel="stylesheet" type="text/css" target="_blank" href="~/Content/css/home/index.css" />
-    <script src="jquery-3.7.1.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="~/Content/js/home/nav.js"></script>
 </head>
-
 <body>
-    @Styles.Render("~/Content/css/home.css")
-    @Styles.Render("~/")
-    <div class="navbarCus">
     <div class="navbarCus">
         <nav>
             <div class="logo">
                 <a href="~/Home/Index">
                     <img src="~/Content/images/logos/logo3.jpg" alt="Logo" />
                 </a>
-
             </div>
             <ul>
                 <li>
                     <a href="~/Home/About">About us</a>
                 </li>
-                <li class="mega_main menu_car">
-                    <a onclick="gtag_custom_link(this);">Car</a>
-                    <div class="mega-dropdown mega_menu">
+                <li class="mega_main menu_car" id="vehicles" href="#">
+                    <a id="vehicles">Vehicles</a>
+                    <div class="mega-dropdown mega_menu" id="megaMenuVehicles">
                         <div class="mega_menu_container">
                             <div id="block-megamainmenuoto">
                                 <div class="hd-mega">
-                                    <nav>
+                                    <nav class="navmenu">
                                         <div class="nav nav-tabs" id="mega_oto_tab" role="tablist">
                                             <a class="nav-item nav-link active-tab" id="dong_co_dien" data-toggle="tab"
-                                               href="#dong_co_dien_content" role="tab" aria-controls="nav-dong_co_dien"
-                                               aria-selected="true" onclick="gtag_custom_link(this);">Động cơ điện</a>
-                                            <a class="nav-item nav-link" id="dong_co_xang" data-toggle="tab"
-                                               href="#dong_co_xang_content" role="tab" aria-controls="nav-dong_co_xang"
-                                               aria-selected="false" onclick="gtag_custom_link(this);">Động cơ xăng</a>
+                                               href="~/VehicleData/List" role="tab" aria-controls="nav-dong_co_dien"
+                                               aria-selected="true">Select Branch</a>
                                         </div>
                                     </nav>
-
                                 </div>
                                 <div class="tab-content" id="mega_oto_tab_content">
                                     <div class="tab-pane fade show active in" id="dong_co_dien_content" role="tabpanel"
                                          aria-labelledby="nav-dong_co_dien">
                                         <div class="row justify-content-center menu-show">
                                             <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-dien-vf5.html"
-                                                   onclick="gtag_custom_link(this);">
+                                                <span class="item_name">Lamborghini</span>
+                                                <a class="img-menu1" href="~/VehicleData/VehicleList">
                                                     <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/vf-5-car-hover_1695227730.png"
+                                                         src="~/Assests/extra-images/lambo1.jpg"
                                                          alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/vf-5-car_1695227667.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/vf-5-car_1695227667.png">
-                                                    <div class="item_name">VF 5</div>
                                                 </a>
+                                                <div class="view-more">
+                                                    <a href="~/VehicleData/VehicleList" class="btn-view">View Details</a>
+                                                </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-dien-vf6.html"
-                                                   onclick="gtag_custom_link(this);">
+                                                <span class="item_name">Mercedes</span>
+                                                <a class="img-menu2" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-dien-vf6.html">
                                                     <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/vf6-thumbnail-hover_1696931862.png"
+                                                         src="~/Assests/extra-images/mercedes2.jpg"
+                                                         style="margin-left:-10px;"
                                                          alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/vf6-thumbnail_1696931858.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/vf6-thumbnail_1696931858.png">
-                                                    <div class="item_name">VF 6</div>
                                                 </a>
-
-
+                                                <div class="view-more">
+                                                    <a href="~/VehicleData/VehicleList" class="btn-view">View Details</a>
+                                                </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-dien-vfe34.html"
-                                                   onclick="gtag_custom_link(this);">
-                                                    <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/VFe34_hover_1654678980_1656324050.png"
+                                                <span class="item_name">VinFast</span>
+                                                <a class="img-menu3" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-dien-vfe34.html">
+                                                    <img class="img-mega-menu-hover" id="img-menu3"
+                                                         src="~/Assests/extra-images/vinfastmenu3.jpg"
+                                                         style="width:80%; margin-top:10px; margin-left:7px;"
                                                          alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/Vfe34_1656324042.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/Vfe34_1656324042.png">
-                                                    <div class="item_name">VF e34</div>
                                                 </a>
+                                                <div class="view-more">
+                                                    <a href="~/VehicleData/VehicleList" class="btn-view">View Details</a>
+                                                </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <a class="img"
-                                                   href="https://reserve.vinfastauto.com/?utm_source=herobanner&amp;utm_medium=cpc&amp;utm_campaign=ra_mat_vf7&amp;utm_content=kv"
-                                                   onclick="gtag_custom_link(this);">
+                                                <span class="item_name">Ferrari</span>
+                                                <a class="img-menu4"
+                                                   href="https://reserve.vinfastauto.com/?utm_source=herobanner&amp;utm_medium=cpc&amp;utm_campaign=ra_mat_vf7&amp;utm_content=kv">
                                                     <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/VF7-icon-hover_1700541533.png"
+                                                         src="~/Assests/extra-images/ferrarimenu2.jpg"
+                                                         style="width:140px;"
                                                          alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/VF7-icon_1700541526.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/VF7-icon_1700541526.png">
-                                                    <div class="item_name">VF 7</div>
                                                 </a>
+                                                <div class="view-more">
+                                                    <a href="~/VehicleData/VehicleList" class="btn-view">View Details</a>
+                                                </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-vf8.html"
-                                                   onclick="gtag_custom_link(this);">
+                                                <span class="item_name">Lexus</span>
+                                                <a class="img-menu5" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-vf8.html">
                                                     <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/VF8_hover_1654748200_1656324067.png"
+                                                         style="margin-left:-20px; margin-top:10px;"
+                                                         src="~/Assests/extra-images/lexusmenu.jpg"
                                                          alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/VF8_1654748056_1656324061.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/VF8_1654748056_1656324061.png">
-                                                    <div class="item_name">VF 8</div>
                                                 </a>
+                                                <div class="view-more">
+                                                    <a href="~/VehicleData/VehicleList" class="btn-view">View Details</a>
+                                                </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-vf9.html"
-                                                   onclick="gtag_custom_link(this);">
+                                                <span style="z-index:100" class="item_name">BMW</span>
+                                                <a class="img-menu6" href="https://shop.vinfastauto.com/vn_vi/dat-coc-xe-vf9.html">
                                                     <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/VF9_hover_1654748359_1656324099.png"
+                                                         style="height:140px; margin-top:-25px; margin-left:-5px; padding-top:20px;"
+                                                         src="~/Assests//extra-images/bmw.jpg"
                                                          alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/VF9_1654748214_1656324093.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/VF9_1654748214_1656324093.png">
-                                                    <div class="item_name">VF 9</div>
                                                 </a>
+                                                <div class="view-more">
+                                                    <a href="~/VehicleData/VehicleList" class="btn-view">View Details</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade in" id="dong_co_xang_content" role="tabpanel"
-                                         aria-labelledby="nav-dong_co_xang">
-                                        <div class="row justify-content-center menu-show">
-                                            <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/car-fadil.html"
-                                                   onclick="gtag_custom_link(this);">
-                                                    <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/Fadil_hover_1654678945_1656323988.png"
-                                                         alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/Fadil_1654679273_1656323968.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/Fadil_1654679273_1656323968.png">
-                                                    <div class="item_name">Fadil</div>
-                                                </a>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/car-lux-a.html"
-                                                   onclick="gtag_custom_link(this);">
-                                                    <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/Lux-A2_1654678930_1656323945.png"
-                                                         alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/Lux-A2_1654679289_1656323935.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/Lux-A2_1654679289_1656323935.png">
-                                                    <div class="item_name">LUX A2.0</div>
-                                                </a>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/car-lux-sa.html"
-                                                   onclick="gtag_custom_link(this);">
-                                                    <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/Lux-SA2_1654678917_1656323897.png"
-                                                         alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/Lux-SA2_1654679300_1656323888.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/Lux-SA2_1654679300_1656323888.png">
-                                                    <div class="item_name">LUX SA2.0</div>
-                                                </a>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <a class="img" href="https://shop.vinfastauto.com/vn_vi/car-president.html"
-                                                   onclick="gtag_custom_link(this);">
-                                                    <img class="img-mega-menu-hover"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/President_hover_1657089840.png"
-                                                         alt="">
-                                                    <img class="img-mega-menu"
-                                                         data-src="https://storage.googleapis.com/vinfast-data-01/President_1654679311_1656324001.png"
-                                                         alt="" loading="lazy"
-                                                         src="https://storage.googleapis.com/vinfast-data-01/President_1654679311_1656324001.png">
-                                                    <div class="item_name">President</div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <a href="~/ServiceOrder/Create">Aftersales services</a>
+                    <a href="~/ServiceOrder/Home">Aftersales services</a>
                 </li>
                 <li>
                     <a href="~/Home/Contact">Contact</a>
@@ -306,7 +228,7 @@
                             </div>
                             <div class="menu-item menu-4" id="menu-charging-station">
                                 <div class="header">
-                                    <p class="menu-title"><a href="~/Home/ContactUs">CONTACT US</a></p>
+                                    <p class="menu-title"><a href="~/Home/Contact">CONTACT US</a></p>
                                 </div>
                             </div>
                             <div class="menu-item menu-5" id="menu-privacy">
@@ -359,7 +281,5 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
 </body>
 </html>

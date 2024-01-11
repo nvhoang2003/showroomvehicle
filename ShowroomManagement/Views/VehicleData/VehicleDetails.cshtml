@@ -1,281 +1,521 @@
-﻿
-@{
-    ViewBag.Title = "VehicleDetails";
-    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
-}
-
-@model ShowroomManagement.Models.vehicle_data
+﻿@model ShowroomManagement.Models.vehicle_data
 
 @{
     ViewBag.Title = "VehicleDetails";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
-@Styles.Render("~/Content/css/vehicledata/detail.css")
-@*@Scripts.Render("https://unpkg.com/swiper/swiper-bundle.min.js")*@
-@*@Scripts.Render("~/Content/js/home/index.js")*@
-<div id="main" class="main clearfix">
-    <div id="block-banner" class="block-banner block">
-        <div class="block-banner-img">
-            <img class="d-none d-sm-block" src="https://vinfastauto.us/themes/custom/vinfast_v2/images/v3/vf-8/VF8.webp" alt="VF 8" data-cookiecategory="646">
-        </div>
-        <div class="block-banner-desc">
-            <div class="container">
-                <div class="banner-desc-left">
-                    <span class="banner-desc-slogan slogan">Vehicle information, specifications.</span>
-                    <h2>@Html.DisplayFor(model => model.vehicle.name)</h2>
-                    <h3>
-                        SPORTY LUXURY SEDAN
-                    </h3>
-                </div>
-                <div class="banner-desc-right">
-                    <div class="banner-desc-right_content">
-                        <div class="content-item content-center">
-                            <h5>@Html.DisplayFor(model => model.vehicle.branch)</h5>
-                            <p>
-                               Color: @Html.DisplayFor(model => model.color) <a class="disclaimer-number" href="#block-specs"><sup>*</sup></a>
-                            </p>
-                        </div>
-                        <div class="content-item">
-                            <h5>
-                                <small>From</small> $ @Html.DisplayFor(model => model.vehicle.price)
-                            </h5>
-                            <p>
-                                For 24 months <a class="btn-offer link-effect link-effect-hover" href="#block-offer">View Offers</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="banner-desc-right_buttons d-flex flex-column align-items-center justify-content-between">
-                        <button type="button" class="btn btn--animated btn--primary--blue btn--border--blue" data-toggle="modal" data-target="#fresh-order-vf8-modal">Order Now</button>
-                        <a id="btn-get-offer-2" href="https://vinfastus.my.site.com/TestDriveRequest" class="btn btn--animated btn--primary--white btn--border--blue">Schedule A Test Drive</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="block-exterior" class="block-exterior block-design block">
-        <div class="container">
-            <div class="block-header">
-                <div class="row">
-                    <div class="col-12 text-md-center">
-                        <h2 class="block-title">
-                            Sophistication &amp; comfort
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-8 col-lg-6 text-md-center m-md-auto">
-                        <p class="block-desc">
-                            State-of-the-art technology and unrivaled interior space combined with stunning Pininfarina design.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="block-slider">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="colorExterior1" role="tabpanel" aria-labelledby="colorExterior1-tab">
-                        <div class="colorSwiper1 swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <picture>
-                                        <source srcset="https://vinfastauto.us/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-gray.webp" type="image/webp">
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-red.webp">
-                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-red.webp" alt="exterior-color" data-cookiecategory="646">
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-@*                    <div class="tab-pane fade" id="colorExterior2" role="tabpanel" aria-labelledby="colorExterior2-tab">
-                        <div class="colorSwiper2 swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <picture>
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-gray.webp" type="image/webp">
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-gray.webp">
-                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-gray.webp" alt="exterior-color" data-cookiecategory="646">
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="colorExterior3" role="tabpanel" aria-labelledby="colorExterior3-tab">
-                        <div class="colorSwiper3 swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <picture>
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-blue.webp" type="image/webp">
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-blue.webp">
-                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-blue.webp" alt="exterior-color" data-cookiecategory="646">
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="colorExterior4" role="tabpanel" aria-labelledby="colorExterior4-tab">
-                        <div class="colorSwiper4 swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <picture>
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-yellow.webp" type="image/webp">
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-yellow.webp">
-                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-yellow.webp" alt="VinFast Car Color" data-cookiecategory="646">
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="colorExterior5" role="tabpanel" aria-labelledby="colorExterior5-tab">
-                        <div class="colorSwiper5 swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <picture>
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-green.webp" type="image/webp">
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-green.webp">
-                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-green.webp" alt="VinFast Car Color" data-cookiecategory="646">
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="colorExterior6" role="tabpanel" aria-labelledby="colorExterior6-tab">
-                        <div class="colorSwiper6 swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <picture>
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-white.webp" type="image/webp">
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-white.webp">
-                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-white.webp" alt="VinFast Car Color" data-cookiecategory="646">
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="colorExterior7" role="tabpanel" aria-labelledby="colorExterior7-tab">
-                        <div class="colorSwiper7 swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <picture>
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-black.webp" type="image/webp">
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-black.webp">
-                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-black.webp" alt="VinFast Car Color" data-cookiecategory="646">
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="colorExterior8" role="tabpanel" aria-labelledby="colorExterior8-tab">
-                        <div class="colorSwiper8 swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <picture>
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-silver.webp" type="image/webp">
-                                        <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-silver.webp">
-                                        <img src="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-color-silver.webp" alt="VinFast Car Color" data-cookiecategory="646">
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </div>*@
-                </div>
-                <div class="tab-color">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item colorExterior1">
-                            <a class="nav-link active" id="colorExterior1-tab" data-color="Crimson Red" data-toggle="tab" href="#colorExterior1" role="tab" aria-controls="colorExterior1" aria-selected="true"></a>
-                        </li>
-                        <li class="nav-item colorExterior2">
-                            <a class="nav-link" id="colorExterior2-tab" data-color="Neptune Grey" data-toggle="tab" href="#colorExterior2" role="tab" aria-controls="colorExterior2" aria-selected="false"></a>
-                        </li>          
-                        <li class="nav-item colorExterior3">
-                            <a class="nav-link" id="colorExterior3-tab" data-color="Brahminy White" data-toggle="tab" href="#colorExterior6" role="tab" aria-controls="colorExterior6" aria-selected="false"></a>
-                        </li>
-                        <li class="nav-item colorExterior4">
-                            <a class="nav-link" id="colorExterior4-tab" data-color="Jet Black" data-toggle="tab" href="#colorExterior7" role="tab" aria-controls="colorExterior7" aria-selected="false"></a>
-                        </li>
-                        <li class="nav-item colorExterior5">
-                            <a class="nav-link" id="colorExterior5-tab" data-color="Desat Silver" data-toggle="tab" href="#colorExterior8" role="tab" aria-controls="colorExterior8" aria-selected="false"></a>
-                        </li>
-                    </ul>
-                    <div class="tab-color__name" data-color="Crimson Red"></div>
-                </div>
-            </div>
-        </div>
-        <div class="detail-container container d-none d-md-block">
-            <div class="block-detail slider">
-                <div class="slides row">
-                    @foreach (var imageUrl in Model.vehicle_image.ToList())
-                    {
-                        <div class="block-detail-item col-md-5 col-lg-3">
-                            <picture>
-                                <source srcset="@imageUrl" type="image/webp">
-                                <source srcset="/themes/custom/vinfast_v2/images/v3/vf-8/exterior-dynamic.webp">
-                                <img src="@imageUrl" alt="Vehicle Images" data-cookiecategory="646">
-                            </picture>
-                        </div>                     
-                        }
-                    </div>
-            </div>
-        </div>
-    </div>
-    <div id="block-specs" class="block-specs block">
-        <div class="container">
-            <div class="field-content">
-                <div class="field-title">
-                    <h2 class="block-title">Vehicle Specification</h2>
-                </div>
-                <div class="tab-content">
-                    <div class="group-title">
-                        <div class="group-title-desktop">
-                            <div class="logo">
-                                <h2 style="margin-top:0px;">@Html.DisplayFor(model => model.vehicle.name)</h2>
-                            </div>
-                            <div class="title-type">Eco</div>
-                            <div class="title-type">Plus</div>
-                        </div>
-                    </div>
-                    <ul class="main-content">
-                        <li class="active">
-                            <div class="spec-detail show">
-                                <div class="spec-detail-content d-none d-md-flex">
-                                    <ul class="title">
-                                        <li>Overall dimension (LxWxH)</li>
-                                        <li>Wheelbase</li>
-                                        <li>Battery Capacity</li>
-                                        <li>Range per full charge (EPA)</li>
-                                        <li>Charging speed</li>
-                                        <li>Engine/e-Motor</li>
-                                        <li>Max. power</li>
-                                        <li>Vehicle warranty</li>
-                                    </ul>
-                                    <ul class="detail">
-                                        <li>187 x 76.1 x 65.6 (in)</li>
-                                        <li>116.1 (in)</li>
-                                        <li>87.7 (kWh)</li>
-                                        <li>264 mi</li>
-                                        <li>10% - 70% in 31 min</li>
-                                        <li>Motor x 2</li>
-                                        <li>349 (hp)</li>
-                                        <li>10 year / 125,000 miles</li>
-                                    </ul>
-                                    <ul class="detail">
-                                        <li>187 x 76.1 x 65.6 (in)</li>
-                                        <li>116.1 (in)</li>
-                                        <li>87.7 (kWh)</li>
-                                        <li>243 mi</li>
-                                        <li>10% - 70% in 31 min</li>
-                                        <li>Motor x 2</li>
-                                        <li>402 (hp)</li>
-                                        <li>10 year / 125,000 miles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="field-button">
-                    <button type="button" class="btn btn--animated btn--primary--blue btn--border--blue" data-toggle="modal" data-target="#fresh-order-vf8-modal">Order Now</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Auto Grid</title>
+    <link href="~/Assests/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Assests/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/Assests/css/iconmoon.css" rel="stylesheet">
+    <link href="~/Assests/css/style.css" rel="stylesheet">
+    <link href="~/Assests/css/cs-automobile-plugin.css" rel="stylesheet">
+    <link href="~/Assests/css/color.css" rel="stylesheet">
+    <link href="~/Assests/css/bootstrap-slider.css" rel="stylesheet">
+    <link href="~/Assests/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="~/Assests/css/chosen.css" rel="stylesheet">
+    <link href="~/Assests/css/widget.css" rel="stylesheet">
+    <link href="~/Assests/css/responsive.css" rel="stylesheet">
+    <link href="~/Assests/css/woocommerce.css" rel="stylesheet">
+    <script src="~/Assests/scripts/jquery.js"></script>
+    <script src="~/Assests/scripts/modernizr.js"></script>
+    <script src="~/Assests/scripts/bootstrap.min.js"></script>
+</head>
+<body class="woocommerce woocommerce-page single single-product">
+    <div class="wrapper">
+        <!-- Main Start -->
+        <div class="main-section">
+            <div class="page-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-fullwidth col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="page-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <div class="site-main">
+                                        <div class=" product type-product has-post-thumbnail product-type-simple">
+                                            <div class="images">
+                                                @foreach (var image in Model.vehicle_image)
+                                                {
+                                                    <a href="#"><img src="~/Assests/extra-images/@image.image_url" alt="shop"></a>
+                                                }
+                                                <div class="thumbnails columns-4">
+                                                    @foreach (var image in Model.vehicle_image)
+                                                    {
+                                                        <a href="#"><img src="~/Assests/extra-images/@image.image_url" alt="shop"></a>
+                                                    }
+                                                </div>
+                                            </div>
+
+                                            <div class="summary entry-summary">
+                                                <div class="star-rating" title="Rated 5 out of 5">
+                                                    <span style="width:66%"><strong class="rating">5</strong> out of 5</span>
+                                                </div>
+                                                <em>(1 customer review)</em>
+                                                <span class="stock_wrapper">Availability: <span class="stock cs-color">In stock</span></span>
+                                                <h3>Automotive Door</h3>
+                                                <span class="price">
+                                                    <ins><span class="amount cs-color">$99.00</span></ins>
+                                                    <del><span class="amount">$150.00</span></del>
+                                                </span>
+                                                <div class="description">
+                                                    <p>Phasellus egestas, nunc non consectetur hendrerit, risus mauris cursus velit, et condimentum nisi enim in eros.Nam ullamcorper neque non erat elementum vulputate. </p>
+                                                </div>
+                                                <form id="myform" method="POST" action="#" class="cart">
+                                                    <div class="quantity">
+                                                        <input type="button" value="-" class="qtyminus" field="quantity">
+                                                        <input type="text" name="quantity" value="0" class="qty">
+                                                        <input type="button" value="+" class="qtyplus" field="quantity">
+                                                    </div>
+                                                    <button class="single_add_to_cart_button button alt cs-bgcolor" type="submit">Add to cart</button>
+                                                </form>
+                                                <div class="product_meta">
+                                                    <span class="posted_in">
+                                                        Category:
+                                                        <a rel="tag" href="#">Oil &amp; Filters</a>,
+                                                        <a rel="tag" href="#">Parts</a>,
+                                                        <a rel="tag" href="#">Exterior</a>
+                                                    </span>
+                                                    <span class="posted_in">
+                                                        tags:
+                                                        <a rel="tag" href="#">Hybrid</a>,
+                                                        <a rel="tag" href="#">Radiator</a>,
+                                                        <a rel="tag" href="#">Wheel Hub</a>,
+                                                        <a rel="tag" href="#">BMW</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="columns-3">
+                                                <div class="shop-sec-title">
+                                                    <h3>Related Products</h3>
+                                                </div>
+                                                <ul class="products">
+                                                    @foreach (var vehicle in Model.vehicle.vehicle_data)
+                                                    {
+                                                        @if (vehicle.vehicle_image.Any())
+
+                                                        {
+                                                            var firstImage = vehicle.vehicle_image.First();
+                                                            <li class="product">
+                                                                <a href="#">
+                                                                    var firstImage = vehicle.vehicle_image.First();
+                                                                    <img alt="shop" src="/Assests/extra-images/@firstImage.image_url">
+                                                                    <h5>Air Filter</h5>
+                                                                    <span class="price">
+                                                                        <span class="amount">$2,000.00</span>
+                                                                    </span>
+                                                                    <div class="star-rating" title="Rated 5 out of 5">
+                                                                        <span style="width:66%"><strong class="rating">5</strong> out of 5</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        }
+
+                                                    }
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <aside class="page-sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <div class="widget woocommerce widget_product_categories">
+                                        <h6>Product Categories</h6>
+                                        <ul>
+                                            <li class="cat-item cat-item-3 cat-parent">
+                                                <a href="#">Clothes &amp; Footwear <span>(17)</span></a>
+                                                <ul class="children">
+                                                    <li><a href="#">Footwear <span>(3)</span></a></li>
+                                                    <li><a href="#">Hoodies <span>(7)</span></a></li>
+                                                    <li><a href="#">T-shirts <span>(7)</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Digital goods <span>(3)</span></a></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="widget woocommerce widget_top_rated_products">
+                                        <h6>latest Products</h6>
+                                        <ul class="product_list_widget">
+                                            <li>
+                                                <a href="#">
+                                                    <img src="~/Assests/extra-images/Shop-widget1.jpg" alt="shop">
+                                                    <span class="product-title">USB Air Compressor</span>
+                                                </a>
+                                                <span class="amount cs-color">$500.00</span>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="~/Assests/extra-images/Shop-widget2.jpg" alt="shop">
+                                                    <span class="product-title">Ninja Sound</span>
+                                                </a>
+                                                <span class="amount cs-color">$800.00</span>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="~/Assests/extra-images/Shop-widget3.jpg" alt="shop">
+                                                    <span class="product-title">Car mats for BMW</span>
+                                                </a>
+                                                <span class="amount cs-color">$900.00</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="widget woocommerce widget_shopping_cart">
+                                        <h6>Top Rated Products</h6>
+                                        <div class="widget_shopping_cart_content">
+                                            <ul class="cart_list product_list_widget">
+                                                <li class="mini_cart_item">
+                                                    <a href="#">
+                                                        <img src="~/Assests/extra-images/Shop-widget4.jpg" alt="shop">
+                                                        Brembo Sport Brakes
+                                                    </a>
+                                                    <span class="amount">$500.00</span>
+                                                    <div title="Rated 5 out of 5" class="star-rating">
+                                                        <span style="width:66%"><strong class="rating">5</strong> out of 5</span>
+                                                    </div>
+                                                </li>
+                                                <li class="mini_cart_item">
+                                                    <a href="#">
+                                                        <img src="~/Assests/extra-images/Shop-widget5.jpg" alt="shop">
+                                                        Custom spark-plug
+                                                    </a>
+                                                    <span class="amount">$800.00</span>
+                                                    <div title="Rated 5 out of 5" class="star-rating">
+                                                        <span style="width:66%"><strong class="rating">5</strong> out of 5</span>
+                                                    </div>
+                                                </li>
+                                                <li class="mini_cart_item">
+                                                    <a href="#">
+                                                        <img src="~/Assests/extra-images/Shop-widget6.jpg" alt="shop">
+                                                        Air Filter
+                                                    </a>
+                                                    <span class="amount">$900.00</span>
+                                                    <div title="Rated 5 out of 5" class="star-rating">
+                                                        <span style="width:66%"><strong class="rating">5</strong> out of 5</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                            <div class="custom-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                <div class="page-section">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="car-detail-heading">
+                                                <div class="auto-text">
+                                                    <h2>Alfa Romeo Launch Edition 2dr Coupe</h2>
+                                                    <span><i class="icon-building-o"></i> Quartz Blue Metallic</span>
+                                                    <address><i class="icon-location"></i>1840 E Garvey Ave South West Covina, CA 91791</address>
+                                                </div>
+                                                <div class="auto-price"><span class="cs-color">$17,845</span> <em>MSRP $32,000</em></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="cs-detail-nav">
+                                                <ul>
+                                                    <li><a class="active" href="#vehicle">Vehicle overview</a></li>
+                                                    <li><a href="#specification" class="">Technical Specification</a></li>
+                                                    <li><a href="#accessories">Accessories</a></li>
+                                                    <li><a href="#location">Location</a></li>
+                                                    <li><a href="#contact">Contact Us</a></li>
+                                                </ul>
+                                                <div class="detail-btn">
+                                                    <div class="cs-button-style">
+                                                        <a class="btn-compare" href="#"><i class="icon-flow-tree"></i> Compare</a>
+                                                        <a class="btn-shortlist" href="#"><i class="icon-heart-o"></i> shortlist</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="on-scroll">
+                                                <div id="vehicle" class="auto-overview detail-content">
+                                                    <ul class="row">
+                                                        <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                            <div class="cs-media">
+                                                                <figure><i class="icon-driving2 cs-color"></i></figure>
+                                                            </div>
+                                                            <div class="auto-text">
+                                                                <span>Year</span>
+                                                                <strong>2002</strong>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                            <div class="cs-media">
+                                                                <figure><i class="icon-vehicle92 cs-color"></i></figure>
+                                                            </div>
+                                                            <div class="auto-text">
+                                                                <span>Mileage</span>
+                                                                <strong>121,899</strong>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                            <div class="cs-media">
+                                                                <figure><i class="icon-engine cs-color"></i></figure>
+                                                            </div>
+                                                            <div class="auto-text">
+                                                                <span>Trans</span>
+                                                                <strong>Automatic</strong>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                            <div class="cs-media">
+                                                                <figure><i class="icon-gas20 cs-color"></i></figure>
+                                                            </div>
+                                                            <div class="auto-text">
+                                                                <span>Fuel Type</span>
+                                                                <strong>Hybrid</strong>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <p class="more-text" style="display: block;">
+                                                        Arear view camera and lane departure warning. This car has 6 airbags fitted for your protection. It has front &amp; rear power windows, central locking and 2nd row split folding seats. Family life is made easy in this 2016 Jaguar XF. This car has Bluetooth connectivity, side curtain airbags, subwoofer, trailer sway control, sports pedals and heads up information display. This car has forward collision alert/warning. This car comes with enough seats for 5. You can relax, this car also has park assist. It has electric power assisted steering. It has 19" alloy wheels. It has an ANCAP safety rating 4. This car has starter button. Options added to vehicle includes Seats - 2nd Row Electric Folding, Sunvisors - Rear and Sunvisors - Rear.
+                                                    </p>
+                                                    <p class="more-text" style="display: block;">
+                                                        This Stunning Brand New Jaguar XF 2016 comes with 3 years / Unlimited km new car warranty. This car has an ANCAP safety rating of 4 so you can be sure you are driving with utmost safety new car available to order.Family life is made easy in this 2016 Jaguar XF. This car has Bluetooth connectivity, side curtain airbags, subwoofer, trailer sway control, sports pedals and heads up information display.
+                                                    </p>
+                                                    <p class="more-text">
+                                                        This Stunning Brand New Jaguar XF 2016 comes with 3 years / Unlimited km new car warranty. This car has an ANCAP safety rating of 4 so you can be sure you are driving with utmost safety new car available to order.Family life is made easy in this 2016 Jaguar XF.
+                                                    </p>
+                                                    <a id="load-text" href="#" class="btn-show-more cs-color"> + Show More</a>
+                                                </div>
+                                                <div id="specification" class="auto-specifications detail-content">
+                                                    <div class="section-title" style="text-align:left;">
+                                                        <h4>Technical Specifications</h4>
+                                                    </div>
+                                                    <ul class="row">
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="element-title">
+                                                                <i class="cs-color icon-engine"></i>
+                                                                <span>Engine and Drive Train</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="specifications-info">
+                                                                <ul>
+                                                                    <li>
+                                                                        <span>Number of cylinders</span>
+                                                                        <strong>825 KG</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>Displacement</span>
+                                                                        <strong>KM/L</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>Drive layout</span>
+                                                                        <strong>4 doors</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>Horespower</span>
+                                                                        <strong>1670 mm</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>rpm</span>
+                                                                        <strong>3600 mm</strong>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="specifications-info">
+                                                                <ul>
+                                                                    <li>
+                                                                        <span>Weight</span>
+                                                                        <strong>Est. 42 mpg</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>Mileage</span>
+                                                                        <strong>ECO driving mode</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>No of Doors</span>
+                                                                        <strong>Standard Bluetooth®</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>Height</span>
+                                                                        <strong>Backup camera</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>Length</span>
+                                                                        <strong>Voice recognitioN</strong>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="row">
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="element-title">
+                                                                <i class="cs-color icon-vehicle92"></i>
+                                                                <span>Transmission</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="specifications-info">
+                                                                <ul>
+                                                                    <li>
+                                                                        <span>Weiaght</span>
+                                                                        <strong>Sport gauge cluster</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>MileagE</span>
+                                                                        <strong>Sportier driver’s position</strong>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="specifications-info">
+                                                                <ul>
+                                                                    <li>
+                                                                        <span>Weiaght</span>
+                                                                        <strong>Paddle shifters</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>MileagE</span>
+                                                                        <strong>6-speed manual</strong>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div id="accessories" class="cs-auto-accessories detail-content">
+                                                    <div class="element-title">
+                                                        <i class="cs-color icon-gear42"></i>
+                                                        <span>Accessories &amp; Options</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="cs-listing-icon">
+                                                                <ul>
+                                                                    <li class="available">
+
+                                                                        <span>Automatic Stability Control</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Tire Pressure Monitoring</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Bluetooth</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Onboard computer</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Mirrors in body color</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Outside temperature display</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Body-color bumpers</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="cs-listing-icon">
+                                                                <ul>
+                                                                    <li class="available">
+
+                                                                        <span>Car Kit</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Remote central locking</span>
+                                                                    </li>
+                                                                    <li class="not-available">
+                                                                        <span>Climate control</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Cruise Control</span>
+                                                                    </li>
+                                                                    <li class="not-available">
+                                                                        <span>Roof rails</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Power sunroof</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Power windows front</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="cs-listing-icon">
+                                                                <ul>
+                                                                    <li class="available">
+
+                                                                        <span>Headlight washers</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Leather steering wheel</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Alloy wheels (17)</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Adaptive headlights</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Center rear armrest</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Front armrest</span>
+                                                                    </li>
+                                                                    <li class="available">
+
+                                                                        <span>Navigation</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main End -->
+
+    </div>
+
+    <script src="~/Assests/scripts/responsive.menu.js"></script>
+    <script src="~/Assests/scripts/chosen.select.js"></script>
+    <script src="~/Assests/scripts/slick.js"></script>
+    <script src="~/Assests/scripts/echo.js"></script>
+    <!-- Put all Functions in functions.js -->
+    <script src="~/Assests/scripts/functions.js"></script>
+
+
+</body>
+</html>

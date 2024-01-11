@@ -229,33 +229,26 @@ nav {
     height: 1.6rem
 }
 
-.mega_menu {
-    position: fixed;
-    width: 100vw;
-    z-index: 100;
-    background: #fff;
-    top: 84px;
-    box-shadow: 0 3px 6px #00000029;
-    left: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: .3s;
-    transform: translateY(-15px);
-}
-.mega-dropdown{
-    position: fixed;
-    width: 100vw;
-    z-index: 100;
-    background: #fff;
-    box-shadow: 0 3px 6px #00000029;
-    left: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: .3s;
-    transform: translateY(-15px);
+.mega-main-menu > li.active > a, .mega_menu_header.mega-main-menu > li.mega_menu_active > a {
+    color: #2c72c6;
 }
 
-.mega_menu_header.mega-main-menu > li.active .mega_menu, .mega_menu_header.mega-main-menu > li.mega_menu_active .mega_menu {
+.mega-main-menu > li.active > a, .mega_menu_header.mega-main-menu > li.mega_menu_active > a {
+    color: #1464f4;
+}
+.mega-main-menu > li.active .mega_menu, .mega_menu_header.mega-main-menu > li.mega_menu_active .mega_menu {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    z-index: 100;
+    overflow: auto;
+    max-height: 240px;
+    border-top: 2px solid #d9e1e2;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.mega-main-menu > li.active .mega_menu, .mega_menu_header.mega-main-menu > li.mega_menu_active .mega_menu {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
@@ -264,4 +257,200 @@ nav {
     max-height: 240px;
     border-top: 2px solid #d9e1e2;
     box-sizing: content-box;
+}
+
+    #megaMenuVehicles.visible {
+        opacity: 1;
+        pointer-events: auto; 
+    }
+.mega_menu_container {
+    max-width: 100% !important;
+    padding: 30px;
+}
+.hd-mega {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+#header .pc-header nav {
+    border-radius: 5px;
+    background-color: transparent;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.mega_menu .nav-tabs {
+    -webkit-box-align: center;
+    align-items: center;
+    border: none;
+}
+
+.mega_menu .nav-tabs .nav-link:not(:last-child) {
+    margin-right: 50px;
+}
+    .mega_menu .nav-tabs .nav-link.active-tab {
+        color: #1464f4;
+        font-size: 16px;
+    }
+    .mega_menu .nav-tabs .nav-link {
+        border: none;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 125%;
+        text-transform: uppercase;
+        padding: 0;
+    }
+.mega_menu .nav-tabs .nav-link {
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 125%;
+    color: #3c3c3c;
+    text-transform: uppercase;
+    padding: 0;
+}
+.nav-tabs .nav-link {
+    margin-bottom: -1px;
+    background-color: transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.mega-main-menu > li.active .mega_menu .tab-content, .mega_menu_header.mega-main-menu > li.mega_menu_active .mega_menu .tab-content {
+    padding: 48px 0 0;
+}
+
+.mega-main-menu .tab-content {
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.mega-main-menu > li.active .mega_menu .fade.show, .mega_menu_header.mega-main-menu > li.mega_menu_active .mega_menu .fade.show {
+    visibility: visible;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.col-md-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.mega-main-menu > li .mega_menu .tab-content .tab-pane a.img {
+    transition: opacity 750ms;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.5rem;
+}
+.mega-main-menu > li .mega_menu .tab-content .tab-pane a.img .img-mega-menu {
+    max-width: 270px;
+    width: 100%;
+}
+
+.mega_menu .item_name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 125%;
+    color: #007bff;
+    margin-top: 0px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.mega-main-menu > li .mega_menu .tab-content .tab-pane a.img .img-mega-menu-hover {
+    display: none;
+}
+.mega-main-menu > li:hover .mega_menu,
+.mega_menu_header.mega-main-menu > li:hover .mega_menu,
+.mega-main-menu > li.active .mega_menu,
+.mega_menu_header.mega-main-menu > li.mega_menu_active .mega_menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 100;
+    overflow: auto;
+    max-height: 240px;
+    border-top: 2px solid #d9e1e2;
+    box-sizing: content-box;
+}
+.navmenu{
+    height:40px;
+}
+.card .view-more a {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 15px;
+    text-transform: uppercase;
+    transition: color 0.4s;
+    color: #1464f4;
+    display: inline-block;
+}
+
+.btn-view {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 20px;
+    background: #1464f4;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background-color 0.4s, color 0.4s;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-view:hover {
+        background-color: transparent;
+        color: #1464f4;
+    }
+#megaMenuVehicles {
+    position: fixed;
+    width: 100vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+    transform: translateY(-2px) translateX(35%);
+    z-index: 99;
+    background: #fff;
+    box-shadow: 0 3px 6px #00000029;
+    left: 0;
+    pointer-events: none;
+}
+
+.vehicles:hover #megaMenuVehicles,
+.vehicles:focus #megaMenuVehicles {
+    visibility: visible;
+    opacity: 1;
+    z-index:100;
+    transition:none;
 }

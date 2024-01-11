@@ -17,8 +17,9 @@ namespace ShowroomManagement.Models
         [DataType(DataType.Password)]
         public string password { get; set; }
 
+
         [Required(ErrorMessage = "Please re-enter the password")]
-        [Compare("Password", ErrorMessage = "Passwords do not match")]
+        [Compare("password", ErrorMessage = "Passwords do not match")]
         [DataType(DataType.Password)]
         public string confirmPassword { get; set; }
     }

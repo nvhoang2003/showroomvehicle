@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using ShowroomManagement.Models;
 
 namespace ShowroomManagement.Controllers
@@ -16,10 +17,14 @@ namespace ShowroomManagement.Controllers
     public class VehicleDataController : Controller
     {
         private showroomEntities db = new showroomEntities();
-        
-        public ActionResult VehicleList()
+
+        public ActionResult VehicleList(int? page)
         {
-            return View();
+            int pageSize = 9;
+            int pageNumber = (page ?? 1);
+
+            var vehicle_dataList = db.vehicle_data.Include(v => v.vehicle).ToList();
+            return View(vehicle_dataList.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: VehicleData

@@ -83,6 +83,12 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -253,6 +259,7 @@
     <Compile Include="Models\purchase_order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\service_order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -351,6 +358,7 @@
     <Content Include="Assests\extra-images\blog-post-thumb.jpg" />
     <Content Include="Assests\extra-images\blog-related-post-1.jpg" />
     <Content Include="Assests\extra-images\blog-related-post-2.jpg" />
+    <Content Include="Assests\extra-images\bmw.jpg" />
     <Content Include="Assests\extra-images\car-select-img1.jpg" />
     <Content Include="Assests\extra-images\car-select-img2.jpg" />
     <Content Include="Assests\extra-images\car-select-img3.jpg" />
@@ -381,6 +389,9 @@
     <Content Include="Assests\extra-images\featured-listing-2.jpg" />
     <Content Include="Assests\extra-images\featured-listing-3.jpg" />
     <Content Include="Assests\extra-images\featured-listing-4.jpg" />
+    <Content Include="Assests\extra-images\ferrarimenu.jpg" />
+    <Content Include="Assests\extra-images\ferrarimenu1.jpg" />
+    <Content Include="Assests\extra-images\ferrarimenu2.jpg" />
     <Content Include="Assests\extra-images\full-section-img.jpg" />
     <Content Include="Assests\extra-images\full-width-img-01.png" />
     <Content Include="Assests\extra-images\gallery-img-1.jpg" />
@@ -394,9 +405,13 @@
     <Content Include="Assests\extra-images\image-frame-1.png" />
     <Content Include="Assests\extra-images\image-frame-2.png" />
     <Content Include="Assests\extra-images\image-frame.jpg" />
+    <Content Include="Assests\extra-images\lambo.png" />
+    <Content Include="Assests\extra-images\lambo1.jpg" />
+    <Content Include="Assests\extra-images\lambomenu.png" />
     <Content Include="Assests\extra-images\latest-model-01.jpg" />
     <Content Include="Assests\extra-images\latest-model-02.jpg" />
     <Content Include="Assests\extra-images\latest-model-03.jpg" />
+    <Content Include="Assests\extra-images\lexusmenu.jpg" />
     <Content Include="Assests\extra-images\listing-Grid-img1.jpg" />
     <Content Include="Assests\extra-images\listing-Grid-img2.jpg" />
     <Content Include="Assests\extra-images\listing-Grid-img3.jpg" />
@@ -406,6 +421,8 @@
     <Content Include="Assests\extra-images\listing-Grid-img7.jpg" />
     <Content Include="Assests\extra-images\listing-Grid-img8.jpg" />
     <Content Include="Assests\extra-images\listing-Grid-img9.jpg" />
+    <Content Include="Assests\extra-images\mercedes1.jpg" />
+    <Content Include="Assests\extra-images\mercedes2.jpg" />
     <Content Include="Assests\extra-images\partner-img-1.jpg" />
     <Content Include="Assests\extra-images\partner-img-2.jpg" />
     <Content Include="Assests\extra-images\partner-img-3.jpg" />
@@ -438,6 +455,7 @@
     <Content Include="Assests\extra-images\recent-widget-6.jpg" />
     <Content Include="Assests\extra-images\recent-widget-7.jpg" />
     <Content Include="Assests\extra-images\recent-widget-8.jpg" />
+    <Content Include="Assests\extra-images\register.png" />
     <Content Include="Assests\extra-images\Shop-comment1.jpg" />
     <Content Include="Assests\extra-images\Shop-comment2.jpg" />
     <Content Include="Assests\extra-images\shop-detail1.jpg" />
@@ -476,6 +494,9 @@
     <Content Include="Assests\extra-images\upload-img-2.jpg" />
     <Content Include="Assests\extra-images\upload-img-3.jpg" />
     <Content Include="Assests\extra-images\user-bg-img.jpg" />
+    <Content Include="Assests\extra-images\vinfastmenu.jpg" />
+    <Content Include="Assests\extra-images\vinfastmenu2.png" />
+    <Content Include="Assests\extra-images\vinfastmenu3.jpg" />
     <Content Include="Assests\extra-images\widget-ad.png" />
     <Content Include="Assests\images\authorize-img.jpg" />
     <Content Include="Assests\images\blank.gif" />
@@ -924,6 +945,7 @@
     <Content Include="Content\libs\simplebar\src\scrollbar-width.js" />
     <Content Include="Content\libs\simplebar\src\simplebar.css" />
     <Content Include="Content\libs\simplebar\src\simplebar.js" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
